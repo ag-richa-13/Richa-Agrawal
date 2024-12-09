@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Briefcase } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Briefcase } from "lucide-react";
 
 export function Experience() {
   return (
@@ -30,20 +30,16 @@ export function Experience() {
                 <div className="flex items-center mb-4">
                   <Briefcase className="h-5 w-5 text-indigo-400 mr-2" />
                   <div>
-                    <h3 className="text-xl font-bold">Software Development Engineer - 1</h3>
+                    <h3 className="text-xl font-bold">
+                      Software Development Engineer - 1
+                    </h3>
                     <p className="text-indigo-400">MyTeam11 Fantasy Sports</p>
                   </div>
                 </div>
-                <ul className="mt-4 space-y-2 text-gray-300">
-                  <li>• Developed and launched Power Ludo using Unity and C#</li>
-                  <li>• Led front-end development and UI/UX optimization</li>
-                  <li>• Implemented in-app updates using Android Library</li>
-                  <li>• Enhanced system reliability and user satisfaction</li>
-                </ul>
               </div>
             </div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -60,11 +56,6 @@ export function Experience() {
                     <p className="text-indigo-400">Labdox</p>
                   </div>
                 </div>
-                <ul className="mt-4 space-y-2 text-gray-300">
-                  <li>• Created portfolios and landing pages using Swipe Pages</li>
-                  <li>• Developed HighOctane gaming zone website</li>
-                  <li>• Collaborated with cross-functional teams</li>
-                </ul>
               </div>
             </div>
           </motion.div>

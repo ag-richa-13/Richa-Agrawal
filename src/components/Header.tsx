@@ -35,7 +35,7 @@ export function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="font-bold bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent"
-            style={{ fontSize: "3rem", fontFamily: "'Ephesis', cursive" }}
+            style={{ fontSize: "2.5rem", fontFamily: "'Ephesis', cursive" }}
           >
             Richa Agrawal
           </motion.h1>

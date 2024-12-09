@@ -1,7 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Code2, GamepadIcon, Database } from 'lucide-react';
-
+import React from "react";
+import { motion } from "framer-motion";
+import { Code2, GamepadIcon, Database } from "lucide-react";
+import richaImage from "../assets/richa.jpg";
 export function Hero() {
   return (
     <section className="min-h-screen bg-gray-900 text-white py-20 flex items-center">
@@ -15,7 +15,9 @@ export function Hero() {
             <h1 className="text-5xl font-bold mb-6">
               <span className="block">Hi, I'm</span>
               <span className="block text-indigo-500">Richa Agrawal</span>
-              <span className="block text-3xl mt-2">Software Development Engineer</span>
+              <span className="block text-3xl mt-2">
+                Software Development Engineer
+              </span>
             </h1>
             {/* <p className="text-xl text-gray-400 mb-8">
               Passionate about creating engaging digital experiences through game and web development.
@@ -45,7 +47,7 @@ export function Hero() {
           >
             <div className="relative w-80 h-80 mx-auto">
               <img
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
+                src={richaImage}
                 alt="Richa Agrawal"
                 className="rounded-full w-full h-full object-cover border-4 border-indigo-600"
               />
@@ -63,9 +65,13 @@ export function Hero() {
           className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8"
         >
           {[
-            { icon: GamepadIcon, title: 'Game Dev', desc: 'Unity & C# Expert' },
-            { icon: Code2, title: 'Web Dev', desc: 'Full Stack Developer' },
-            { icon: Database, title: 'Backend', desc: 'API & Database Specialist' }
+            { icon: GamepadIcon, title: "Game Dev", desc: "Unity & C# Expert" },
+            { icon: Code2, title: "Web Dev", desc: "Full Stack Developer" },
+            {
+              icon: Database,
+              title: "Backend",
+              desc: "API & Database Specialist",
+            },
           ].map((item, index) => (
             <div
               key={index}
