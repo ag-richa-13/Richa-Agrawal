@@ -89,7 +89,7 @@ export function Contact() {
             <div className="flex space-x-6 justify-center">
               {/* LinkedIn */}
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/in/ag-richa-13s/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group"
@@ -101,7 +101,7 @@ export function Contact() {
 
               {/* Facebook */}
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/ag.richa13"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group"
@@ -113,7 +113,7 @@ export function Contact() {
 
               {/* Instagram */}
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/r.i._c_.h.a/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group"
@@ -125,7 +125,7 @@ export function Contact() {
 
               {/* Twitter */}
               <a
-                href="https://twitter.com"
+                href="https://twitter.com/IAMRICHAAGRAWAL"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group"
@@ -137,7 +137,7 @@ export function Contact() {
 
               {/* GitHub */}
               <a
-                href="https://github.com"
+                href="https://github.com/ag-richa-13"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group"
@@ -149,7 +149,7 @@ export function Contact() {
 
               {/* Medium */}
               <a
-                href="https://medium.com"
+                href="https://medium.com/@agricha-13"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group"

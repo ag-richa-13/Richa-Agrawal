@@ -1,4 +1,3 @@
-import React from "react";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
@@ -13,23 +12,23 @@ import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa"; /
 const socialLinks = [
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/richa-agrawal/",
+    url: "https://www.linkedin.com/in/ag-richa-13s/",
     icon: <FaLinkedin size={24} />,
   },
   {
     name: "GitHub",
-    url: "https://github.com/richa-agrawal",
+    url: "https://github.com/ag-richa-13",
     icon: <FaGithub size={24} />,
   },
   {
-    name: "Twitter",
-    url: "https://twitter.com/richa-agrawal",
-    icon: <FaTwitter size={24} />,
+    name: "Instagram",
+    url: "https://www.instagram.com/r.i._c_.h.a/",
+    icon: <FaInstagram size={24} />,
   },
   {
-    name: "Instagram",
-    url: "https://www.instagram.com/richa_agrawal/",
-    icon: <FaInstagram size={24} />,
+    name: "Twitter",
+    url: "https://twitter.com/IAMRICHAAGRAWAL",
+    icon: <FaTwitter size={24} />,
   },
 ];
 
