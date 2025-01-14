@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap");
+
+/* Project.css */
+.projects-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background: #000;
+}
+
+.projects-heading {
+  font-family: "Atma", system-ui;
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: left;
+  color: #b6a28e;
+  margin-bottom: 3rem;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  animation: slideIn 0.8s ease-out;
+}
+
+.project-card {
+  background: linear-gradient(145deg, #42082c, #292945);
+  color: #fff;
+  width: 340px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease,
+    background-color 0.4s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid transparent;
+  animation: borderAnimation 5s infinite linear;
+}
+
+.project-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 15px 40px rgba(65, 15, 40, 0.5); /* Glowing shadow effect */
+  background: linear-gradient(145deg, #292945, #1e1e2f);
+}
+
+.project-card:hover .project-title {
+  color: #ffffff; /* Neon yellow on hover */
+}
+
+.project-image {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #eb6f0a; /* Vibrant yellow border */
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.1) rotate(360deg); /* Zoom and rotate icon on hover */
+  border-color: #e77ec8;
+}
+
+.project-title {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  font-weight: bold;
+  /* font-family: "Press Start 2P", cursive; */
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.project-description {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  /* font-family: Arial, sans-serif; */
+  color: #d1d1e0; /* Softer white */
+}
+
+.project-skills {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.skill-bubble {
+  background: linear-gradient(135deg, #f10404, #090700); /* Gradient bubble */
+  padding: 8px 18px;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 0.9rem;
+  /* font-family: Arial, sans-serif; */
+  text-transform: capitalize;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-bubble:hover {
+  transform: scale(1.1);
+  box-shadow: rgba(67, 14, 14, 0.373) 0px 6px 12px -2px,
+    rgba(84, 2, 2, 0.532) 0px 3px 7px -3px; /* Neon glow on hover */
+}
+
+.project-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.button {
+  /* font-family: Arial, sans-serif; */
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* Adjust spacing between icon and text */
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.button:hover {
+  color: #87ffb3; /* Optional hover effect */
+}
+
+.apk-btn {
+  color: #ffffff; /* Adjust color for APK button */
+}
+
+.github-btn {
+  color: #ffffff; /* Adjust color for GitHub button */
+}
+
+.icon {
+  font-size: 18px; /* Icon size */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes borderAnimation {
+  0% {
+    border-color: #e5d9f2;
+  }
+  25% {
+    border-color: #a0d683; /* Neon red border */
+  }
+  50% {
+    border-color: #87a2ff; /* Vibrant yellow border */
+  }
+  75% {
+    border-color: #ff8a8a; /* Neon cyan border */
+  }
+  100% {
+    border-color: #f6fb7a;
+  }
+}
+
+/* GitHub prompt section */
+.github-prompt {
+  max-width: 800px;
+  margin: 2rem auto 0; /* Center horizontally and add top/bottom spacing */
+  padding: 1rem;
+  background-color: #9c72f0;
+  border: 3px solid #920fd3;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out;
+}
+
+.github-prompt h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.github-prompt p {
+  font-size: 1rem;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.github-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.github-info .github-icon {
+  color: #120808;
+}
+
+.github-link {
+  font-size: 1.1rem;
+  color: #140a0a;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.github-link:hover {
+  color: #32052f; /* A soft green color on hover */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

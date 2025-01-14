@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap");
+
+/* Section Styling */
+#blogs {
+  border: 2px solid #fff;
+  border-radius: 10px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #000000;
+}
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+/* Heading Styling */
+#blogs h2 {
+  font-family: "Atma", system-ui;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #b6a28e; /* Light green color */
+}
+
+/* Grid Styling */
+#blogs .blog-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: left;
+  gap: 2rem;
+}
+
+/* Blog Post Card */
+#blogs .blog-card {
+  width: 500px;
+  height: 750px;
+  background-color: #1e1e1e;
+  border-radius: 0.75rem;
+  border: 1px solid #0a864a;
+  transition: all 0.5s ease; /* Slightly longer transition for a smoother effect */
+  box-shadow: rgba(2, 67, 36, 0.25) 0px 13px 27px -5px,
+    rgba(1, 57, 24, 0.3) 0px 8px 16px -8px;
+}
+
+#blogs .blog-card:hover {
+  box-shadow: rgba(21, 221, 138, 0.315) 0px 20px 25px -5px,
+    rgba(13, 183, 169, 0.26) 0px 10px 10px -5px;
+}
+.blog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Blog Post Image */
+#blogs .blog-card .post-image {
+  position: relative;
+  width: 500px;
+  height: 350px;
+
+  padding: 1rem;
+  overflow: hidden;
+}
+
+#blogs .blog-card .post-image img {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #034808;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Post Information */
+#blogs .blog-card .post-info {
+  padding: 1rem;
+}
+
+#blogs .blog-card .post-info .meta-info {
+  display: flex;
+  gap: 1rem;
+  color: #999;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+#blogs .blog-card .post-info .meta-info span {
+  display: flex;
+  gap: 0.25rem;
+}
+
+/* Paragraph Styling */
+#blogs .blog-card .post-info p {
+  font-size: 0.9rem;
+  line-height: 1.5; /* Improved readability */
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+/* Heading Styling */
+#blogs .blog-card .post-info h3 {
+  font-size: 1.3rem; /* Slightly larger size for better emphasis */
+  font-weight: 700;
+  color: #9b4d96; /* Purple color */
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+#blogs .blog-card .post-info h3:hover {
+  color: #a263c0; /* Light purple color */
+}
+
+#blogs .blog-card .post-info .author-info {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+#blogs .blog-card .post-info .author-info .author-image {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#blogs .blog-card .post-info .author-info .author-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#blogs .blog-card .post-info .author-info span {
+  color: #999;
+}
+
+/* "Read More" Button Styling */
+#blogs .blog-card .post-info .read-more {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem; /* Added padding for better button feel */
+  color: #16e178;
+  font-weight: 600; /* Increased weight for emphasis */
+  text-decoration: none; /* Remove underline */
+  border: 2px solid transparent; /* Smooth border transition */
+  border-radius: 0.25rem; /* Subtle rounded corners */
+  transition: all 0.3s ease; /* Unified transition for smooth effect */
+}
+
+#blogs .blog-card .post-info .read-more:hover {
+  color: #022813; /* White text on hover */
+  background-color: #0cc151; /* Green background on hover */
+  border: 2px solid #092802; /* Visible border effect */
+  box-shadow: 0px 4px 10px rgba(8, 50, 1, 0.5); /* Glow effect */
+}
+
+/* "See More" Button */
+#blogs .see-more-btn a {
+  display: inline-block;
+  padding: 0.75rem 2rem; /* Increased padding for prominence */
+  background-color: #035629;
+  color: #b1f487;
+  font-size: 1rem; /* Slightly larger text */
+  font-weight: 600;
+  text-transform: uppercase; /* Added uppercase for emphasis */
+  border: 2px solid transparent; /* Smooth border transition */
+  border-radius: 0.5rem;
+  box-shadow: 0px 6px 12px rgba(11, 67, 1, 0.3); /* Subtle shadow */
+  transition: all 0.3s ease; /* Unified transition */
+}
+
+#blogs .see-more-btn a:hover {
+  background-color: #33cc0a; /* Darker green background */
+  color: #082905; /* White text on hover */
+  border: 2px solid #0b2804; /* Border visible on hover */
+  box-shadow: 0px 8px 16px rgba(18, 69, 4, 0.6); /* Intense shadow effect */
+  transform: translateY(-3px); /* Slight lift effect on hover */
+}

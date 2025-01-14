@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+.cursor-trail-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cursor-trail-container div {
+  position: absolute;
+  border: 1px solid; /* Dark border width set to 1px */
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: growAndFade 1s forwards;
+}
+
+@keyframes growAndFade {
+  0% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    width: 10px; /* Smallest possible circle size */
+    height: 10px; /* Smallest possible circle size */
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(3); /* Grow to 3 times size */
+    width: 60px; /* Grow size */
+    height: 60px; /* Grow size */
+  }
+}
+@keyframes borderAnimation {
+  0% {
+    border-color: #4b0082; /* Dark indigo */
+  }
+  50% {
+    border-color: #1e3a8a; /* Deep blue */
+  }
+  100% {
+    border-color: #4b0082; /* Dark indigo */
+  }
+}
+
+/* Optional: Add more styles for general page layout if necessary */
+#home {
+  position: relative;
+  min-height: 100vh;
+}

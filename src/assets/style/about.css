@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Borel&display=swap");
+/* About Section Styling */
+#about {
+  border: 2px solid #fff;
+  border-radius: 10px;
+  padding: 3rem 0;
+  background-color: #000000;
+}
+/* Custom Font Style for Text */
+#about h2 {
+  font-family: "Atma", system-ui;
+  font-weight: 700;
+}
+
+#about p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* Skill Icons Container */
+.skills-heading {
+  font-size: 2rem; /* Larger font size for emphasis */
+  font-family: "Borel", cursive;
+  font-weight: 600;
+  color: #fff; /* Bright color for contrast */
+  background: linear-gradient(90deg, #8e44ad, #3498db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem; /* Increase spacing */
+  display: inline-block;
+  text-transform: uppercase; /* Capitalize text for style */
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #8852b8; /* Add underline */
+}
+
+.skills-container {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Base Style for Skill Icons */
+.skill-icon {
+  padding: 1rem;
+  background-color: #1a1a1d; /* Default background */
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  transform: translateY(0);
+}
+
+/* Hover Effect for Skill Icons */
+.skill-icon:hover {
+  transform: scale(1.15) translateY(-10px); /* Larger scaling */
+
+  box-shadow: 0px 8px 15px rgba(117, 86, 166, 0.5); /* Shadow effect */
+  cursor: pointer;
+}
+
+/* Skill Icon Images */
+.skill-icon img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* Add any custom hover effects for specific icons */
+.skill-icon[data-skill="unity"]:hover {
+  background-color: #fff7fc;
+}
+.skill-icon[data-skill="csharp"]:hover {
+  background-color: #607274;
+}
+.skill-icon[data-skill="html"]:hover {
+  background-color: #eb5b00;
+}
+.skill-icon[data-skill="nodejs"]:hover {
+  background-color: #1f4529;
+}
+.skill-icon[data-skill="css"]:hover {
+  background-color: #264de4;
+}
+
+.skill-icon[data-skill="javascript"]:hover {
+  background-color: #f7df1e;
+}
+.skill-icon[data-skill="sql"]:hover {
+  background-color: #1f509a;
+}
+
+/* Add responsive styling if needed */
+@media (max-width: 768px) {
+  .skills-container {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}

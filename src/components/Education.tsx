@@ -1,46 +1,55 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { GraduationCap } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { education } from "../data/portfolio";
+import { GraduationCap, MapPin } from "lucide-react";
+import { IoSchool } from "react-icons/io5";
+import { AiFillStar } from "react-icons/ai";
+import "../assets/style/education.css";
 
-export function Education() {
+const Education = () => {
   return (
-    <section id="education" className="py-20 bg-gray-800 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold mb-4">Education</h2>
-          <p className="text-gray-400">Academic Background and Achievements</p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="bg-gray-900 rounded-2xl p-8 shadow-xl"
-        >
-          <div className="flex items-start space-x-6">
-            <div className="bg-indigo-600 p-4 rounded-xl">
-              <GraduationCap className="h-8 w-8" />
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold mb-2">B.Tech in Information Technology</h3>
-              <p className="text-xl text-indigo-400 mb-4">Engineering College Ajmer</p>
-              <div className="flex flex-wrap gap-4 mb-6">
-                <span className="px-4 py-2 bg-gray-800 rounded-full text-sm">CGPA: 7.53</span>
-                <span className="px-4 py-2 bg-gray-800 rounded-full text-sm">2019 - 2023</span>
+    <section id="education">
+      <div className="container mx-auto px-4">
+        <h2 className="section-title">&lt;Education./&gt;</h2>
+        <div className="timeline">
+          {education.map((edu, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className={`timeline-item ${index % 2 === 0 ? "left" : "right"}`}
+            >
+              <div className="timeline-dot">
+                <IoSchool className="timeline-icon" />
               </div>
-              <p className="text-gray-400">
-                Focused on core computer science concepts, software development, and modern technologies.
-                Participated in various technical competitions and workshops to enhance practical skills.
-              </p>
-            </div>
+              <div className="timeline-content">
+                <div className="content-header">
+                  <h3 className="degree">{edu.degree}</h3>
+                  <div className="institution">
+                    <GraduationCap size={18} className="icon" />
+                    <span>{edu.institution}</span>
+                  </div>
+                </div>
+                <div className="details">
+                  <div className="duration">{edu.duration}</div>
+                  <div className="location">
+                    <MapPin size={16} className="location-icon" />
+                    <span>{edu.location}</span>
+                  </div>
+                  {edu.grade && <div className="grade">{edu.grade}</div>}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+          <div className="timeline-end">
+            <AiFillStar className="timeline-end-icon" />
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
-}
+};
+
+export default Education;

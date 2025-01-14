@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap");
+
+/* Section styling */
+#achievements {
+  background-color: #000000;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+/* Title styling */
+#achievements h2 {
+  font-family: "Atma", system-ui;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #b6a28e; /* Orange color for the title */
+}
+
+.card-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: left;
+  gap: 2rem;
+}
+/* Achievement card styling */
+.achievement-card {
+  width: 600px;
+  height: 500px;
+  background-color: #02021d;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 3px solid #fdfcfc;
+  transition: all 0.5s ease; /* Slightly longer transition for a smoother effect */
+  transform: translateY(0) rotate(0deg);
+  box-shadow: rgba(15, 1, 20, 0.25) 0px 13px 27px -5px,
+    rgba(14, 1, 6, 0.3) 0px 8px 16px -8px;
+}
+
+.achievement-card:hover {
+  box-shadow: rgba(192, 125, 217, 0.315) 0px 20px 25px -5px,
+    rgba(198, 135, 217, 0.26) 0px 10px 10px -5px;
+}
+
+/* Flex container for image, trophy, and text */
+.achievement-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.achievement-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #9b59b6;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.achievement-description {
+  color: #ccc;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+/* Image styling */
+.achievement-image-wrapper {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.achievement-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

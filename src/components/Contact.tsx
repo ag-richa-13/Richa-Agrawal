@@ -1,167 +1,274 @@
-import React from "react";
-import { motion } from "framer-motion";
-
-import {
-  FaLinkedinIn,
-  FaFacebookF,
-  FaInstagram,
-  FaTwitter,
-  FaGithub,
-} from "react-icons/fa"; // Import social media icons from react-icons
+import React, { useState } from "react";
+import { toast, Toaster } from "react-hot-toast";
+import emailjs from "emailjs-com"; // Import EmailJS
+import { FaGithub, FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaMedium, FaWhatsapp, FaXTwitter } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";
-import { FaMedium, FaPhone } from "react-icons/fa6";
-import { PiMapPinBold } from "react-icons/pi";
+import { RiHomeHeartLine } from "react-icons/ri";
 
-export function Contact() {
+const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false); // Loading state for the button
+
+  // Handle change for form fields
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // Handle form submission
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true); // Set loading to true when starting to send
+
+    // Form validation: Ensure all fields are filled
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.subject ||
+      !formData.message
+    ) {
+      toast.error("All fields are required!", {
+        className: "toast-error",
+      });
+      setLoading(false); // Stop loading on error
+      return;
+    }
+
+    // Use EmailJS to send the email
+    emailjs
+      .send(
+        "service_2jvyrmd", // Replace with your EmailJS service ID
+        "template_uxwydsc", // Replace with your EmailJS template ID
+        {
+          ...formData, // Send form data
+          from_name: formData.name, // Ensure the sender's name is correctly set
+        },
+        "l7LRkSGlwOuhCx-2d" // Replace with your EmailJS user ID
+      )
+      .then(
+        (response) => {
+          console.log("Email sent successfully", response);
+          toast.success("Message Sent Successfully!", {
+            className: "toast-success",
+          });
+        },
+        (error) => {
+          console.error("Error sending email", error);
+          toast.error("Failed to send the message. Please try again later.", {
+            className: "toast-error",
+          });
+        }
+      )
+      .finally(() => {
+        setLoading(false); // Stop loading after completion
+        setFormData({ name: "", email: "", subject: "", message: "" }); // Reset form
+      });
+  };
+
   return (
-    <section
+    <div
       id="contact"
-      className="py-20 bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-700 text-white relative overflow-hidden"
+      className="bg-[#000000] min-h-screen flex flex-col justify-center items-center px-6 text-gray-300 text-sm md:text-base"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-5xl font-bold text-white mb-4">Get in Touch</h2>
-          <p className="text-gray-400 text-lg max-w-xl mx-auto">
-            Let's collaborate on something amazing together. Feel free to reach
-            out to me anytime.
+      <h1 className="text-2xl md:text-3xl font-semibold mb-4 text-pink-400 animate__animated animate__fadeIn animate__delay-1s hover:text-yellow-400 cursor-pointer transition-all duration-300 transform hover:scale-105">
+        Let's connect.
+      </h1>
+      <p className="text-center mb-10 text-lg md:text-xl animate__animated animate__fadeIn animate__delay-2s">
+        If you want to know more about my work, or just say hello, send me a
+        message. I'd love to hear from you.
+      </p>
+
+      {/* Contact Form and Info Section */}
+      <div className="grid md:grid-cols-2 gap-8 w-full max-w-4xl">
+        {/* Contact Info */}
+        <div className="bg-[#000000] border-2 border-[#D4BDAC] shadow-lg rounded-lg p-6 flex flex-col items-center h-auto">
+          <h2 className="text-xl md:text-2xl font-semibold mb-4 text-yellow-400">
+            Get in Touch
+          </h2>
+          <p className="text-center mb-4 text-gray-400">
+            Feel free to reach out via email or connect with me on social media.
           </p>
-        </motion.div>
+          <div className="text-gray-400 space-y-3 text-center">
+            {/* Gmail Button with Blue Color */}
+            <a
+              href="mailto:agrawalricha013@gmail.com"
+              className="flex items-center justify-center gap-2 gmail-btn hover:bg-[#030637] hover:text-white transition-all duration-300 rounded-full p-2 text-sm md:text-base transform hover:scale-105"
+            >
+              <SiGmail size={24} />
+              agrawalricha013@gmail.com
+            </a>
+            {/* WhatsApp Button */}
+            <a
+              href="https://wa.me/919079531049" // WhatsApp link
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 whatsapp-btn hover:bg-[#006A67] hover:text-white transition-all duration-300 rounded-full p-2 text-sm md:text-base transform hover:scale-105"
+            >
+              <FaWhatsapp size={24} />
+              +91 9079531049
+            </a>
+            {/* Location Button (Heart Color) */}
+            <a
+              href="https://www.google.com/maps?q=Gangapur+City,+Rajasthan,+India"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 location-btn hover:bg-[#FF4D4D] hover:text-white transition-all duration-300 rounded-full p-2 text-sm md:text-base transform hover:scale-105"
+            >
+              <RiHomeHeartLine size={24} />
+              Gangapur City, Rajasthan, India
+            </a>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Contact Details Card */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-8 p-8 bg-gray-800 rounded-xl shadow-2xl border-4 border-indigo-600 hover:border-indigo-400 transition-all ease-in-out"
-          >
-            {/* Email */}
-            <div className="flex items-center space-x-4">
-              <div className="bg-indigo-600 p-3 rounded-full shadow-lg">
-                <SiGmail className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-1">Email</h3>
-                <p className="text-gray-400">agrawalricha013@gmail.com</p>
-              </div>
+          {/* Social Media Links */}
+          <div className="flex space-x-4 mt-6 justify-center">
+            <a
+              href="https://github.com/ag-richa-13"
+              className="text-gray-400 hover:bg-gray-300 hover:text-gray-900 transition-all duration-300 rounded-full p-2 transform hover:scale-105 hover-fill"
+            >
+              <FaGithub size={24} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ag-richa-13s/"
+              className="text-gray-400 hover:bg-gray-300 hover:text-gray-900 transition-all duration-300 rounded-full p-2 transform hover:scale-105 hover-fill"
+            >
+              <FaLinkedin size={24} />
+            </a>
+            <a
+              href="https://www.instagram.com/r.i._c_.h.a/"
+              className="text-gray-400 hover:bg-gray-300 hover:text-gray-900 transition-all duration-300 rounded-full p-2 transform hover:scale-105 hover-fill"
+            >
+              <FaInstagram size={24} />
+            </a>
+            <a
+              href="https://www.facebook.com/ag.richa13"
+              className="text-gray-400 hover:bg-gray-300 hover:text-gray-900 transition-all duration-300 rounded-full p-2 transform hover:scale-105 hover-fill"
+            >
+              <FaFacebook size={24} />
+            </a>
+            <a
+              href="https://twitter.com/IAMRICHAAGRAWAL"
+              className="text-gray-400 hover:bg-gray-300 hover:text-gray-900 transition-all duration-300 rounded-full p-2 transform hover:scale-105 hover-fill"
+            >
+              <FaXTwitter size={24} />
+            </a>
+            <a
+              href="https://medium.com/@agricha-13"
+              className="text-gray-400 hover:bg-gray-300 hover:text-gray-900 transition-all duration-300 rounded-full p-2 transform hover:scale-105 hover-fill"
+            >
+              <FaMedium size={24} />
+            </a>
+          </div>
+
+          {/* Thank You Note */}
+          <p className="text-gray-400 text-center mt-6">
+            Thank you for visiting! 😊🎉 I'm glad you're here! Let's stay
+            connected! 🌟
+          </p>
+        </div>
+
+        {/* Contact Form */}
+        <div className="bg-[#000000] border-2 border-[#D4BDAC] shadow-lg rounded-lg p-6 h-auto">
+          <h2 className="text-xl md:text-2xl font-semibold mb-4 text-orange-400">
+            Send a Message
+          </h2>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label
+                htmlFor="name"
+                className="block text-[#A0D683] font-medium mb-1 text-sm md:text-base"
+              >
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08]"
+                placeholder="Enter your name"
+                required
+              />
             </div>
-
-            {/* Location */}
-            <div className="flex items-center space-x-4">
-              <div className="bg-indigo-600 p-3 rounded-full shadow-lg">
-                <PiMapPinBold className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-1">
-                  Location
-                </h3>
-                <p className="text-gray-400">Gangapur City, Rajasthan, India</p>
-              </div>
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-[#A0D683] font-medium mb-1 text-sm md:text-base"
+              >
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08]"
+                placeholder="Enter your email"
+                required
+              />
             </div>
-
-            {/* Phone */}
-            <div className="flex items-center space-x-4">
-              <div className="bg-indigo-600 p-3 rounded-full shadow-lg">
-                <FaPhone className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-1">Phone</h3>
-                <p className="text-gray-400">9079531049</p>
-              </div>
+            <div>
+              <label
+                htmlFor="subject"
+                className="block text-[#A0D683] font-medium mb-1 text-sm md:text-base"
+              >
+                Subject
+              </label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08]"
+                placeholder="Enter the subject"
+                required
+              />
             </div>
-          </motion.div>
-
-          {/* Social Media Section */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6 flex justify-center flex-col items-center p-8 bg-gray-800 rounded-xl shadow-2xl border-4 border-indigo-600 hover:border-indigo-400 transition-all ease-in-out"
-          >
-            <h3 className="text-2xl font-semibold text-gray-300 mb-4">
-              Follow Me
-            </h3>
-            <div className="flex space-x-6 justify-center">
-              {/* LinkedIn */}
-              <a
-                href="https://www.linkedin.com/in/ag-richa-13s/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
+            <div>
+              <label
+                htmlFor="message"
+                className="block text-[#A0D683] font-medium mb-1 text-sm md:text-base"
               >
-                <div className="w-12 h-12 bg-indigo-600 p-3 rounded-full flex items-center justify-center shadow-xl transform group-hover:scale-110 group-hover:bg-indigo-500 transition-all">
-                  <FaLinkedinIn className="h-6 w-6 text-white group-hover:text-gray-100" />
-                </div>
-              </a>
-
-              {/* Facebook */}
-              <a
-                href="https://www.facebook.com/ag.richa13"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
-              >
-                <div className="w-12 h-12 bg-indigo-600 p-3 rounded-full flex items-center justify-center shadow-xl transform group-hover:scale-110 group-hover:bg-indigo-500 transition-all">
-                  <FaFacebookF className="h-6 w-6 text-white group-hover:text-gray-100" />
-                </div>
-              </a>
-
-              {/* Instagram */}
-              <a
-                href="https://www.instagram.com/r.i._c_.h.a/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
-              >
-                <div className="w-12 h-12 bg-indigo-600 p-3 rounded-full flex items-center justify-center shadow-xl transform group-hover:scale-110 group-hover:bg-indigo-500 transition-all">
-                  <FaInstagram className="h-6 w-6 text-white group-hover:text-gray-100" />
-                </div>
-              </a>
-
-              {/* Twitter */}
-              <a
-                href="https://twitter.com/IAMRICHAAGRAWAL"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
-              >
-                <div className="w-12 h-12 bg-indigo-600 p-3 rounded-full flex items-center justify-center shadow-xl transform group-hover:scale-110 group-hover:bg-indigo-500 transition-all">
-                  <FaTwitter className="h-6 w-6 text-white group-hover:text-gray-100" />
-                </div>
-              </a>
-
-              {/* GitHub */}
-              <a
-                href="https://github.com/ag-richa-13"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
-              >
-                <div className="w-12 h-12 bg-indigo-600 p-3 rounded-full flex items-center justify-center shadow-xl transform group-hover:scale-110 group-hover:bg-indigo-500 transition-all">
-                  <FaGithub className="h-6 w-6 text-white group-hover:text-gray-100" />
-                </div>
-              </a>
-
-              {/* Medium */}
-              <a
-                href="https://medium.com/@agricha-13"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
-              >
-                <div className="w-12 h-12 bg-indigo-600 p-3 rounded-full flex items-center justify-center shadow-xl transform group-hover:scale-110 group-hover:bg-indigo-500 transition-all">
-                  <FaMedium className="h-6 w-6 text-white group-hover:text-gray-100" />
-                </div>
-              </a>
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows={4}
+                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08] resize-none"
+                placeholder="Write your message"
+                required
+              ></textarea>
             </div>
-          </motion.div>
+            {/* Send Message Button with Fixed Length */}
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-auto bg-[#A78295] text-[#22092C] font-bold py-2 px-4 rounded-lg transition-colors hover:bg-[#22092C] hover:text-[#CDC1FF] transform hover:scale-105"
+            >
+              {loading ? "Sending..." : "Send Message"}
+            </button>
+          </form>
         </div>
       </div>
-    </section>
+
+      {/* Toast Notifications Container */}
+      <Toaster position="top-right" />
+    </div>
   );
-}
+};
+
+export default ContactPage;

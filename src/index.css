@@ -7,127 +7,59 @@
 }
 
 body {
-  @apply bg-gray-900;
+  font-family: "Fira Code", monospace;
+  background-color: #1e1e1e;
+  color: #fff;
+  overflow-x: hidden;
 }
 
-/* Smooth Scrolling */
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 4rem;
 }
 
-/* Custom Scrollbar */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-800;
+  background: #1e1e1e;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-indigo-600 rounded-full;
+  background: #333;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-indigo-700;
+  background: #444;
 }
 
-/* Gradient Text */
-.gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-500;
+/* Prevent content shift on scroll */
+html {
+  scrollbar-gutter: stable;
 }
 
-/* Card Hover Effects */
-.hover-card {
-  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/10;
-}
-
-/* Animation Classes */
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
+/* Animations */
 @keyframes float {
-  0% {
-    transform: translateY(0px);
+  0%,
+  100% {
+    transform: translateY(0);
   }
   50% {
     transform: translateY(-10px);
   }
-  100% {
-    transform: translateY(0px);
-  }
 }
 
-/* Glass Effect */
-.glass-effect {
-  @apply bg-gray-900/80 backdrop-blur-sm;
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
 
-/* Custom Link Underline Animation */
-.link-underline {
-  position: relative;
-}
-
-.link-underline::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  @apply bg-indigo-500;
-  transition: width 0.3s ease-in-out;
-}
-
-.link-underline:hover::after {
-  width: 100%;
-}
-
-/* Gradient Animation for Border */
-@keyframes gradientBorder {
-  0% {
-    border-image-source: linear-gradient(
-      45deg,
-      #6ee7b7,
-      #3b82f6,
-      #9333ea,
-      #f59e0b
-    );
-  }
-  50% {
-    border-image-source: linear-gradient(
-      45deg,
-      #9333ea,
-      #6ee7b7,
-      #3b82f6,
-      #f59e0b
-    );
-  }
-  100% {
-    border-image-source: linear-gradient(
-      45deg,
-      #f59e0b,
-      #9333ea,
-      #6ee7b7,
-      #3b82f6
-    );
-  }
-}
-
-/* Apply to the cards */
-.animate-gradient-bg {
-  border-width: 4px; /* Increased border width */
-  border-style: solid;
-  border-radius: 16px; /* Rounded corners */
-  border-image-source: linear-gradient(
-    45deg,
-    #6ee7b7,
-    #3b82f6,
-    #9333ea,
-    #f59e0b
-  );
-  border-image-slice: 1;
-  animation: gradientBorder 3s infinite linear;
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(to right, #9333ea, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

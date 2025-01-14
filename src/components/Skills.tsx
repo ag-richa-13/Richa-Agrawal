@@ -1,52 +1,68 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
+import "../assets/style/skills.css";
 
-export function Skills() {
-  const skills = {
-    "Game Development": ["Unity", "C#"],
-    "Web Development": ["Node.js", "HTML5", "CSS3", "JavaScript"],
-    "Database": ["SQL", "MongoDB"],
-    "Tools": ["Postman", "Git", "Figma", "Android Studio"],
-    "API Integration": ["RESTful APIs"]
-  };
+const Skills = () => {
+  const skillCategories = [
+    {
+      title: "Game Development",
+      skills: "Unity, C#, Figma",
+      color: "text-purple-400",
+      // "background-color": "#14022e", // Dark Green
+    },
+    {
+      title: "Web Development",
+      skills: "HTML, CSS, JavaScript, Node.js, Express.js, MySQL",
+      color: "text-blue-400",
+      // "background-color": "#38031a", // Dark Purple
+    },
+    {
+      title: "Tools",
+      skills: "Git, Postman, Android Studio, GitHub, Jira, VS Code",
+      color: "text-pink-400",
+      // "background-color": "#04022a", // Dark Red
+    },
+  ];
 
   return (
-    <section className="py-20 bg-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+    <section id="skills" className="py-20 bg-[#252526]">
+      <div className="container mx-auto px-4">
+        <h2
+          className="text-3xl font-bold mb-8 text-green-400"
+          id="skill-heading"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">Technical Skills</h2>
-          <p className="text-gray-400">Technologies I work with</p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {Object.entries(skills).map(([category, items], index) => (
+          &lt;MySkills./&gt;
+        </h2>
+        <div
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 skills-container"
+          id="skill-grid"
+        >
+          {skillCategories.map((category, index) => (
             <motion.div
-              key={category}
+              key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-gray-900 rounded-xl p-6 border border-gray-700"
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="p-6 rounded-lg hover:scale-105 hover:shadow-lg transition-transform duration-300"
+              id="skill-card"
+              // Dynamically setting background color
             >
-              <h3 className="text-lg font-semibold text-indigo-400 mb-4">{category}</h3>
-              <div className="flex flex-wrap gap-2">
-                {items.map((skill, skillIndex) => (
-                  <span
-                    key={skillIndex}
-                    className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full border border-gray-700"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              <h3
+                className={`text-xl font-bold mb-4 ${category.color}`}
+                id="skill-title"
+              >
+                {category.title}
+              </h3>
+              <p className="text-gray-300" id="skill-text">
+                {category.skills}
+              </p>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Skills;
