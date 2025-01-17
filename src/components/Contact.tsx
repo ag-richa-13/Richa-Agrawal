@@ -121,10 +121,10 @@ const ContactPage = () => {
               href="https://www.google.com/maps?q=Gangapur+City,+Rajasthan,+India"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 location-btn hover:bg-[#FF4D4D] hover:text-white transition-all duration-300 rounded-full p-2 text-xs sm:text-sm md:text-base transform hover:scale-105 text-center"
+              className="flex items-center justify-center gap-2 location-btn hover:bg-[#FF4D4D] hover:text-white transition-all duration-300 rounded-full p-2 text-xs sm:text-sm md:text-base transform hover:scale-105 text-center w-full"
             >
               <RiHomeHeartLine size={20} className="flex-shrink-0" />
-              <span>Gangapur City, Rajasthan, India</span>
+              <span className="truncate">Gangapur City, Rajasthan, India</span>
             </a>
           </div>
 
