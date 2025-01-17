@@ -48,7 +48,7 @@ const Experience = () => {
                 viewport={{ once: true }}
                 className="experience-card bg-[#1a1a1a] rounded-xl p-6 hover:shadow-lg transition-all"
               >
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+                <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6">
                   <div className="experience-logo-container w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
                     <img
                       src={
