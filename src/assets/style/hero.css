@@ -7,8 +7,7 @@
   font-family: "Quicksand", sans-serif;
 }
 
-/* Cursor Trail Effects */
-.cursor-trail-container {
+Cursor Trail Effects .cursor-trail-container {
   position: fixed;
   top: 0;
   left: 0;
