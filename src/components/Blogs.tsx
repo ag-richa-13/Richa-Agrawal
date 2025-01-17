@@ -9,10 +9,7 @@ import "../assets/style/blogs.css";
 
 const Blogs = () => {
   return (
-    <section
-      id="blogs"
-      className="py-12 md:py-20 bg-gradient-to-b from-[#1a1a1a] to-[#232323]"
-    >
+    <section id="blogs" className="py-12 md:py-20 ">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="mb-12">
           <motion.h2
