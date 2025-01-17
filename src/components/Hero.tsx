@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import ParticleBackground from "./ParticleBackground";
 import TypeWriter from "./TypeWriter";
 import "../assets/style/hero.css";
+import "../assets/style/curser.css";
 import resume from "../assets/images/Richa Agrawal.pdf";
 import programmerImage from "../assets/images/profileImg.png"; // Update this with your image path
 
