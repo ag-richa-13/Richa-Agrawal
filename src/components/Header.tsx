@@ -44,7 +44,7 @@ const Header = () => {
         isScrolled ? "header-scrolled" : "header-transparent"
       }`}
     >
-      <nav className="container mx-auto px-16 py-3 flex justify-between items-center">
+      <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
         {/* Centered Logo */}
         <Link
           to="home"
@@ -87,8 +87,11 @@ const Header = () => {
         </button>
 
         {/* Mobile Menu */}
-        <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
-          <div className="flex flex-col items-center justify-center h-full space-y-8">
+        <div
+          className={`mobile-menu ${isOpen ? "open" : ""}`}
+          onClick={(e) => e.target === e.currentTarget && setIsOpen(false)}
+        >
+          <div className="mobile-menu-content">
             {menuItems.map((item) => (
               <Link
                 key={item.to}

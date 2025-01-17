@@ -77,20 +77,20 @@ const ContactPage = () => {
   return (
     <div
       id="contact"
-      className="bg-[#000000] min-h-screen flex flex-col justify-center items-center px-6 text-gray-300 text-sm md:text-base"
+      className="bg-[#000000] min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 py-8 text-gray-300 text-sm md:text-base"
     >
-      <h1 className="text-2xl md:text-3xl font-semibold mb-4 text-pink-400 animate__animated animate__fadeIn animate__delay-1s hover:text-yellow-400 cursor-pointer transition-all duration-300 transform hover:scale-105">
+      <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-pink-400 animate__animated animate__fadeIn animate__delay-1s hover:text-yellow-400 cursor-pointer transition-all duration-300 transform hover:scale-105 text-center">
         Let's connect.
       </h1>
-      <p className="text-center mb-10 text-lg md:text-xl animate__animated animate__fadeIn animate__delay-2s">
+      <p className="text-center mb-8 sm:mb-10 text-base sm:text-lg md:text-xl animate__animated animate__fadeIn animate__delay-2s px-4">
         If you want to know more about my work, or just say hello, send me a
         message. I'd love to hear from you.
       </p>
 
       {/* Contact Form and Info Section */}
-      <div className="grid md:grid-cols-2 gap-8 w-full max-w-4xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full max-w-4xl px-4">
         {/* Contact Info */}
-        <div className="bg-[#000000] border-2 border-[#D4BDAC] shadow-lg rounded-lg p-6 flex flex-col items-center h-auto">
+        <div className="bg-[#000000] border-2 border-[#D4BDAC] shadow-lg rounded-lg p-4 sm:p-6 flex flex-col items-center h-auto">
           <h2 className="text-xl md:text-2xl font-semibold mb-4 text-yellow-400">
             Get in Touch
           </h2>
@@ -101,35 +101,35 @@ const ContactPage = () => {
             {/* Gmail Button with Blue Color */}
             <a
               href="mailto:agrawalricha013@gmail.com"
-              className="flex items-center justify-center gap-2 gmail-btn hover:bg-[#030637] hover:text-white transition-all duration-300 rounded-full p-2 text-sm md:text-base transform hover:scale-105"
+              className="flex items-center justify-center gap-2 gmail-btn hover:bg-[#030637] hover:text-white transition-all duration-300 rounded-full p-2 text-xs sm:text-sm md:text-base transform hover:scale-105 break-all"
             >
-              <SiGmail size={24} />
-              agrawalricha013@gmail.com
+              <SiGmail size={20} className="flex-shrink-0" />
+              <span className="truncate">agrawalricha013@gmail.com</span>
             </a>
             {/* WhatsApp Button */}
             <a
-              href="https://wa.me/919079531049" // WhatsApp link
+              href="https://wa.me/919079531049"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 whatsapp-btn hover:bg-[#006A67] hover:text-white transition-all duration-300 rounded-full p-2 text-sm md:text-base transform hover:scale-105"
+              className="flex items-center justify-center gap-2 whatsapp-btn hover:bg-[#006A67] hover:text-white transition-all duration-300 rounded-full p-2 text-xs sm:text-sm md:text-base transform hover:scale-105"
             >
-              <FaWhatsapp size={24} />
-              +91 9079531049
+              <FaWhatsapp size={20} className="flex-shrink-0" />
+              <span>+91 9079531049</span>
             </a>
-            {/* Location Button (Heart Color) */}
+            {/* Location Button */}
             <a
               href="https://www.google.com/maps?q=Gangapur+City,+Rajasthan,+India"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 location-btn hover:bg-[#FF4D4D] hover:text-white transition-all duration-300 rounded-full p-2 text-sm md:text-base transform hover:scale-105"
+              className="flex items-center justify-center gap-2 location-btn hover:bg-[#FF4D4D] hover:text-white transition-all duration-300 rounded-full p-2 text-xs sm:text-sm md:text-base transform hover:scale-105 text-center"
             >
-              <RiHomeHeartLine size={24} />
-              Gangapur City, Rajasthan, India
+              <RiHomeHeartLine size={20} className="flex-shrink-0" />
+              <span>Gangapur City, Rajasthan, India</span>
             </a>
           </div>
 
           {/* Social Media Links */}
-          <div className="flex space-x-4 mt-6 justify-center">
+          <div className="flex flex-wrap justify-center gap-3 mt-6">
             <a
               href="https://github.com/ag-richa-13"
               className="text-gray-400 hover:bg-gray-300 hover:text-gray-900 transition-all duration-300 rounded-full p-2 transform hover:scale-105 hover-fill"
@@ -176,7 +176,7 @@ const ContactPage = () => {
         </div>
 
         {/* Contact Form */}
-        <div className="bg-[#000000] border-2 border-[#D4BDAC] shadow-lg rounded-lg p-6 h-auto">
+        <div className="bg-[#000000] border-2 border-[#D4BDAC] shadow-lg rounded-lg p-4 sm:p-6 h-auto">
           <h2 className="text-xl md:text-2xl font-semibold mb-4 text-orange-400">
             Send a Message
           </h2>
@@ -194,7 +194,7 @@ const ContactPage = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08]"
+                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-2 sm:px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08] text-sm md:text-base"
                 placeholder="Enter your name"
                 required
               />
@@ -212,7 +212,7 @@ const ContactPage = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08]"
+                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-2 sm:px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08] text-sm md:text-base"
                 placeholder="Enter your email"
                 required
               />
@@ -230,7 +230,7 @@ const ContactPage = () => {
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08]"
+                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-2 sm:px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08] text-sm md:text-base"
                 placeholder="Enter the subject"
                 required
               />
@@ -248,7 +248,7 @@ const ContactPage = () => {
                 value={formData.message}
                 onChange={handleChange}
                 rows={4}
-                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08] resize-none"
+                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-2 sm:px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08] text-sm md:text-base"
                 placeholder="Write your message"
                 required
               ></textarea>
@@ -257,7 +257,7 @@ const ContactPage = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-auto bg-[#A78295] text-[#22092C] font-bold py-2 px-4 rounded-lg transition-colors hover:bg-[#22092C] hover:text-[#CDC1FF] transform hover:scale-105"
+              className="w-full sm:w-auto bg-[#A78295] text-[#22092C] font-bold py-2 px-4 rounded-lg transition-colors hover:bg-[#22092C] hover:text-[#CDC1FF] transform hover:scale-105 text-sm md:text-base"
             >
               {loading ? "Sending..." : "Send Message"}
             </button>

@@ -38,58 +38,59 @@ const Terminal = ({ onComplete }: { onComplete: () => void }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a] z-50 flex items-center justify-center overflow-hidden"
+          className="fixed inset-0 bg-gradient-to-r from-[#0F172A] via-[#1E293B] to-[#0F172A] z-50 flex items-center justify-center overflow-hidden"
         >
-          {/* Enhanced Background Effect */}
+          {/* Dynamic Background Effect */}
           <motion.div
             className="absolute inset-0 pointer-events-none"
             animate={{
               backgroundPosition: ["0% 0%", "100% 100%"],
             }}
             transition={{
-              duration: 15,
+              duration: 10,
               ease: "linear",
               repeat: Infinity,
             }}
             style={{
               backgroundImage:
-                "radial-gradient(circle at center, rgba(99, 102, 241, 0.15) 0%, transparent 70%)",
-              backgroundSize: "200% 200%",
-              opacity: 0.3,
+                "radial-gradient(circle, #475569 1%, transparent 40%)",
+              backgroundSize: "300% 300%",
+              opacity: 0.1,
             }}
           />
 
-          <div className="w-full max-w-3xl bg-[#1a1a1a]/90 backdrop-blur-lg text-white rounded-xl shadow-2xl border border-indigo-500/20 overflow-hidden relative">
-            {/* Enhanced Header */}
-            <div className="flex items-center justify-between px-4 py-3 bg-[#151515] border-b border-indigo-500/20">
-              <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors duration-200"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors duration-200"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 transition-colors duration-200"></div>
+          <div className="w-full max-w-3xl mx-4 bg-[#1E293B] text-white rounded-lg shadow-xl border border-[#475569] overflow-hidden relative">
+            {/* Header */}
+            <div className="flex items-center px-2 sm:px-4 py-2 sm:py-3 bg-[#0F172A] border-b border-[#475569]">
+              <div className="flex gap-1 sm:gap-2">
+                <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#F87171]"></div>
+                <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#FBBF24]"></div>
+                <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#34D399]"></div>
               </div>
-              <span className="text-xs font-mono text-gray-400">
-                richa@portfolio:~$
+              <span className="ml-2 sm:ml-3 text-[10px] sm:text-xs font-semibold text-gray-300">
+                portfolio-terminal
               </span>
             </div>
 
-            {/* Enhanced Terminal Body */}
-            <div className="p-6 font-mono text-sm bg-gradient-to-b from-transparent to-black/20">
+            {/* Terminal Body */}
+            <div className="p-3 sm:p-6 font-mono text-xs sm:text-sm text-white">
+              {/* Loop through commands and display each line */}
               {commands.map((cmd, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                   transition={{
-                    duration: 0.4,
-                    delay: index * 0.2,
+                    duration: 0.3,
+                    delay: index * 0.3, // Delay for each command
                   }}
                   className="mb-3"
                 >
-                  <span className="text-emerald-400 brightness-110">{cmd}</span>
+                  <span className="text-[#67E8F9]">{cmd}</span>
                 </motion.div>
               ))}
 
-              {/* Enhanced Blinking Cursor */}
+              {/* Blinking cursor */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -98,8 +99,8 @@ const Terminal = ({ onComplete }: { onComplete: () => void }) => {
               >
                 <motion.span
                   animate={{ opacity: [0, 1] }}
-                  transition={{ repeat: Infinity, duration: 0.7 }}
-                  className="inline-block w-2.5 h-5 bg-emerald-400 ml-1"
+                  transition={{ repeat: Infinity, duration: 0.8 }}
+                  className="inline-block w-2 h-4 bg-[#67E8F9] ml-1"
                 ></motion.span>
               </motion.div>
             </div>

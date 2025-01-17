@@ -29,23 +29,23 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="flex items-center space-x-8"
+            className="flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0"
           >
             {/* Image Section */}
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 w-full md:w-auto">
               <img
                 src={richaImage}
                 alt="About Me"
-                className="w-512 h-308 object-cover"
+                className="w-full md:w-512 h-auto md:h-308 object-cover"
               />
             </div>
 
             {/* Content Section */}
             <div className="text-gray-300 flex-1">
-              <h2 className="text-4xl font-extrabold mb-8 text-[#B6A28E]">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-6 md:mb-8 text-[#B6A28E]">
                 &lt;AboutMe. /&gt;
               </h2>
-              <p className="leading-relaxed mb-4 text-lg">
+              <p className="leading-relaxed mb-4 text-base md:text-lg">
                 Hi, I'm a passionate{" "}
                 <span className="font-semibold text-purple-400">
                   Software Development Engineer
@@ -54,7 +54,7 @@ const About = () => {
                 complex challenges. My journey in tech has been driven by a love
                 for creativity and problem-solving.
               </p>
-              <p className="leading-relaxed mb-4 text-lg">
+              <p className="leading-relaxed mb-4 text-base md:text-lg">
                 Currently, I work at{" "}
                 <span className="font-semibold text-pink-400">
                   MyTeam11 Fantasy Sports
@@ -62,7 +62,7 @@ const About = () => {
                 , contributing to projects like Power Ludo, where I enhance user
                 experiences and develop innovative features.
               </p>
-              <p className="leading-relaxed text-lg">
+              <p className="leading-relaxed text-base md:text-lg">
                 I believe in combining{" "}
                 <span className="font-semibold text-blue-400">
                   technical expertise
@@ -73,9 +73,9 @@ const About = () => {
                 </span>{" "}
                 to deliver exceptional solutions.
               </p>
-              <p className="leading-relaxed text-lg mt-4">
+              <p className="leading-relaxed text-base md:text-lg mt-4">
                 <span className="skills-heading">Stuff I Know:</span>
-                <div className="skills-container">
+                <div className="skills-container flex flex-wrap gap-4">
                   {/* Add data-skill attribute for hover customization */}
                   <div className="skill-icon" data-skill="unity">
                     <img src={UnityIcon} alt="Unity" />

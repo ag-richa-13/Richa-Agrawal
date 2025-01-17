@@ -129,12 +129,12 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative bg-[#000] min-h-screen flex items-center justify-center px-8 md:px-16"
+      className="relative bg-[#000] min-h-[calc(100vh-64px)] flex items-center justify-center px-4 sm:px-8 md:px-16"
       style={{ fontFamily: "'Quicksand', sans-serif" }}
     >
       <ParticleBackground />
-      <div className="container mx-auto px-4 pt-16 md:pt-32">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+      <div className="container mx-auto max-w-7xl px-2 sm:px-4 pt-16 sm:pt-20 md:pt-24">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 sm:gap-12 max-w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -143,9 +143,9 @@ const Hero = () => {
               ease: "easeInOut",
               delay: 0.2,
             }}
-            className="text-left md:w-2/5 space-y-6"
+            className="text-left w-full md:w-1/2 lg:w-3/5 space-y-4 sm:space-y-6 mt-8 md:mt-0"
           >
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               <motion.h2
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -154,9 +154,9 @@ const Hero = () => {
                   ease: "easeInOut",
                   delay: 0.6,
                 }}
-                className="text-xl md:text-2xl font-semibold"
+                className="text-lg sm:text-xl md:text-2xl font-semibold"
               >
-                <span className="text-[#F3D7CA] text-xl md:text-2xl font-bold">
+                <span className="text-[#F3D7CA] text-lg sm:text-xl md:text-2xl font-bold">
                   Hello, I'm
                 </span>
               </motion.h2>
@@ -168,10 +168,9 @@ const Hero = () => {
                   ease: "easeInOut",
                   delay: 0.4,
                 }}
+                className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold"
               >
-                <span className="text-2xl md:text-4xl font-bold">
-                  <span className="text-[#86A789]">Richa Agrawal</span>
-                </span>
+                <span className="text-[#86A789]">Richa Agrawal</span>
               </motion.h1>
 
               <motion.h2
@@ -182,7 +181,7 @@ const Hero = () => {
                   ease: "easeInOut",
                   delay: 0.6,
                 }}
-                className="text-xl md:text-2xl font-semibold"
+                className="text-lg sm:text-xl md:text-2xl font-semibold"
               >
                 <span className="text-[#57A6A1]">A </span>{" "}
                 {/* Decrease font size of "A" */}
@@ -204,101 +203,93 @@ const Hero = () => {
                   ease: "easeInOut",
                   delay: 0.8,
                 }}
-                className="text-sm md:text-base text-gray-300"
+                className="text-sm sm:text-base md:text-lg text-gray-300 max-w-prose"
               >
                 I'm passionate about technology and solving real-world problems.
                 With a strong development background and a love for learning, I
                 aim to contribute to innovative projects.
               </motion.p>
 
-              {/* Game Developer Style Resume Button */}
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.4, ease: "easeInOut", delay: 1.0 }}
-                className="relative group"
-              >
+              {/* Game Developer Resume Button */}
+              <motion.div>
                 <button
                   onClick={handleResumeClick}
-                  className="relative px-10 py-4 font-mono text-lg uppercase tracking-wider
-                    bg-transparent border-2 border-[#4ade80] text-[#4ade80] 
-                    hover:bg-[#4ade80]/10 hover:shadow-[0_0_20px_#4ade80] 
-                    active:scale-95 transition-all duration-300 overflow-hidden
-                    rounded-none font-bold"
+                  className="mt-4 px-8 py-4 bg-[#0A0A0A] 
+                  text-[#00FF94] font-bold text-lg tracking-wider
+                  transform transition-all duration-300 
+                  border-2 border-[#00FF94] relative overflow-hidden group
+                  hover:bg-[#00FF94] hover:text-black
+                  hover:shadow-[0_0_20px_rgba(0,255,148,0.5)]
+                  active:scale-95 flex items-center gap-3"
                   style={{
                     clipPath:
-                      "polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)",
+                      "polygon(90% 0, 100% 30%, 100% 100%, 0 100%, 0 0)",
+                    textShadow: "0 0 8px rgba(0,255,148,0.5)",
                   }}
                 >
-                  {/* Glitch Effect Container */}
-                  <div className="absolute inset-0 group-hover:animate-glitch opacity-50">
-                    <div className="absolute inset-0 bg-[#4ade80]"></div>
-                  </div>
+                  <span className="relative z-10 uppercase group-hover:animate-pulse">
+                    <span className="mr-1 text-[#FF2E63]">&lt;</span>
+                    Download_CV
+                    <span className="ml-1 text-[#FF2E63]">/&gt;</span>
+                  </span>
 
-                  {/* Corner Decorations */}
-                  <div className="absolute top-0 left-0 w-2 h-2 border-l-2 border-t-2 border-[#4ade80]"></div>
-                  <div className="absolute top-0 right-0 w-2 h-2 border-r-2 border-t-2 border-[#4ade80]"></div>
-                  <div className="absolute bottom-0 left-0 w-2 h-2 border-l-2 border-b-2 border-[#4ade80]"></div>
-                  <div className="absolute bottom-0 right-0 w-2 h-2 border-r-2 border-b-2 border-[#4ade80]"></div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 transform transition-all duration-500
+                    group-hover:rotate-[360deg] group-hover:scale-125"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                    />
+                  </svg>
 
-                  {/* Button Content */}
-                  <div className="relative flex items-center justify-center gap-3 z-10">
-                    <span className="relative">
-                      <span className="relative z-10 group-hover:animate-pulse text-white mix-blend-difference">
-                        DOWNLOAD_RESUME
-                      </span>
-                      <span
-                        className="absolute -left-1 -right-1 top-0 h-full bg-[#4ade80]/20 
-                        transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      ></span>
-                    </span>
-                    <svg
-                      className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
+                  {/* Glitch Effect Layers */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100">
+                    <div className="absolute inset-0 translate-x-1 translate-y-1 bg-[#FF2E63] mix-blend-screen"></div>
+                    <div className="absolute inset-0 -translate-x-1 -translate-y-1 bg-[#00FF94] mix-blend-screen"></div>
                   </div>
 
                   {/* Scan Line Effect */}
                   <div
-                    className="absolute inset-0 bg-gradient-to-b from-transparent via-[#4ade80]/10 to-transparent opacity-0 
-                    group-hover:opacity-100 animate-scan"
-                  ></div>
-                </button>
+                    className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00FF94]/10 to-transparent 
+                    opacity-0 group-hover:opacity-100 animate-scan"
+                  />
 
-                {/* Glow Effect */}
-                <div className="absolute -inset-1 bg-[#4ade80] opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-300 -z-10"></div>
+                  {/* Border Glow Effect */}
+                  <div
+                    className="absolute -inset-px bg-[#00FF94] opacity-0 group-hover:opacity-50 
+                    animate-pulse rounded-sm"
+                    style={{ zIndex: -1 }}
+                  />
+                </button>
               </motion.div>
             </div>
           </motion.div>
 
-          {/* Rectangle Image Section */}
+          {/* Image Section */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="md:w-2/5 flex justify-center relative"
+            className="w-full md:w-1/2 lg:w-2/5 flex justify-center relative"
           >
             <div
-              className="relative"
+              className="relative w-full max-w-[300px] md:max-w-[400px] lg:max-w-[512px]"
               style={{
-                width: "512px", // Maintain original image size
-                height: "308px", // Maintain original image size
+                aspectRatio: "1/1",
               }}
             >
               <img
-                ref={imageRef} // Attach the ref to the image
+                ref={imageRef}
                 src={programmerImage}
                 alt="Programmer Working on a Project"
-                className="object-contain w-full h-full rounded-lg" // Use object-contain to ensure the image remains clear and proportionate
+                className="object-contain w-full h-full rounded-lg"
               />
             </div>
           </motion.div>
