@@ -1,0 +1,178 @@
+/* Container Styles */
+#home {
+  position: relative;
+  background: #000;
+  min-height: calc(100vh - 64px);
+
+  font-family: "Quicksand", sans-serif;
+}
+
+/* Cursor Trail Effects */
+.cursor-trail-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Text Colors */
+.text-gray-300 {
+  color: #d1d5db;
+}
+
+/* Button Styles */
+.game-dev-button {
+  background: #0a0a0a;
+  color: #00ff94;
+  font-weight: bold;
+  font-size: 1.125rem;
+  letter-spacing: 0.05em;
+  transition: all 0.3s;
+  border: 2px solid #00ff94;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(90% 0, 100% 30%, 100% 100%, 0 100%, 0 0);
+  text-shadow: 0 0 8px rgba(0, 255, 148, 0.5);
+}
+
+.game-dev-button:hover {
+  background: #00ff94;
+  color: black;
+  box-shadow: 0 0 20px rgba(0, 255, 148, 0.5);
+}
+
+.game-dev-button:active {
+  transform: scale(0.95);
+}
+
+/* Button Glitch Effects */
+.glitch-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.game-dev-button:hover .glitch-layer {
+  opacity: 1;
+}
+
+.glitch-layer-1 {
+  transform: translate(4px, 4px);
+  background: #ff2e63;
+  mix-blend-mode: screen;
+}
+
+.glitch-layer-2 {
+  transform: translate(-4px, -4px);
+  background: #00ff94;
+  mix-blend-mode: screen;
+}
+
+/* Scan Line Effect */
+.scan-line {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 255, 148, 0.1) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.game-dev-button:hover .scan-line {
+  opacity: 1;
+  animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Border Glow */
+.border-glow {
+  position: absolute;
+  inset: -1px;
+  background: #00ff94;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 2px;
+  z-index: -1;
+}
+
+.game-dev-button:hover .border-glow {
+  opacity: 0.5;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Image Container Styles */
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 512px;
+  aspect-ratio: 1/1;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .image-container {
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .image-container {
+    max-width: 400px;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

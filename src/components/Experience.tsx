@@ -35,10 +35,8 @@ const Experience = () => {
 
   return (
     <section id="experience">
-      <div className="experience-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="experience-heading text-3xl md:text-4xl text-center mb-12">
-          &lt;Experience. /&gt;
-        </h2>
+      <div className="experience-container mx-auto px-4">
+        <h2 className="experience-heading">&lt;Experience./&gt;</h2>
         <div className="experience-content flex flex-col lg:flex-row gap-8">
           <div className="experience-cards flex-1 space-y-6">
             {experiences.map((exp, index) => (

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import ParticleBackground from "./ParticleBackground";
 import TypeWriter from "./TypeWriter";
-import "../assets/style/curser.css";
+import "../assets/style/hero.css";
 import resume from "../assets/images/Richa Agrawal.pdf";
 import programmerImage from "../assets/images/profileImg.png"; // Update this with your image path
 
@@ -133,7 +133,7 @@ const Hero = () => {
       style={{ fontFamily: "'Quicksand', sans-serif" }}
     >
       <ParticleBackground />
-      <div className="container mx-auto max-w-7xl px-2 sm:px-4 pt-16 sm:pt-20 md:pt-24">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-4 pt-16 pb-16 sm:pt-20 md:pt-24">
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 sm:gap-12 max-w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
