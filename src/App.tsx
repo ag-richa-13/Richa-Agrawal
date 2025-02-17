@@ -11,33 +11,43 @@ import Achievements from "./components/Achievements";
 import Blogs from "./components/Blogs";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import { AuthProvider } from './context/AuthContext';
+import { useAuth } from './context/AuthContext';
+import { AccessRequestForm } from './components/AccessRequestForm';
 
-function App() {
-  const [isLoading, setIsLoading] = useState(true);
+function ProtectedApp() {
+  const { isAuthenticated, loading } = useAuth();
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!isAuthenticated) {
+    return <AccessRequestForm />;
+  }
 
   return (
-    <>
-      <Terminal onComplete={() => setIsLoading(false)} />
-      <div
-        className={`transition-opacity duration-500 ${
-          isLoading ? "opacity-0" : "opacity-100"
-        }`}
-      >
-        <div className="bg-[#1e1e1e] text-white min-h-screen">
-          <Header />
-          <Hero />
-          <About />
-          <Experience />
-          <Education />
-          <Projects />
-          <Skills />
-          <Achievements />
-          <Blogs />
-          <Contact />
-          <Footer />
-        </div>
-      </div>
-    </>
+    <div className="bg-[#1e1e1e] text-white min-h-screen">
+      <Header />
+      <Hero />
+      <About />
+      <Experience />
+      <Education />
+      <Projects />
+      <Skills />
+      <Achievements />
+      <Blogs />
+      <Contact />
+      <Footer />
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <ProtectedApp />
+    </AuthProvider>
   );
 }
 

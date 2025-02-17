@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import ParticleBackground from "./ParticleBackground";
 import TypeWriter from "./TypeWriter";
@@ -9,6 +9,8 @@ import programmerImage from "../assets/images/profileImg.png"; // Update this wi
 
 const Hero = () => {
   const imageRef = useRef<HTMLImageElement>(null); // Ref for the image
+  const [showStrengths, setShowStrengths] = useState(false);
+  const [showWeaknesses, setShowWeaknesses] = useState(false);
 
   useEffect(() => {
     const homeSection = document.querySelector("#home");
@@ -127,6 +129,44 @@ const Hero = () => {
     window.open(resume, "_blank");
   };
 
+  const strengths = [
+    "Problem Solving",
+    "Game Logic Implementation",
+    "3D Mathematics",
+    "Unity/Unreal Engine",
+    "Performance Optimization"
+  ];
+
+  const weaknesses = [
+    "Still Learning Shader Programming",
+    "Networking Implementation",
+    "Advanced AI Algorithms",
+    "Mobile Game Optimization"
+  ];
+
+  const renderPrompt = (items: string[], isStrength: boolean) => {
+    return (
+      <div className={`game-prompt ${isStrength ? 'success-prompt' : 'error-prompt'}`}>
+        <div className="prompt-header">
+          <h3>{isStrength ? 'POWER UPS 🎮' : 'DEBUFFS ⚠️'}</h3>
+          <button 
+            onClick={() => isStrength ? setShowStrengths(false) : setShowWeaknesses(false)}
+            className="close-btn"
+          >
+            ×
+          </button>
+        </div>
+        <ul>
+          {items.map((item, index) => (
+            <li key={index} className="prompt-item">
+              {isStrength ? '🎯 ' : '⚡ '}{item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+
   return (
     <section
       id="home"
@@ -134,6 +174,8 @@ const Hero = () => {
       style={{ fontFamily: "'Quicksand', sans-serif" }}
     >
       <ParticleBackground />
+      {showStrengths && renderPrompt(strengths, true)}
+      {showWeaknesses && renderPrompt(weaknesses, false)}
       <div className="container mx-auto max-w-7xl px-4 sm:px-4 pt-16 pb-16 sm:pt-20 md:pt-24">
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 sm:gap-12 max-w-full">
           <motion.div
@@ -215,61 +257,62 @@ const Hero = () => {
               <motion.div>
                 <button
                   onClick={handleResumeClick}
-                  className="mt-4 px-8 py-4 bg-[#0A0A0A] 
-                  text-[#00FF94] font-bold text-lg tracking-wider
-                  transform transition-all duration-300 
-                  border-2 border-[#00FF94] relative overflow-hidden group
-                  hover:bg-[#00FF94] hover:text-black
-                  hover:shadow-[0_0_20px_rgba(0,255,148,0.5)]
-                  active:scale-95 flex items-center gap-3"
-                  style={{
-                    clipPath:
-                      "polygon(90% 0, 100% 30%, 100% 100%, 0 100%, 0 0)",
-                    textShadow: "0 0 8px rgba(0,255,148,0.5)",
-                  }}
+                  className="cyber-button"
+                  aria-label="Download Resume"
                 >
-                  <span className="relative z-10 uppercase group-hover:animate-pulse">
-                    <span className="mr-1 text-[#FF2E63]">&lt;</span>
-                    Download_CV
-                    <span className="ml-1 text-[#FF2E63]">/&gt;</span>
+                  <span className="cyber-button__tag">exe.</span>
+                  <span className="cyber-button__text">
+                    <span className="glitch-text" data-text="DOWNLOAD_CV">
+                      DOWNLOAD_CV
+                    </span>
                   </span>
-
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 transform transition-all duration-500
-                    group-hover:rotate-[360deg] group-hover:scale-125"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                    />
-                  </svg>
-
-                  {/* Glitch Effect Layers */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100">
-                    <div className="absolute inset-0 translate-x-1 translate-y-1 bg-[#FF2E63] mix-blend-screen"></div>
-                    <div className="absolute inset-0 -translate-x-1 -translate-y-1 bg-[#00FF94] mix-blend-screen"></div>
-                  </div>
-
-                  {/* Scan Line Effect */}
-                  <div
-                    className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00FF94]/10 to-transparent 
-                    opacity-0 group-hover:opacity-100 animate-scan"
-                  />
-
-                  {/* Border Glow Effect */}
-                  <div
-                    className="absolute -inset-px bg-[#00FF94] opacity-0 group-hover:opacity-50 
-                    animate-pulse rounded-sm"
-                    style={{ zIndex: -1 }}
-                  />
+                  <span className="cyber-button__glitch"></span>
+                  <span className="cyber-button__icon">
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="download-icon" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth="2" 
+                        d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"
+                      />
+                    </svg>
+                  </span>
                 </button>
               </motion.div>
+
+              <div className="flex gap-6 mt-6">
+                <button
+                  onClick={() => setShowStrengths(true)}
+                  className="power-btn"
+                >
+                  <span className="power-btn__badge">LVL 99</span>
+                  <span className="power-btn__content">
+                    <span className="power-btn__icon">⚔️</span>
+                    <span className="power-btn__text">POWER UPS</span>
+                  </span>
+                  <div className="power-btn__glitch"></div>
+                  <div className="power-btn__scanlines"></div>
+                </button>
+
+                <button
+                  onClick={() => setShowWeaknesses(true)}
+                  className="challenge-btn"
+                >
+                  <span className="challenge-btn__badge">BOSS</span>
+                  <span className="challenge-btn__content">
+                    <span className="challenge-btn__icon">🛡️</span>
+                    <span className="challenge-btn__text">CHALLENGES</span>
+                  </span>
+                  <div className="challenge-btn__glitch"></div>
+                  <div className="challenge-btn__scanlines"></div>
+                </button>
+              </div>
             </div>
           </motion.div>
 

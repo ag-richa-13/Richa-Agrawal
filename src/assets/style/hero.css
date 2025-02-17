@@ -175,3 +175,522 @@ Cursor Trail Effects .cursor-trail-container {
     transform: scale(1);
   }
 }
+
+/* Add these styles to your hero.css file */
+
+.game-prompt {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  padding: 2rem;
+  border-radius: 10px;
+  min-width: 300px;
+  max-width: 500px;
+  animation: glowPulse 2s infinite;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.success-prompt {
+  background: rgba(0, 255, 148, 0.1);
+  border: 2px solid #00FF94;
+}
+
+.error-prompt {
+  background: rgba(255, 46, 99, 0.1);
+  border: 2px solid #FF2E63;
+}
+
+.prompt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.prompt-header h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+.prompt-item {
+  color: #fff;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+
+.prompt-item:hover {
+  transform: translateX(10px);
+}
+
+.game-btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.success-btn {
+  background: rgba(0, 255, 148, 0.1);
+  border: 2px solid #00FF94;
+  color: #00FF94;
+}
+
+.error-btn {
+  background: rgba(255, 46, 99, 0.1);
+  border: 2px solid #FF2E63;
+  color: #FF2E63;
+}
+
+.game-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+  100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+}
+
+/* Add overlay when prompts are shown */
+.game-prompt::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+/* Cyber Button Styles */
+.cyber-button {
+  --primary: #00ff94;
+  --shadow-primary: #00ff9480;
+  --primary-darker: #00cc77;
+  --primary-darkest: #00995a;
+  --text: #ffffff;
+  
+  position: relative;
+  padding: 1rem 3rem;
+  background: transparent;
+  color: var(--text);
+  border: 2px solid var(--primary);
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cyber-button::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.cyber-button:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.cyber-button__tag {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: var(--primary-darker);
+  color: var(--text);
+  padding: 4px 8px;
+  font-size: 0.7rem;
+  border-radius: 2px;
+  transform: rotate(12deg);
+  box-shadow: -2px 2px 0 var(--primary-darkest);
+}
+
+.cyber-button__text {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.cyber-button:hover .cyber-button__text {
+  color: #000;
+}
+
+.cyber-button__icon {
+  position: relative;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.cyber-button:hover .cyber-button__icon {
+  transform: translateY(3px);
+  color: #000;
+}
+
+.cyber-button__glitch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary);
+  transform: translateX(-100%);
+  opacity: 0.3;
+}
+
+.cyber-button:hover .cyber-button__glitch {
+  animation: glitch 0.3s infinite;
+}
+
+/* Glitch Text Effect */
+.glitch-text {
+  position: relative;
+  animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00c1;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -2px 0 #00fff9;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch {
+  0% { transform: translateX(-100%) }
+  20% { transform: translateX(100%) }
+  100% { transform: translateX(100%) }
+}
+
+@keyframes glitch-skew {
+  0% { transform: skew(0deg) }
+  20% { transform: skew(-1deg) }
+  40% { transform: skew(1deg) }
+  60% { transform: skew(0deg) }
+  80% { transform: skew(1deg) }
+  100% { transform: skew(-1deg) }
+}
+
+@keyframes glitch-anim {
+  0% { clip: rect(31px, 9999px, 94px, 0) }
+  5% { clip: rect(70px, 9999px, 71px, 0) }
+  10% { clip: rect(29px, 9999px, 83px, 0) }
+  15% { clip: rect(38px, 9999px, 98px, 0) }
+  20% { clip: rect(93px, 9999px, 67px, 0) }
+  25% { clip: rect(22px, 9999px, 27px, 0) }
+  30% { clip: rect(10px, 9999px, 96px, 0) }
+}
+
+@keyframes glitch-anim2 {
+  0% { clip: rect(96px, 9999px, 78px, 0) }
+  5% { clip: rect(82px, 9999px, 15px, 0) }
+  10% { clip: rect(87px, 9999px, 24px, 0) }
+  15% { clip: rect(33px, 9999px, 58px, 0) }
+  20% { clip: rect(45px, 9999px, 84px, 0) }
+  25% { clip: rect(76px, 9999px, 31px, 0) }
+  30% { clip: rect(89px, 9999px, 44px, 0) }
+}
+
+/* Hover State Enhancement */
+.cyber-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 10px var(--shadow-primary),
+    0 0 20px var(--shadow-primary),
+    0 0 40px var(--shadow-primary);
+}
+
+.cyber-button:active {
+  transform: translateY(1px);
+}
+
+/* Add scanlines effect */
+.cyber-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 100%
+  );
+  background-size: 100% 4px;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.cyber-button:hover::after {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .cyber-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .cyber-button__tag {
+    top: -8px;
+    right: -8px;
+    padding: 2px 6px;
+    font-size: 0.6rem;
+  }
+}
+
+/* Base styles for both buttons */
+.power-btn,
+.challenge-btn {
+  position: relative;
+  padding: 0.8rem 1.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  border: none;
+  color: #fff;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  overflow: hidden;
+  clip-path: polygon(
+    0 10px,
+    10px 0,
+    calc(100% - 10px) 0,
+    100% 10px,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    10px 100%,
+    0 calc(100% - 10px)
+  );
+}
+
+.power-btn {
+  border: 2px solid #00ff94;
+  box-shadow: 0 0 10px rgba(0, 255, 148, 0.3);
+}
+
+.challenge-btn {
+  border: 2px solid #ff2e63;
+  box-shadow: 0 0 10px rgba(255, 46, 99, 0.3);
+}
+
+.power-btn__badge,
+.challenge-btn__badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 3px 8px;
+  font-size: 0.6rem;
+  transform: rotate(15deg);
+  z-index: 2;
+}
+
+.power-btn__badge {
+  background: #00ff94;
+  color: #000;
+  box-shadow: -2px 2px 0 #008048;
+}
+
+.challenge-btn__badge {
+  background: #ff2e63;
+  color: #fff;
+  box-shadow: -2px 2px 0 #801731;
+}
+
+.power-btn__content,
+.challenge-btn__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.power-btn__icon,
+.challenge-btn__icon {
+  font-size: 1.2rem;
+}
+
+.power-btn__text,
+.challenge-btn__text {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+/* Glitch Effects */
+.power-btn__glitch,
+.challenge-btn__glitch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.power-btn__glitch {
+  background: #00ff94;
+}
+
+.challenge-btn__glitch {
+  background: #ff2e63;
+}
+
+/* Scanline Effects */
+.power-btn__scanlines,
+.challenge-btn__scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 100%
+  );
+  background-size: 100% 4px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Hover Effects */
+.power-btn:hover,
+.challenge-btn:hover {
+  transform: translateY(-2px);
+}
+
+.power-btn:hover {
+  box-shadow: 
+    0 0 20px rgba(0, 255, 148, 0.5),
+    0 0 40px rgba(0, 255, 148, 0.3);
+}
+
+.challenge-btn:hover {
+  box-shadow: 
+    0 0 20px rgba(255, 46, 99, 0.5),
+    0 0 40px rgba(255, 46, 99, 0.3);
+}
+
+.power-btn:hover .power-btn__glitch,
+.challenge-btn:hover .challenge-btn__glitch {
+  opacity: 0.1;
+  animation: glitch 0.3s infinite;
+}
+
+.power-btn:hover .power-btn__scanlines,
+.challenge-btn:hover .challenge-btn__scanlines {
+  opacity: 1;
+}
+
+/* Active States */
+.power-btn:active,
+.challenge-btn:active {
+  transform: translateY(1px);
+}
+
+/* Animation Keyframes */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .power-btn,
+  .challenge-btn {
+    padding: 0.6rem 1.2rem;
+  }
+  
+  .power-btn__text,
+  .challenge-btn__text {
+    font-size: 0.7rem;
+  }
+  
+  .power-btn__badge,
+  .challenge-btn__badge {
+    font-size: 0.5rem;
+    padding: 2px 6px;
+  }
+}
