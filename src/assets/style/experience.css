@@ -307,3 +307,69 @@
   line-height: 1.5;
   word-wrap: break-word;
 }
+
+.font-pixel {
+  font-family: 'Press Start 2P', monospace;
+}
+
+.experience-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(16, 185, 129, 0.2) 50%,
+    transparent 100%
+  );
+}
+
+.experience-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(34, 211, 238, 0.2) 50%,
+    transparent 100%
+  );
+}
+
+.experience-logo-container {
+  position: relative;
+}
+
+.experience-logo-container::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, 
+    rgba(16, 185, 129, 0.3),
+    rgba(34, 211, 238, 0.3)
+  );
+  border-radius: 8px;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

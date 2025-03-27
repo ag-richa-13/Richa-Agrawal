@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-scroll";
-import "../assets/style/header.css"; // Import the CSS file
+import "../assets/style/header.css";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,8 +10,6 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-
-      // Close menu on scroll if it's open
       if (isOpen) {
         setIsOpen(false);
       }
@@ -22,11 +20,10 @@ const Header = () => {
   }, [isOpen]);
 
   useEffect(() => {
-    // Disable scrolling when the menu is open
     if (isOpen) {
-      document.body.style.overflow = "hidden"; // Disable body scroll
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto"; // Enable body scroll
+      document.body.style.overflow = "auto";
     }
   }, [isOpen]);
 
@@ -45,7 +42,6 @@ const Header = () => {
       }`}
     >
       <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
-        {/* Centered Logo */}
         <Link
           to="home"
           spy={true}
@@ -54,12 +50,11 @@ const Header = () => {
           duration={500}
           className="logo-container"
         >
-          <span className="text-green-500">&lt;</span>
-          <span className="logo-text">Richa.</span>
-          <span className="text-green-500">/&gt;</span>
+          <span className="logo-bracket">[</span>
+          <span className="logo-text">RICHA</span>
+          <span className="logo-bracket">]</span>
         </Link>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 menu-list">
           {menuItems.map((item) => (
             <Link
@@ -77,16 +72,14 @@ const Header = () => {
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-300 z-50 hover:text-purple-400 transition-colors"
+          className="md:hidden text-neon-blue z-50 hover:text-neon-pink transition-colors"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Mobile Menu */}
         <div
           className={`mobile-menu ${isOpen ? "open" : ""}`}
           onClick={(e) => e.target === e.currentTarget && setIsOpen(false)}

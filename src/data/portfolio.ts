@@ -5,8 +5,8 @@ import {
   Education,
   Achievement,
 } from "../types";
-import rocket from "../assets/images/rocket.png"; // Adjust the path as needed
-import ticTacToe from "../assets/images/tictactoeIcon.png"; // Adjust the path as needed
+// import rocket from "../assets/images/rocket.png"; // Adjust the path as needed
+// import ticTacToe from "../assets/images/tictactoeIcon.png"; // Adjust the path as needed
 import blogTicTac from "../assets/images/blogtictac.jpeg";
 import blogInApp from "../assets/images/blogInApp.png";
 import MyTeam11 from "../assets/images/MyTeam11Award.jpg";
@@ -15,23 +15,26 @@ import Labdox from "../assets/images/LabdoxAward.jpg";
 export const projects: Project[] = [
   {
     title: "Crash Astral",
-    description:
-      "An exciting space adventure game with a unique gameplay experience.",
+    description: "An exciting space adventure game with a unique gameplay experience.",
     techStack: "Unity, C#, Figma",
     githubUrl: "https://github.com/agricha-635/Crash-Astral",
-    apkUrl:
-      "https://drive.google.com/drive/u/0/folders/1Psdk2AtcdGUVEwWsiFV8M_hDbC-wA8py",
-    imageUrl: rocket,
+    apkUrl: "https://drive.google.com/drive/u/0/folders/1Psdk2AtcdGUVEwWsiFV8M_hDbC-wA8py",
+    type: "game"
   },
   {
     title: "Tic Tac Toe",
     description: "A multiplayer Tic Tac Toe game with real-time online play.",
     techStack: "Unity, C#, Figma",
     githubUrl: "https://github.com/ag-richa-13/Tic-Tac-Toe",
-    apkUrl:
-      "https://drive.google.com/drive/u/0/folders/1gdkefYC7llVIvUz2a_8KDFyGTD1pew3Q",
-    imageUrl: ticTacToe,
+    apkUrl: "https://drive.google.com/drive/u/0/folders/1gdkefYC7llVIvUz2a_8KDFyGTD1pew3Q",
+    type: "game"
   },
+  {
+    title: "Web Development Projects",
+    description: "Collection of web development projects including a User Registration Page with secure authentication and CineCraze Watchlist Feature for managing movie and drama watchlists.",
+    techStack: "Node.js, MySQL, HTML, CSS",
+    type: "web"
+  }
 ];
 
 export const blogPosts: BlogPost[] = [

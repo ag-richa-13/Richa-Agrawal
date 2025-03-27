@@ -1,251 +1,266 @@
-@import url("https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap");
-
-/* Project.css */
 .projects-section {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  background: #000;
+  min-height: 100vh;
+  padding: 4rem 0;
+  background: #0a0a16;
+  color: #b8b8b8;
+}
+
+.pixel-font {
+  font-family: 'Press Start 2P', cursive;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .projects-heading {
-  font-family: "Atma", system-ui;
   font-size: 2rem;
-  font-weight: 800;
-  text-align: left;
-  color: #b6a28e;
   margin-bottom: 3rem;
+  text-align: center;
+  color: #10b981; /* emerald-400 */
+  text-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
 }
 
 .projects-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  animation: slideIn 0.8s ease-out;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
 }
 
 .project-card {
-  background: linear-gradient(145deg, #42082c, #292945);
-  color: #fff;
-  width: 340px;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease,
-    background-color 0.4s ease;
-  text-align: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 4px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
-  border: 3px solid transparent;
-  animation: borderAnimation 5s infinite linear;
 }
 
 .project-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 15px 40px rgba(65, 15, 40, 0.5); /* Glowing shadow effect */
-  background: linear-gradient(145deg, #292945, #1e1e2f);
-}
-
-.project-card:hover .project-title {
-  color: #ffffff; /* Neon yellow on hover */
-}
-
-.project-image {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 25px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 5px solid #eb6f0a; /* Vibrant yellow border */
-  transition: transform 0.3s ease-in-out;
-}
-
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.project-card:hover .project-image {
-  transform: scale(1.1) rotate(360deg); /* Zoom and rotate icon on hover */
-  border-color: #e77ec8;
+  transform: translateY(-2px);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.1);
 }
 
 .project-title {
-  font-size: 1.8rem;
-  margin-bottom: 12px;
-  font-weight: bold;
-  /* font-family: "Press Start 2P", cursive; */
-  color: #ffffff;
-  transition: color 0.3s ease;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #10b981;
+  background: linear-gradient(90deg, #10b981, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .project-description {
-  font-size: 1rem;
-  margin-bottom: 20px;
-  /* font-family: Arial, sans-serif; */
-  color: #d1d1e0; /* Softer white */
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+.tech-stack-container {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(16, 185, 129, 0.03);
+  border-left: 2px solid #10b981;
+  position: relative;
+}
+
+.tech-stack-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 2px;
+  height: 10px;
+  background: #0a0a16;
+}
+
+.tech-stack-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -2px;
+  width: 2px;
+  height: 10px;
+  background: #0a0a16;
+}
+
+.tech-stack-title {
+  font-size: 0.8rem;
+  color: #10b981;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .project-skills {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
+  gap: 0.8rem;
 }
 
 .skill-bubble {
-  background: linear-gradient(135deg, #f10404, #090700); /* Gradient bubble */
-  padding: 8px 18px;
-  border-radius: 50px;
-  color: #fff;
-  font-size: 0.9rem;
-  /* font-family: Arial, sans-serif; */
-  text-transform: capitalize;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(16, 185, 129, 0.05);
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
 .skill-bubble:hover {
-  transform: scale(1.1);
-  box-shadow: rgba(67, 14, 14, 0.373) 0px 6px 12px -2px,
-    rgba(84, 2, 2, 0.532) 0px 3px 7px -3px; /* Neon glow on hover */
+  background: rgba(16, 185, 129, 0.1);
+  transform: translateY(-2px);
 }
 
 .project-buttons {
   display: flex;
-  gap: 15px;
-  justify-content: space-between;
-  margin-top: 20px;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .button {
-  /* font-family: Arial, sans-serif; */
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 400;
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 8px; /* Adjust spacing between icon and text */
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 2px;
+  color: #10b981;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .button:hover {
-  color: #87ffb3; /* Optional hover effect */
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.5);
 }
 
-.apk-btn {
-  color: #ffffff; /* Adjust color for APK button */
-}
-
-.github-btn {
-  color: #ffffff; /* Adjust color for GitHub button */
-}
-
-.icon {
-  font-size: 18px; /* Icon size */
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes borderAnimation {
-  0% {
-    border-color: #e5d9f2;
-  }
-  25% {
-    border-color: #a0d683; /* Neon red border */
-  }
-  50% {
-    border-color: #87a2ff; /* Vibrant yellow border */
-  }
-  75% {
-    border-color: #ff8a8a; /* Neon cyan border */
-  }
-  100% {
-    border-color: #f6fb7a;
-  }
-}
-
-/* GitHub prompt section */
 .github-prompt {
-  max-width: 800px;
-  margin: 2rem auto 0; /* Center horizontally and add top/bottom spacing */
-  padding: 1rem;
-  background-color: #9c72f0;
-  border: 3px solid #920fd3;
-  border-radius: 12px;
+  margin-top: 4rem;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 1s ease-out;
-}
-
-.github-prompt h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #000000;
-  margin-bottom: 1rem;
-}
-
-.github-prompt p {
-  font-size: 1rem;
-  color: #000000;
-  margin-bottom: 1.5rem;
-  line-height: 1.5;
+  padding: 2rem;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 4px;
 }
 
 .github-info {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-}
-
-.github-info .github-icon {
-  color: #120808;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .github-link {
-  font-size: 1.1rem;
-  color: #140a0a;
-  font-weight: 600;
+  color: #10b981;
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
 }
 
 .github-link:hover {
-  color: #32052f; /* A soft green color on hover */
+  text-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
+.github-icon {
+  color: #10b981;
+}
+
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 2rem 0;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  .projects-heading {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .project-card {
+    padding: 1.2rem;
+  }
+
+  .project-title {
+    font-size: 1rem;
+  }
+
+  .project-description {
+    font-size: 0.85rem;
+  }
+
+  .tech-stack-container {
+    padding: 0.8rem;
+    margin: 1rem 0;
+  }
+
+  .project-skills {
+    gap: 0.5rem;
+  }
+
+  .skill-bubble {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.65rem;
+  }
+
+  .project-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .button {
+    width: 100%;
+    justify-content: center;
+    padding: 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .github-prompt {
+    margin-top: 3rem;
+    padding: 1.5rem;
+  }
+
+  .github-info {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-heading {
+    font-size: 1.2rem;
+  }
+
+  .project-card {
+    padding: 1rem;
+  }
+
+  .tech-stack-title {
+    font-size: 0.7rem;
+  }
+
+  .skill-bubble {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.6rem;
+  }
+
+  .github-prompt p {
+    font-size: 0.8rem;
+  }
+
+  .github-link {
+    font-size: 0.7rem;
   }
 }

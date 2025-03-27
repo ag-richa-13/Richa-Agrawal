@@ -2,9 +2,9 @@ export interface Project {
   title: string;
   description: string;
   techStack: string;
-  imageUrl: string;
-  githubUrl: string;
-  apkUrl?: string;
+  githubUrl?: string;  // Made optional
+  apkUrl?: string;     // Already optional
+  type?: string;       // Added to distinguish between game and web projects
 }
 
 export interface BlogPost {

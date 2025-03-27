@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Borel&display=swap");
 /* About Section Styling */
 #about {
-  border: 2px solid #fff;
+  width: 100%;
   border-radius: 10px;
   padding: 3rem 0;
   background-color: #000000;
@@ -93,6 +93,359 @@
 @media (max-width: 768px) {
   .skills-container {
     flex-wrap: wrap;
-    gap: 1rem;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .player-card {
+    padding: 1.2rem;
+  }
+
+  .player-name {
+    font-size: 1.4rem;
+  }
+
+  .player-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .content-title {
+    font-size: 1.6rem;
+  }
+
+  .content-title .bracket {
+    font-size: 1.6rem;
+  }
+
+  .content-title .title-text {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    gap: 8px;
+  }
+
+  .skill-item {
+    width: 35px;
+    height: 35px;
+  }
+
+  .skill-item img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .education-card {
+    padding: 1rem;
+  }
+
+  .education-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
 }
+
+@media (max-width: 480px) {
+  .player-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-heading {
+    font-size: 1.5rem;
+  }
+
+  .content-title .bracket {
+    font-size: 1.4rem;
+  }
+
+  .content-title .title-text {
+    font-size: 1.2rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
+    gap: 6px;
+  }
+
+  .skill-item {
+    width: 30px;
+    height: 30px;
+  }
+
+  .skill-item img {
+    width: 18px;
+    height: 18px;
+  }
+
+  #about p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+.about-section {
+  background: linear-gradient(135deg, #0f1218 0%, #1a1f2c 100%);
+  min-height: 80vh; /* Reduced from 100vh */
+  color: #e0e0e0;
+  padding: 2rem 0; /* Reduced padding */
+}
+
+.player-card {
+  padding: 1.5rem; /* Reduced padding */
+}
+
+.player-name {
+  font-size: 1.5rem; /* Reduced from 1.8rem */
+  margin-bottom: 3px;
+}
+
+.education-card {
+  padding: 1rem; /* Reduced from 20px */
+  margin-top: 1rem; /* Reduced from 20px */
+}
+
+.content-title {
+  font-size: 2rem; /* Reduced from 2.5rem */
+  margin-bottom: 1rem; /* Reduced from 20px */
+}
+
+.content-text {
+  gap: 10px; /* Reduced from 15px */
+}
+
+.skills-card {
+  padding: 1rem; /* Reduced from 20px */
+  margin-top: 1rem; /* Reduced from 20px */
+}
+
+.skills-title {
+  margin-bottom: 1rem; /* Reduced from 20px */
+}
+
+.skills-grid {
+  gap: 10px; /* Reduced from 15px */
+}
+
+/* Player Card Styles */
+/* Remove these styles */
+.player-image-container,
+.player-image,
+.player-status {
+  display: none;
+}
+
+/* Update player card styles */
+.player-card {
+  background: rgba(30, 35, 45, 0.9);
+  border: 2px solid #2a3040;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  padding: 2rem;
+}
+
+.player-info {
+  padding: 0;
+}
+
+/* Rest of the styles remain the same */
+.player-info {
+  padding: 20px;
+}
+
+.player-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00fff2;
+  margin-bottom: 5px;
+  font-family: "Orbitron", sans-serif;
+}
+
+.player-title {
+  color: #ff00ff;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.player-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #b0b0b0;
+}
+
+.stat-icon {
+  color: #00fff2;
+}
+
+/* Education Card Styles */
+.education-card {
+  background: rgba(30, 35, 45, 0.9);
+  border: 2px solid #2a3040;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.header-icon {
+  color: #ff00ff;
+  font-size: 1.5rem;
+}
+
+.education-content h4 {
+  color: #00fff2;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.institution {
+  color: #ff00ff;
+  margin-bottom: 10px;
+}
+
+.education-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #b0b0b0;
+  font-size: 0.9rem;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Content Styles */
+.content-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 20px;
+}
+
+.content-title .bracket {
+  color: #00fff2;
+  text-shadow: 0 0 10px rgba(0, 255, 242, 0.5);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.content-title .title-text {
+  color: #ff00ff;
+  text-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.content-title .status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #00ff00;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ff00;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+.content-text {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.content-text p {
+  line-height: 1.6;
+}
+
+.highlight-text {
+  color: #ff00ff;
+  font-weight: bold;
+}
+
+/* Skills Card Styles */
+.skills-card {
+  background: rgba(30, 35, 45, 0.9);
+  border: 2px solid #2a3040;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.skills-title {
+  color: #00fff2;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-family: "Orbitron", sans-serif;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 15px;
+}
+
+/* Update the skill item styles */
+.skill-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px; /* Reduced from 10px */
+  padding: 8px; /* Reduced from 10px */
+  transition: all 0.3s ease;
+  width: 40px; /* Added fixed width */
+  height: 40px; /* Added fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-item img {
+  width: 24px; /* Reduced from 100% */
+  height: 24px; /* Reduced from auto */
+  filter: drop-shadow(0 0 3px rgba(0, 255, 255, 0.3));
+}
+
+/* Update grid gap to accommodate smaller icons */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(45px, 1fr)
+  ); /* Reduced from 60px */
+  gap: 10px; /* Reduced from 15px */
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.skill-item img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.3));
+} /* Add this closing brace */
