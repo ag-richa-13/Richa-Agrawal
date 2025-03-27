@@ -6,6 +6,9 @@ import "../assets/style/hero.css";
 import "../assets/style/curser.css";
 import resume from "../assets/images/Richa Agrawal.pdf";
 import programmerImage from "../assets/images/profileImg.png"; // Update this with your image path
+import { useState } from "react";
+import TicTacToe from './games/TicTacToe';
+import Snake from './games/Snake';
 
 const Hero = () => {
   const imageRef = useRef<HTMLImageElement>(null); // Ref for the image
@@ -32,13 +35,17 @@ const Hero = () => {
     let colorCount = 0;
 
     const createCursorRing = (e: MouseEvent) => {
-      // Skip the cursor effect if mouse is over the image
-      if (imageRef.current && imageRef.current.contains(e.target as Node))
+      // Skip cursor effect for game section
+      const gameSection = document.querySelector(".game-section");
+      if (gameSection?.contains(e.target as Node)) {
         return;
+      }
 
+      // Skip cursor effect for chatbot
       const chatbotContainer = document.querySelector(".chatbot-container");
-      if (chatbotContainer && chatbotContainer.contains(e.target as Node))
+      if (chatbotContainer?.contains(e.target as Node)) {
         return;
+      }
 
       if (!homeSection?.contains(e.target as Node)) return;
 
@@ -83,6 +90,14 @@ const Hero = () => {
 
     const stopRingEffectOnHover = (e: MouseEvent) => {
       const hoveredElement = e.target as HTMLElement;
+      const gameSection = document.querySelector(".game-section");
+      
+      // Don't create rings when hovering over game section
+      if (gameSection?.contains(hoveredElement)) {
+        document.removeEventListener("mousemove", createCursorRing);
+        return;
+      }
+
       if (
         hoveredElement.matches(
           "#home h1, #home p, #home a, #home .text-left"
@@ -127,10 +142,113 @@ const Hero = () => {
     window.open(resume, "_blank");
   };
 
+  const [activeGame, setActiveGame] = useState<'tic-tac-toe' | 'snake' | 'pong' | null>(null);
+  const [gameStarted, setGameStarted] = useState(false);
+
+  // Replace the image section with games section
+  const renderGamesSection = () => (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8 }}
+      className="game-section w-full md:w-1/2 lg:w-2/5 flex flex-col items-center justify-center relative mt-20 md:mt-0"
+    >
+      <div className="w-full max-w-[400px] bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] rounded-xl p-6 border-4 border-[#00FF94] shadow-[0_0_30px_rgba(0,255,148,0.3)] relative overflow-hidden">
+        {/* Arcade screen scanlines effect */}
+        <div className="absolute inset-0 bg-scanlines pointer-events-none"></div>
+        
+        {!gameStarted ? (
+          <div className="space-y-6 relative z-10">
+            <div className="text-center space-y-2">
+              <h3 className="text-[#00FF94] text-2xl font-bold animate-pulse">
+                ARCADE ZONE
+              </h3>
+              <p className="text-[#888] text-sm">Insert coin to play</p>
+            </div>
+            
+            <div className="grid grid-cols-1 gap-4">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  setActiveGame('tic-tac-toe');
+                  setGameStarted(true);
+                }}
+                className="game-button-arcade relative group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-[#FF7EE2] to-[#FF2E63] opacity-50 group-hover:opacity-100 transition-opacity rounded-lg"></div>
+                <div className="relative p-4 flex items-center justify-between">
+                  <span className="text-white font-bold">Tic Tac Toe</span>
+                  <span className="text-xs text-white/70">PRESS START</span>
+                </div>
+              </motion.button>
+
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  setActiveGame('snake');
+                  setGameStarted(true);
+                }}
+                className="game-button-arcade relative group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-[#FFE700] to-[#FFA500] opacity-50 group-hover:opacity-100 transition-opacity rounded-lg"></div>
+                <div className="relative p-4 flex items-center justify-between">
+                  <span className="text-white font-bold">Snake</span>
+                  <span className="text-xs text-white/70">PRESS START</span>
+                </div>
+              </motion.button>
+
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  setActiveGame('pong');
+                  setGameStarted(true);
+                }}
+                className="game-button-arcade relative group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-[#00FF94] to-[#00B8FF] opacity-50 group-hover:opacity-100 transition-opacity rounded-lg"></div>
+                <div className="relative p-4 flex items-center justify-between">
+                  <span className="text-white font-bold">Pong</span>
+                  <span className="text-xs text-white/70">COMING SOON</span>
+                </div>
+              </motion.button>
+            </div>
+          </div>
+        ) : (
+          <div className="relative">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => {
+                setActiveGame(null);
+                setGameStarted(false);
+              }}
+              className="absolute -top-3 -right-3 bg-[#FF2E63] text-white w-10 h-10 rounded-full hover:bg-[#ff4778] transition-colors flex items-center justify-center text-xl font-bold shadow-lg z-20"
+            >
+              ×
+            </motion.button>
+            <div className="game-container h-[400px] flex items-center justify-center bg-[#0a0a0a] rounded-lg border-2 border-[#333] relative overflow-hidden">
+              <div className="absolute inset-0 bg-scanlines pointer-events-none"></div>
+              {activeGame === 'tic-tac-toe' && <TicTacToe />}
+              {activeGame === 'snake' && <Snake />}
+              {activeGame === 'pong' && (
+                <div className="text-[#00FF94] text-xl font-bold animate-pulse">
+                  Coming Soon!
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+    </motion.div>
+  );
+
   return (
     <section
       id="home"
-      className="relative bg-[#000] min-h-[calc(100vh-64px)] flex items-center justify-center px-4 sm:px-8 md:px-16"
+      className="relative bg-[#000] min-h-[calc(100vh-64px)] flex items-center justify-center px-4 sm:px-8 md:px-16 pt-16 sm:pt-20 md:pt-24" // Added padding-top
       style={{ fontFamily: "'Quicksand', sans-serif" }}
     >
       <ParticleBackground />
@@ -273,27 +391,8 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Image Section */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="w-full md:w-1/2 lg:w-2/5 flex justify-center relative"
-          >
-            <div
-              className="relative w-full max-w-[300px] md:max-w-[400px] lg:max-w-[512px]"
-              style={{
-                aspectRatio: "1/1",
-              }}
-            >
-              <img
-                ref={imageRef}
-                src={programmerImage}
-                alt="Programmer Working on a Project"
-                className="object-contain w-full h-full rounded-lg"
-              />
-            </div>
-          </motion.div>
+          {/* Replace image section with games section */}
+          {renderGamesSection()}
         </div>
       </div>
     </section>
