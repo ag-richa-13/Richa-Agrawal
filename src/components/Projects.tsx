@@ -1,28 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa6";
 import { projects } from "../data/portfolio";
 import "../assets/style/project.css";
 
-const Project = () => {
+const Projects = () => {
+  const [filter, setFilter] = useState<'all' | 'games' | 'web'>('all');
+
+  const filteredProjects = projects.filter(project => {
+    if (filter === 'all') return true;
+    if (filter === 'games') return project.type === 'game';
+    if (filter === 'web') return project.type === 'web';
+    return true;
+  });
+
   return (
     <div className="projects-section mx-auto px-4" id="projects">
-      <h2 className="projects-heading pixel-font">[PROJECTS_ARCHIVE]</h2>
+      <h2 className="projects-heading pixel-font">My Projects</h2>
+      <p className="text-center mb-8">
+        A showcase of my work in game development and web applications, demonstrating my
+        skills and passion for creating interactive experiences.
+      </p>
+
+      <div className="filter-buttons mb-8 flex justify-center gap-4">
+        <button 
+          className={`button ${filter === 'all' ? 'active' : ''}`}
+          onClick={() => setFilter('all')}
+        >
+          All Projects
+        </button>
+        <button 
+          className={`button ${filter === 'games' ? 'active' : ''}`}
+          onClick={() => setFilter('games')}
+        >
+          Games
+        </button>
+        <button 
+          className={`button ${filter === 'web' ? 'active' : ''}`}
+          onClick={() => setFilter('web')}
+        >
+          Web Apps
+        </button>
+      </div>
       
       <div className="projects-container">
-        {projects.map((project, index) => (
-          <div 
-            className="project-card" 
-            key={index}
-          >
+        {filteredProjects.map((project, index) => (
+          <div className="project-card" key={index}>
             <div className="card-content">
-              <h2 className="project-title pixel-font">/{project.title}/</h2>
+              <div className="project-type">{project.type}</div>
+              <h2 className="project-title pixel-font">{project.title}</h2>
               <div className="project-description">{project.description}</div>
               
               <div className="tech-stack-container">
                 <h3 className="tech-stack-title pixel-font">{'>'} TECH STACK_</h3>
                 <ul className="project-skills">
-                  {project.techStack.split(", ").map((skill, index) => (
+                  {project.techStack.map((skill, index) => (
                     <li key={index} className="skill-bubble">
                       {skill}
                     </li>
@@ -31,7 +63,7 @@ const Project = () => {
               </div>
 
               <div className="project-buttons">
-                {project.type === 'game' && (
+                {project.type === 'game' && project.apkUrl && (
                   <a
                     href={project.apkUrl}
                     target="_blank"
@@ -42,15 +74,17 @@ const Project = () => {
                     DOWNLOAD
                   </a>
                 )}
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="button github-btn"
-                >
-                  <FaGithub size={16} className="icon" />
-                  SOURCE
-                </a>
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="button github-btn"
+                  >
+                    <FaGithub size={16} className="icon" />
+                    SOURCE
+                  </a>
+                )}
               </div>
             </div>
           </div>
@@ -76,4 +110,4 @@ const Project = () => {
   );
 };
 
-export default Project;
+export default Projects;

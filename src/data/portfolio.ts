@@ -14,25 +14,37 @@ import Labdox from "../assets/images/LabdoxAward.jpg";
 
 export const projects: Project[] = [
   {
-    title: "Crash Astral",
-    description: "An exciting space adventure game with a unique gameplay experience.",
-    techStack: "Unity, C#, Figma",
-    githubUrl: "https://github.com/agricha-635/Crash-Astral",
-    apkUrl: "https://drive.google.com/drive/u/0/folders/1Psdk2AtcdGUVEwWsiFV8M_hDbC-wA8py",
-    type: "game"
-  },
-  {
     title: "Tic Tac Toe",
-    description: "A multiplayer Tic Tac Toe game with real-time online play.",
-    techStack: "Unity, C#, Figma",
+    description: "A multiplayer Tic Tac Toe game featuring AI-based solo play, offline multiplayer, and online multiplayer using Photon Unity Networking 2.",
+    techStack: ["Unity", "C#", "PUN2", "Multiplayer"],
     githubUrl: "https://github.com/ag-richa-13/Tic-Tac-Toe",
     apkUrl: "https://drive.google.com/drive/u/0/folders/1gdkefYC7llVIvUz2a_8KDFyGTD1pew3Q",
     type: "game"
   },
   {
-    title: "Web Development Projects",
-    description: "Collection of web development projects including a User Registration Page with secure authentication and CineCraze Watchlist Feature for managing movie and drama watchlists.",
-    techStack: "Node.js, MySQL, HTML, CSS",
+    title: "Crash Astral",
+    description: "An Aviator-inspired multiplayer game with real-time prediction mechanics and an intuitive user interface for high player retention.",
+    techStack: ["Unity", "C#", "Multiplayer", "UI/UX"],
+    githubUrl: "https://github.com/agricha-635/Crash-Astral",
+    apkUrl: "https://drive.google.com/drive/u/0/folders/1Psdk2AtcdGUVEwWsiFV8M_hDbC-wA8py",
+    type: "game"
+  },
+  {
+    title: "Power Ludo",
+    description: "A high-performance Ludo game built with Unity and C#, focusing on responsive UI/UX and seamless in-app updates.",
+    techStack: ["Unity", "C#", "Android Library", "UI/UX"],
+    type: "game"
+  },
+  {
+    title: "User Registration System",
+    description: "A robust user registration page with secure authentication mechanisms and responsive design.",
+    techStack: ["Node.js", "MySQL", "HTML", "CSS"],
+    type: "web"
+  },
+  {
+    title: "CineCraze Watchlist",
+    description: "A dynamic feature enabling users to manage and personalize movie and drama watchlists with intuitive UI.",
+    techStack: ["Node.js", "MySQL", "HTML", "CSS", "JavaScript"],
     type: "web"
   }
 ];
