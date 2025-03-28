@@ -33,7 +33,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative bg-[#0a192f] min-h-screen flex items-center justify-center p-4 sm:px-8 md:px-16 w-full"
+      className="relative bg-[#0a192f] min-h-screen flex items-center justify-center sm:px-8 md:px-16 w-full"
       style={{
         fontFamily: "'JetBrains Mono', monospace",
       }}

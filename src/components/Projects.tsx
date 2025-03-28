@@ -5,56 +5,59 @@ import { projects } from "../data/portfolio";
 import "../assets/style/project.css";
 
 const Projects = () => {
-  const [filter, setFilter] = useState<'all' | 'games' | 'web'>('all');
+  const [filter, setFilter] = useState<"all" | "games" | "web">("all");
 
-  const filteredProjects = projects.filter(project => {
-    if (filter === 'all') return true;
-    if (filter === 'games') return project.type === 'game';
-    if (filter === 'web') return project.type === 'web';
+  const filteredProjects = projects.filter((project) => {
+    if (filter === "all") return true;
+    if (filter === "games") return project.type === "game";
+    if (filter === "web") return project.type === "web";
     return true;
   });
 
   return (
-    <div className="projects-section mx-auto px-4 w-full" id="projects">
+    <div className="projects-section mx-auto px-4" id="projects">
       <h2 className="projects-heading pixel-font">[PROJECTS_ARCHIVE]</h2>
       <p className="text-center mb-8 font-mono">
-        A showcase of my work in game development and web applications, demonstrating my
-        skills and passion for creating interactive experiences.
+        A showcase of my work in game development and web applications,
+        demonstrating my skills and passion for creating interactive
+        experiences.
       </p>
 
       <div className="filter-buttons mb-8 flex justify-center gap-4">
-        <button 
-          className={`button font-mono ${filter === 'all' ? 'active' : ''}`}
-          onClick={() => setFilter('all')}
+        <button
+          className={`button font-mono ${filter === "all" ? "active" : ""}`}
+          onClick={() => setFilter("all")}
         >
           All Projects
         </button>
-        <button 
-          className={`button font-mono ${filter === 'games' ? 'active' : ''}`}
-          onClick={() => setFilter('games')}
+        <button
+          className={`button font-mono ${filter === "games" ? "active" : ""}`}
+          onClick={() => setFilter("games")}
         >
           Games
         </button>
-        <button 
-          className={`button font-mono ${filter === 'web' ? 'active' : ''}`}
-          onClick={() => setFilter('web')}
+        <button
+          className={`button font-mono ${filter === "web" ? "active" : ""}`}
+          onClick={() => setFilter("web")}
         >
           Web Apps
         </button>
       </div>
-      
-      <div className="projects-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+
+      <div className="projects-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredProjects.map((project, index) => (
           <div className="project-card" key={index}>
             <div className="card-content">
               <div className="project-type-bubble font-mono">
-                {project.type === 'game' ? '🎮 Game' : '🌐 Web'}
+                {project.type === "game" ? "🎮 Game" : "🌐 Web"}
               </div>
               <h2 className="project-title pixel-font">{project.title}</h2>
               <div className="project-description">{project.description}</div>
-              
+
               <div className="tech-stack-container">
-                <h3 className="tech-stack-title pixel-font">{'>'} TECH STACK_</h3>
+                <h3 className="tech-stack-title pixel-font">
+                  {">"} TECH STACK_
+                </h3>
                 <ul className="project-skills">
                   {project.techStack.map((skill, index) => (
                     <li key={index} className="skill-bubble">
@@ -65,7 +68,7 @@ const Projects = () => {
               </div>
 
               <div className="project-buttons">
-                {project.type === 'game' && project.apkUrl && (
+                {project.type === "game" && project.apkUrl && (
                   <a
                     href={project.apkUrl}
                     target="_blank"
@@ -94,7 +97,7 @@ const Projects = () => {
       </div>
 
       <div className="github-prompt">
-        <h3 className="pixel-font">{'>'} MORE_PROJECTS</h3>
+        <h3 className="pixel-font">{">"} MORE_PROJECTS</h3>
         <p>[ Explore the complete archive of my digital creations ]</p>
         <div className="github-info">
           <FaGithub size={24} className="github-icon" />

@@ -37,21 +37,38 @@ const Experience = () => {
       <div className="max-w-6xl mx-auto px-4 w-full">
         <div className="text-center mb-16">
           <motion.div
-            initial={{ y: -20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-4 mb-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="relative mb-6"
           >
-            <FaGamepad className="text-4xl text-emerald-400 animate-pulse" />
-            <h2 className="text-4xl font-bold font-pixel text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
-              [QUEST_LOG]
-            </h2>
+            <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg blur-xl"></div>
+            <div className="relative flex flex-col items-center">
+              <motion.div 
+                initial={{ y: -20, scale: 0.9 }}
+                whileInView={{ y: 0, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="flex items-center gap-2 sm:gap-3 mb-2"
+              >
+                <FaGamepad className="text-3xl sm:text-4xl text-pink-400 animate-pulse" />
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-pixel text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 tracking-wider">
+                  [WORK_JOURNEY]
+                </h2>
+              </motion.div>
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: "150px" }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mb-1"
+              ></motion.div>
+            </div>
           </motion.div>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Chronicles of my digital adventures and conquests in the realm of technology
+            Chronicles of my digital adventures and conquests in the realm of
+            technology
           </p>
         </div>
-        
+
         <div className="grid gap-8">
           {experiences.map((exp, index) => (
             <motion.div
@@ -67,13 +84,17 @@ const Experience = () => {
                   <div className="w-full h-full relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 rounded-lg transform rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
                     <img
-                      src={exp.company === "MyTeam11 Fantasy Sports" ? myteam11 : labdox}
+                      src={
+                        exp.company === "MyTeam11 Fantasy Sports"
+                          ? myteam11
+                          : labdox
+                      }
                       alt={exp.company}
                       className="w-full h-full object-contain rounded-lg relative z-10 p-2"
                     />
                   </div>
                 </div>
-                
+
                 <div className="flex-1 space-y-4 text-center lg:text-left">
                   <div>
                     <h3 className="text-xl lg:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 mb-2">
@@ -102,7 +123,9 @@ const Experience = () => {
                     <span className="text-sm">
                       {exp.skills.slice(0, 3).join(" • ")}
                       {exp.skills.length > 3 && (
-                        <span className="text-emerald-400 ml-2">+{exp.skills.length - 3}</span>
+                        <span className="text-emerald-400 ml-2">
+                          +{exp.skills.length - 3}
+                        </span>
                       )}
                     </span>
                   </div>

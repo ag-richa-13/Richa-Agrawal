@@ -7,17 +7,17 @@ const Skills = () => {
     {
       title: "Game Development",
       skills: ["Unity", "C#", "Figma"],
-      icon: "🎮"
+      icon: "🎮",
     },
     {
       title: "Web Development",
       skills: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MySQL"],
-      icon: "🌐"
+      icon: "🌐",
     },
     {
       title: "Tools & Technologies",
       skills: ["Git", "Postman", "Android Studio", "GitHub", "Jira", "VS Code"],
-      icon: "🛠️"
+      icon: "🛠️",
     },
   ];
 
@@ -29,7 +29,7 @@ const Skills = () => {
           Skills Matrix
           <span className="title-accent">/&gt;</span>
         </h2>
-        
+
         <div className="skills-grid">
           {skillCategories.map((category, index) => (
             <motion.div
@@ -43,7 +43,9 @@ const Skills = () => {
               <h3 className="skill-title">{category.title}</h3>
               <div className="skills-list">
                 {category.skills.map((skill, idx) => (
-                  <span key={idx} className="skill-tag">{skill}</span>
+                  <span key={idx} className="skill-tag">
+                    {skill}
+                  </span>
                 ))}
               </div>
               <div className="card-glow"></div>

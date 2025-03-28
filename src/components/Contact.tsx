@@ -5,6 +5,7 @@ import { FaGithub, FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
 import { FaMedium, FaWhatsapp, FaXTwitter } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";
 import { RiHomeHeartLine } from "react-icons/ri";
+import "../assets/style/contact.css";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -83,7 +84,8 @@ const ContactPage = () => {
         Let's connect.
       </h1>
       <p className="text-center mb-4 sm:mb-6 md:mb-8 text-sm sm:text-base md:text-lg lg:text-xl animate__animated animate__fadeIn animate__delay-2s px-2 sm:px-4 max-w-2xl mx-auto">
-        If you want to know more about my work, or just say hello, send me a message. I'd love to hear from you.
+        If you want to know more about my work, or just say hello, send me a
+        message. I'd love to hear from you.
       </p>
 
       {/* Contact Form and Info Section */}
@@ -103,7 +105,9 @@ const ContactPage = () => {
               className="flex items-center justify-center gap-1.5 sm:gap-2 gmail-btn hover:bg-[#030637] hover:text-white transition-all duration-300 rounded-full p-1.5 sm:p-2 text-xs sm:text-sm md:text-base transform hover:scale-105 w-full"
             >
               <SiGmail size={16} className="flex-shrink-0 sm:w-5 sm:h-5" />
-              <span className="truncate text-xs sm:text-sm">agrawalricha013@gmail.com</span>
+              <span className="truncate text-xs sm:text-sm">
+                agrawalricha013@gmail.com
+              </span>
             </a>
             {/* WhatsApp Button */}
             <a
@@ -122,8 +126,13 @@ const ContactPage = () => {
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-1.5 sm:gap-2 location-btn hover:bg-[#FF4D4D] hover:text-white transition-all duration-300 rounded-full p-1.5 sm:p-2 text-xs sm:text-sm md:text-base transform hover:scale-105 w-full"
             >
-              <RiHomeHeartLine size={16} className="flex-shrink-0 sm:w-5 sm:h-5" />
-              <span className="truncate text-xs sm:text-sm">Gangapur City, Rajasthan, India</span>
+              <RiHomeHeartLine
+                size={16}
+                className="flex-shrink-0 sm:w-5 sm:h-5"
+              />
+              <span className="truncate text-xs sm:text-sm">
+                Gangapur City, Rajasthan, India
+              </span>
             </a>
           </div>
 
@@ -169,7 +178,8 @@ const ContactPage = () => {
 
           {/* Thank You Note */}
           <p className="text-gray-400 text-center mt-4 sm:mt-6 text-sm sm:text-base">
-            Thank you for visiting! 😊🎉 I'm glad you're here! Let's stay connected! 🌟
+            Thank you for visiting! 😊🎉 I'm glad you're here! Let's stay
+            connected! 🌟
           </p>
         </div>
 

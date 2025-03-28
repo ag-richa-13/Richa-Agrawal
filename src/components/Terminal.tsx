@@ -38,59 +38,51 @@ const Terminal = ({ onComplete }: { onComplete: () => void }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-[#000000] z-50 flex items-center justify-center overflow-hidden"
+          className="fixed inset-0 bg-[#000300] z-50 flex items-center justify-center overflow-hidden"
         >
-          {/* Cyberpunk Grid Background */}
+          {/* Matrix Rain Effect */}
+          <div className="absolute inset-0 opacity-20">
+            <canvas id="matrixRain" className="w-full h-full"></canvas>
+          </div>
+
+          {/* Hexagon Grid Pattern */}
           <div 
             className="absolute inset-0" 
             style={{
-              backgroundImage: `
-                linear-gradient(#00FF9480 1px, transparent 1px),
-                linear-gradient(90deg, #00FF9480 1px, transparent 1px)
-              `,
-              backgroundSize: '50px 50px',
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15L30 0z' fill-opacity='0.1' fill='%2300FF94'/%3E%3C/svg%3E")`,
+              backgroundSize: '60px 60px',
               opacity: 0.1
             }}
           />
 
-          {/* Glowing Orbs Background */}
-          <motion.div
-            className="absolute inset-0 pointer-events-none"
-            animate={{
-              backgroundPosition: ["0% 0%", "100% 100%"],
-            }}
-            transition={{
-              duration: 15,
-              ease: "linear",
-              repeat: Infinity,
-            }}
-            style={{
-              backgroundImage:
-                "radial-gradient(circle, #00FF94 1%, transparent 10%)",
-              backgroundSize: "100px 100px",
-              opacity: 0.2,
-            }}
-          />
-
-          <div className="w-full max-w-3xl mx-4 bg-black/80 backdrop-blur-sm text-[#00FF94] rounded-lg shadow-[0_0_20px_rgba(0,255,148,0.3)] border-2 border-[#00FF94] overflow-hidden relative">
-            {/* Terminal Header */}
-            <div className="flex items-center justify-between px-3 py-2 sm:px-4 sm:py-3 bg-[#0a0a0a] border-b-2 border-[#00FF94]">
-              <div className="flex items-center gap-2">
-                <div className="flex gap-1.5 sm:gap-2">
-                  <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#FF2E63] shadow-[0_0_10px_#FF2E63]"></div>
-                  <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#FFE700] shadow-[0_0_10px_#FFE700]"></div>
-                  <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#00FF94] shadow-[0_0_10px_#00FF94]"></div>
+          <div className="w-full max-w-4xl mx-4 bg-black/90 backdrop-blur-md text-[#00FF94] rounded-xl shadow-[0_0_30px_rgba(0,255,148,0.4)] border border-[#00FF94]/30 overflow-hidden relative">
+            {/* Terminal Header with enhanced design */}
+            <div className="flex items-center justify-between px-4 py-3 bg-[#001a10] border-b border-[#00FF94]/30">
+              <div className="flex items-center gap-3">
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 rounded-full bg-[#FF2E63] shadow-[0_0_10px_#FF2E63] transition-all hover:scale-110"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#FFE700] shadow-[0_0_10px_#FFE700] transition-all hover:scale-110"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#00FF94] shadow-[0_0_10px_#00FF94] transition-all hover:scale-110"></div>
                 </div>
-                <span className="hidden sm:inline text-xs font-mono text-[#00FF94]">
-                  NEURAL.LINK//TERMINAL
+                <span className="text-sm font-mono text-[#00FF94]/90 tracking-wider">
+                  NEURAL.MATRIX_v2.0
                 </span>
               </div>
-              <div className="text-xs font-mono text-[#00FF94] animate-pulse">
-                {new Date().toLocaleTimeString()}
+              <div className="flex items-center gap-3">
+                <div className="h-1.5 w-12 bg-[#00FF94]/20 rounded-full overflow-hidden">
+                  <motion.div 
+                    className="h-full bg-[#00FF94]"
+                    animate={{ x: [-48, 48] }}
+                    transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
+                  />
+                </div>
+                <span className="text-sm font-mono text-[#00FF94]/90">
+                  {new Date().toLocaleTimeString()}
+                </span>
               </div>
             </div>
 
-            {/* Terminal Body */}
+            {/* Rest of the terminal body remains the same */}
             <div className="p-4 sm:p-6 font-mono text-sm sm:text-base">
               {commands.map((cmd, index) => (
                 <motion.div
@@ -127,8 +119,14 @@ const Terminal = ({ onComplete }: { onComplete: () => void }) => {
               </motion.div>
             </div>
 
-            {/* Scanline Effect */}
-            <div className="pointer-events-none absolute inset-0 bg-scanline opacity-10"></div>
+            {/* Enhanced Scanline Effect */}
+            <div className="pointer-events-none absolute inset-0 bg-scanline opacity-15 mix-blend-overlay"></div>
+            
+            {/* Glowing Corner Accents */}
+            <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-[#00FF94]"></div>
+            <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-[#00FF94]"></div>
+            <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-[#00FF94]"></div>
+            <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-[#00FF94]"></div>
           </div>
         </motion.div>
       )}

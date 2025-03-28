@@ -15,7 +15,7 @@ const Achievements = () => {
         >
           &lt;Achievements/&gt;
         </motion.h2>
-        
+
         <div className="card-container">
           {achievements.map((achievement, index) => (
             <motion.div
@@ -31,14 +31,14 @@ const Achievements = () => {
             >
               <div className="achievement-content">
                 <h3 className="achievement-title">{achievement.title}</h3>
-                <p className="achievement-description">{achievement.description}</p>
+                <p className="achievement-description">
+                  {achievement.description}
+                </p>
                 <div className="achievement-stats">
                   <span className="stat">
                     ⭐ {Math.floor(Math.random() * 100)}
                   </span>
-                  <span className="stat">
-                    🎮 LVL {index + 1}
-                  </span>
+                  <span className="stat">🎮 LVL {index + 1}</span>
                 </div>
               </div>
             </motion.div>
