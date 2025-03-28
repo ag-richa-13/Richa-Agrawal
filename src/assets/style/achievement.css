@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap");
 
 #achievements {
   background-color: #0a0a1f;
@@ -13,11 +13,29 @@
 }
 
 #achievements h2 {
-  font-family: "Orbitron", sans-serif;
-  font-size: 2.5rem;
+  font-family: "Atma", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
   text-align: center;
-  color: #00ff88;
-  margin-bottom: 3rem;
+  background: linear-gradient(45deg, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  padding-bottom: 5px;
+  filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.3));
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .card-container {
@@ -82,10 +100,28 @@
 
 @media (max-width: 768px) {
   #achievements h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 12px;
   }
 
   .card-container {
     grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
   }
+}
+
+@media (max-width: 480px) {
+  #achievements h2 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 1.2rem;
+    padding-bottom: 10px;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

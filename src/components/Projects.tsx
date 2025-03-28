@@ -16,7 +16,14 @@ const Projects = () => {
 
   return (
     <div className="projects-section mx-auto px-4" id="projects">
-      <h2 className="projects-heading pixel-font">[PROJECTS_ARCHIVE]</h2>
+      <div className="text-center mb-12">
+        <h2 className="projects-heading pixel-font">Projects Archive</h2>
+        <div className="flex items-center justify-center space-x-4 mt-2">
+          <span className="h-[1px] w-20 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></span>
+          <FaGithub className="w-5 h-5 text-purple-500" />
+          <span className="h-[1px] w-20 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></span>
+        </div>
+      </div>
       <p className="text-center mb-8 font-mono">
         A showcase of my work in game development and web applications,
         demonstrating my skills and passion for creating interactive

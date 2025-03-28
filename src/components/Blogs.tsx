@@ -17,22 +17,22 @@ const Blogs = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative w-full">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="inline-block"
           >
-            <h2 className="relative inline-block px-8 py-2">
-              <span className="relative z-10 text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FF2E97] via-[#FF42A4] to-[#FF61F6] drop-shadow-[0_0_10px_rgba(255,46,151,0.3)]">
-                DEV QUEST LOGS
+            <h2 className="relative inline-block">
+              <span className="relative z-10 text-3xl md:text-4xl font-bold text-transparent bg-clip-text 
+                bg-gradient-to-r from-purple-500 to-pink-500">
+                Dev Quest Logs
               </span>
-              {/* Decorative elements */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#FF2E97]/10 to-[#FF61F6]/10 rounded-lg blur-xl"></div>
-              <div className="absolute -left-4 top-1/2 h-[2px] w-6 bg-gradient-to-r from-[#FF2E97] to-transparent"></div>
-              <div className="absolute -right-4 top-1/2 h-[2px] w-6 bg-gradient-to-l from-[#FF61F6] to-transparent"></div>
-              <div className="absolute -top-1 left-0 w-full h-[2px] bg-gradient-to-r from-[#FF2E97] via-[#FF42A4] to-[#FF61F6]"></div>
-              <div className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-[#FF2E97] via-[#FF42A4] to-[#FF61F6]"></div>
+              <div className="flex items-center justify-center space-x-4 mt-2">
+                <span className="h-[1px] w-20 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></span>
+                <BookOpen className="w-5 h-5 text-purple-500" />
+                <span className="h-[1px] w-20 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></span>
+              </div>
             </h2>
           </motion.div>
         </div>
