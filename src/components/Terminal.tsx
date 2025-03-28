@@ -38,95 +38,41 @@ const Terminal = ({ onComplete }: { onComplete: () => void }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-[#000300] z-50 flex items-center justify-center overflow-hidden"
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-2 sm:p-4"
         >
-          {/* Matrix Rain Effect */}
-          <div className="absolute inset-0 opacity-20">
-            <canvas id="matrixRain" className="w-full h-full"></canvas>
-          </div>
-
-          {/* Hexagon Grid Pattern */}
-          <div 
-            className="absolute inset-0" 
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15L30 0z' fill-opacity='0.1' fill='%2300FF94'/%3E%3C/svg%3E")`,
-              backgroundSize: '60px 60px',
-              opacity: 0.1
-            }}
-          />
-
-          <div className="w-full max-w-4xl mx-4 bg-black/90 backdrop-blur-md text-[#00FF94] rounded-xl shadow-[0_0_30px_rgba(0,255,148,0.4)] border border-[#00FF94]/30 overflow-hidden relative">
-            {/* Terminal Header with enhanced design */}
-            <div className="flex items-center justify-between px-4 py-3 bg-[#001a10] border-b border-[#00FF94]/30">
-              <div className="flex items-center gap-3">
-                <div className="flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-[#FF2E63] shadow-[0_0_10px_#FF2E63] transition-all hover:scale-110"></div>
-                  <div className="w-3 h-3 rounded-full bg-[#FFE700] shadow-[0_0_10px_#FFE700] transition-all hover:scale-110"></div>
-                  <div className="w-3 h-3 rounded-full bg-[#00FF94] shadow-[0_0_10px_#00FF94] transition-all hover:scale-110"></div>
-                </div>
-                <span className="text-sm font-mono text-[#00FF94]/90 tracking-wider">
-                  NEURAL.MATRIX_v2.0
-                </span>
+          <div className="w-full max-w-3xl bg-[#1a1a1a] rounded-lg shadow-2xl border border-gray-700">
+            {/* Simplified Terminal Header */}
+            <div className="flex items-center px-2 sm:px-4 py-2 bg-[#2a2a2a] rounded-t-lg border-b border-gray-700">
+              <div className="flex gap-1.5 sm:gap-2">
+                <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-red-500"></div>
+                <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-yellow-500"></div>
+                <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-green-500"></div>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="h-1.5 w-12 bg-[#00FF94]/20 rounded-full overflow-hidden">
-                  <motion.div 
-                    className="h-full bg-[#00FF94]"
-                    animate={{ x: [-48, 48] }}
-                    transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
-                  />
-                </div>
-                <span className="text-sm font-mono text-[#00FF94]/90">
-                  {new Date().toLocaleTimeString()}
-                </span>
-              </div>
+              <span className="ml-3 sm:ml-4 text-xs sm:text-sm text-gray-400 font-mono">terminal@richa</span>
             </div>
 
-            {/* Rest of the terminal body remains the same */}
-            <div className="p-4 sm:p-6 font-mono text-sm sm:text-base">
+            {/* Terminal Content */}
+            <div className="p-3 sm:p-6 font-mono text-xs sm:text-sm overflow-x-auto">
               {commands.map((cmd, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{
-                    duration: 0.3,
-                    delay: index * 0.2,
-                  }}
-                  className="mb-3 flex items-center gap-2"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="mb-2 sm:mb-3 whitespace-pre-wrap break-words"
                 >
-                  <span className="text-[#FF2E63]">&gt;</span>
-                  <span className="text-[#00FF94] glitch-text">{cmd}</span>
+                  <span className="text-green-500">$ </span>
+                  <span className="text-gray-300">{cmd}</span>
                 </motion.div>
               ))}
 
-              {/* Animated Cursor */}
+              {/* Simplified Cursor */}
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="flex items-center"
-              >
-                <span className="text-[#FF2E63]">&gt;</span>
-                <motion.span
-                  animate={{ opacity: [0, 1], scaleY: [1, 1.2, 1] }}
-                  transition={{ 
-                    opacity: { repeat: Infinity, duration: 0.8 },
-                    scaleY: { repeat: Infinity, duration: 1.2 }
-                  }}
-                  className="inline-block w-2.5 h-5 bg-[#00FF94] ml-2 shadow-[0_0_10px_#00FF94]"
-                ></motion.span>
-              </motion.div>
+                animate={{ opacity: [0, 1] }}
+                transition={{ repeat: Infinity, duration: 0.8 }}
+                className="inline-block w-1.5 sm:w-2 h-4 sm:h-5 bg-green-500 ml-2"
+              />
             </div>
-
-            {/* Enhanced Scanline Effect */}
-            <div className="pointer-events-none absolute inset-0 bg-scanline opacity-15 mix-blend-overlay"></div>
-            
-            {/* Glowing Corner Accents */}
-            <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-[#00FF94]"></div>
-            <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-[#00FF94]"></div>
-            <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-[#00FF94]"></div>
-            <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-[#00FF94]"></div>
           </div>
         </motion.div>
       )}
