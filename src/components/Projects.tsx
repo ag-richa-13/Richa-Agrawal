@@ -15,39 +15,41 @@ const Projects = () => {
   });
 
   return (
-    <div className="projects-section mx-auto px-4" id="projects">
-      <h2 className="projects-heading pixel-font">My Projects</h2>
-      <p className="text-center mb-8">
+    <div className="projects-section mx-auto px-4 w-full" id="projects">
+      <h2 className="projects-heading pixel-font">[PROJECTS_ARCHIVE]</h2>
+      <p className="text-center mb-8 font-mono">
         A showcase of my work in game development and web applications, demonstrating my
         skills and passion for creating interactive experiences.
       </p>
 
       <div className="filter-buttons mb-8 flex justify-center gap-4">
         <button 
-          className={`button ${filter === 'all' ? 'active' : ''}`}
+          className={`button font-mono ${filter === 'all' ? 'active' : ''}`}
           onClick={() => setFilter('all')}
         >
           All Projects
         </button>
         <button 
-          className={`button ${filter === 'games' ? 'active' : ''}`}
+          className={`button font-mono ${filter === 'games' ? 'active' : ''}`}
           onClick={() => setFilter('games')}
         >
           Games
         </button>
         <button 
-          className={`button ${filter === 'web' ? 'active' : ''}`}
+          className={`button font-mono ${filter === 'web' ? 'active' : ''}`}
           onClick={() => setFilter('web')}
         >
           Web Apps
         </button>
       </div>
       
-      <div className="projects-container">
+      <div className="projects-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
         {filteredProjects.map((project, index) => (
           <div className="project-card" key={index}>
             <div className="card-content">
-              <div className="project-type">{project.type}</div>
+              <div className="project-type-bubble font-mono">
+                {project.type === 'game' ? '🎮 Game' : '🌐 Web'}
+              </div>
               <h2 className="project-title pixel-font">{project.title}</h2>
               <div className="project-description">{project.description}</div>
               

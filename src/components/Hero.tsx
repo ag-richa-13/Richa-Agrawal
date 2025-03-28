@@ -33,14 +33,14 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative bg-[#0a192f] min-h-[calc(100vh-64px)] flex items-center justify-center px-4 sm:px-8 md:px-16 pt-16 sm:pt-20 md:pt-24"
+      className="relative bg-[#0a192f] min-h-screen flex items-center justify-center p-4 sm:px-8 md:px-16 w-full"
       style={{
         fontFamily: "'JetBrains Mono', monospace",
       }}
     >
       <ParticleBackground />
 
-      <div className="container mx-auto max-w-7xl px-4 sm:px-4 pt-16 pb-16 sm:pt-20 md:pt-24 relative z-10">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-4 relative z-10 w-full">
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 sm:gap-12 max-w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -90,7 +90,7 @@ const Hero = () => {
               <motion.div>
                 <button
                   onClick={handleResumeClick}
-                  className="mt-8 px-8 py-3 bg-transparent 
+                  className="mt-8 mb-4 md:mb-0 px-8 py-3 bg-transparent 
                   text-[#64ffda] font-mono text-sm tracking-wider
                   transform transition-all duration-300 
                   border border-[#64ffda] relative

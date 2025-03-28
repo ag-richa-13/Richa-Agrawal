@@ -37,7 +37,7 @@ const Header = () => {
 
   return (
     <header
-      className={`header ${
+      className={`header fixed top-0 left-0 right-0 z-50 ${
         isScrolled ? "header-scrolled" : "header-transparent"
       }`}
     >
@@ -79,6 +79,13 @@ const Header = () => {
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
+
+        {/* Remove this duplicate hamburger div */}
+        {/* <div className="hamburger" onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div> */}
 
         <div
           className={`mobile-menu ${isOpen ? "open" : ""}`}

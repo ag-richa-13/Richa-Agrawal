@@ -74,8 +74,8 @@ const ParticleBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 pointer-events-none"
-      style={{ opacity: 0.3 }}
+      className="absolute inset-0 pointer-events-none w-full h-full"
+      style={{ opacity: 0.3, width: '100%', height: '100%' }}
     />
   );
 };

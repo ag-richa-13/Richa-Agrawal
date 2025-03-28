@@ -33,5 +33,4 @@ export interface Education {
 export interface Achievement {
   title: string;
   description: string;
-  imageUrl?: string;
 }

@@ -1,12 +1,16 @@
 /* Container Styles */
 #home {
-  position: relative;
+  /* position: relative; */
   background: #000;
-  min-height: calc(100vh - 64px);
-  min-height: 100vh;
+  min-height: 100vh; /* This overrides the previous line */
   font-family: "Quicksand", sans-serif;
+  width: 100%;
 }
 
+.container {
+  min-height: 100%;
+  height: auto;
+}
 Cursor Trail Effects .cursor-trail-container {
   position: fixed;
   top: 0;
@@ -210,10 +214,7 @@ Cursor Trail Effects .cursor-trail-container {
 }
 
 .cyber-text {
-  text-shadow: 
-    0 0 5px #FF2E63,
-    0 0 10px #FF2E63,
-    0 0 20px #FF2E63;
+  text-shadow: 0 0 5px #ff2e63, 0 0 10px #ff2e63, 0 0 20px #ff2e63;
   animation: glow 2s ease-in-out infinite alternate;
 }
 
@@ -224,16 +225,10 @@ Cursor Trail Effects .cursor-trail-container {
 
 @keyframes glow {
   from {
-    text-shadow: 
-      0 0 5px #FF2E63,
-      0 0 10px #FF2E63,
-      0 0 20px #FF2E63;
+    text-shadow: 0 0 5px #ff2e63, 0 0 10px #ff2e63, 0 0 20px #ff2e63;
   }
   to {
-    text-shadow: 
-      0 0 10px #FF2E63,
-      0 0 20px #FF2E63,
-      0 0 30px #FF2E63;
+    text-shadow: 0 0 10px #ff2e63, 0 0 20px #ff2e63, 0 0 30px #ff2e63;
   }
 }
 
@@ -281,8 +276,13 @@ Cursor Trail Effects .cursor-trail-container {
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .animate-blink {
@@ -298,6 +298,13 @@ Cursor Trail Effects .cursor-trail-container {
 }
 
 @keyframes typing {
-  0%, 90%, 100% { width: 0; }
-  30%, 60% { width: 100%; }
+  0%,
+  90%,
+  100% {
+    width: 0;
+  }
+  30%,
+  60% {
+    width: 100%;
+  }
 }

@@ -9,44 +9,49 @@ import {
 // import ticTacToe from "../assets/images/tictactoeIcon.png"; // Adjust the path as needed
 import blogTicTac from "../assets/images/blogtictac.jpeg";
 import blogInApp from "../assets/images/blogInApp.png";
-import MyTeam11 from "../assets/images/MyTeam11Award.jpg";
-import Labdox from "../assets/images/LabdoxAward.jpg";
 
 export const projects: Project[] = [
   {
     title: "Tic Tac Toe",
-    description: "A multiplayer Tic Tac Toe game featuring AI-based solo play, offline multiplayer, and online multiplayer using Photon Unity Networking 2.",
+    description:
+      "A multiplayer Tic Tac Toe game featuring AI-based solo play, offline multiplayer, and online multiplayer using Photon Unity Networking 2.",
     techStack: ["Unity", "C#", "PUN2", "Multiplayer"],
     githubUrl: "https://github.com/ag-richa-13/Tic-Tac-Toe",
-    apkUrl: "https://drive.google.com/drive/u/0/folders/1gdkefYC7llVIvUz2a_8KDFyGTD1pew3Q",
-    type: "game"
+    apkUrl:
+      "https://drive.google.com/drive/u/0/folders/1gdkefYC7llVIvUz2a_8KDFyGTD1pew3Q",
+    type: "game",
   },
   {
     title: "Crash Astral",
-    description: "An Aviator-inspired multiplayer game with real-time prediction mechanics and an intuitive user interface for high player retention.",
+    description:
+      "An Aviator-inspired multiplayer game with real-time prediction mechanics and an intuitive user interface for high player retention.",
     techStack: ["Unity", "C#", "Multiplayer", "UI/UX"],
     githubUrl: "https://github.com/agricha-635/Crash-Astral",
-    apkUrl: "https://drive.google.com/drive/u/0/folders/1Psdk2AtcdGUVEwWsiFV8M_hDbC-wA8py",
-    type: "game"
+    apkUrl:
+      "https://drive.google.com/drive/u/0/folders/1Psdk2AtcdGUVEwWsiFV8M_hDbC-wA8py",
+    type: "game",
   },
   {
     title: "Power Ludo",
-    description: "A high-performance Ludo game built with Unity and C#, focusing on responsive UI/UX and seamless in-app updates.",
+    description:
+      "A high-performance Ludo game built with Unity and C#, focusing on responsive UI/UX and seamless in-app updates.",
     techStack: ["Unity", "C#", "Android Library", "UI/UX"],
-    type: "game"
+    type: "game",
   },
   {
     title: "User Registration System",
-    description: "A robust user registration page with secure authentication mechanisms and responsive design.",
+    description:
+      "A robust user registration page with secure authentication mechanisms and responsive design.",
     techStack: ["Node.js", "MySQL", "HTML", "CSS"],
-    type: "web"
+    type: "web",
   },
   {
     title: "CineCraze Watchlist",
-    description: "A dynamic feature enabling users to manage and personalize movie and drama watchlists with intuitive UI.",
+    description:
+      "A dynamic feature enabling users to manage and personalize movie and drama watchlists with intuitive UI.",
     techStack: ["Node.js", "MySQL", "HTML", "CSS", "JavaScript"],
-    type: "web"
-  }
+    type: "web",
+  },
 ];
 
 export const blogPosts: BlogPost[] = [
@@ -131,16 +136,16 @@ export const education: Education[] = [
   },
 ];
 
+// Remove MyTeam11 and Labdox image imports
+
 export const achievements: Achievement[] = [
   {
     title: "Quality Enforcer",
     description:
       "Recognized for ensuring top-notch standards at MyTeam11 Fantasy Sports",
-    imageUrl: MyTeam11,
   },
   {
     title: "Intern of the Month",
     description: "Awarded at Labdox for outstanding performance and dedication",
-    imageUrl: Labdox,
   },
 ];

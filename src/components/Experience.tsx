@@ -33,8 +33,8 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="min-h-screen py-20 bg-[#0a0a16]">
-      <div className="max-w-6xl mx-auto px-4">
+    <section id="experience" className="min-h-screen py-20 bg-[#0a0a16] w-full">
+      <div className="max-w-6xl mx-auto px-4 w-full">
         <div className="text-center mb-16">
           <motion.div
             initial={{ y: -20, opacity: 0 }}

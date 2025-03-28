@@ -77,59 +77,58 @@ const ContactPage = () => {
   return (
     <div
       id="contact"
-      className="bg-[#000000] min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 py-8 text-gray-300 text-sm md:text-base"
+      className="bg-[#000000] min-h-screen flex flex-col justify-center items-center px-2 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8 text-gray-300 text-sm md:text-base w-full"
     >
-      <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-pink-400 animate__animated animate__fadeIn animate__delay-1s hover:text-yellow-400 cursor-pointer transition-all duration-300 transform hover:scale-105 text-center">
+      <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-2 sm:mb-4 text-pink-400 animate__animated animate__fadeIn animate__delay-1s hover:text-yellow-400 cursor-pointer transition-all duration-300 transform hover:scale-105 text-center px-2 sm:px-4">
         Let's connect.
       </h1>
-      <p className="text-center mb-8 sm:mb-10 text-base sm:text-lg md:text-xl animate__animated animate__fadeIn animate__delay-2s px-4">
-        If you want to know more about my work, or just say hello, send me a
-        message. I'd love to hear from you.
+      <p className="text-center mb-4 sm:mb-6 md:mb-8 text-sm sm:text-base md:text-lg lg:text-xl animate__animated animate__fadeIn animate__delay-2s px-2 sm:px-4 max-w-2xl mx-auto">
+        If you want to know more about my work, or just say hello, send me a message. I'd love to hear from you.
       </p>
 
       {/* Contact Form and Info Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full max-w-4xl px-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 w-full max-w-4xl px-2 sm:px-4">
         {/* Contact Info */}
-        <div className="bg-[#000000] border-2 border-[#D4BDAC] shadow-lg rounded-lg p-4 sm:p-6 flex flex-col items-center h-auto">
-          <h2 className="text-xl md:text-2xl font-semibold mb-4 text-yellow-400">
+        <div className="bg-[#000000] border-2 border-[#D4BDAC] shadow-lg rounded-lg p-3 sm:p-4 md:p-6 flex flex-col items-center h-auto">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 sm:mb-4 text-yellow-400">
             Get in Touch
           </h2>
           <p className="text-center mb-4 text-gray-400">
             Feel free to reach out via email or connect with me on social media.
           </p>
-          <div className="text-gray-400 space-y-3 text-center">
+          <div className="text-gray-400 space-y-2 sm:space-y-3 text-center w-full max-w-xs sm:max-w-sm mx-auto">
             {/* Gmail Button with Blue Color */}
             <a
               href="mailto:agrawalricha013@gmail.com"
-              className="flex items-center justify-center gap-2 gmail-btn hover:bg-[#030637] hover:text-white transition-all duration-300 rounded-full p-2 text-xs sm:text-sm md:text-base transform hover:scale-105 break-all"
+              className="flex items-center justify-center gap-1.5 sm:gap-2 gmail-btn hover:bg-[#030637] hover:text-white transition-all duration-300 rounded-full p-1.5 sm:p-2 text-xs sm:text-sm md:text-base transform hover:scale-105 w-full"
             >
-              <SiGmail size={20} className="flex-shrink-0" />
-              <span className="truncate">agrawalricha013@gmail.com</span>
+              <SiGmail size={16} className="flex-shrink-0 sm:w-5 sm:h-5" />
+              <span className="truncate text-xs sm:text-sm">agrawalricha013@gmail.com</span>
             </a>
             {/* WhatsApp Button */}
             <a
               href="https://wa.me/919079531049"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 whatsapp-btn hover:bg-[#006A67] hover:text-white transition-all duration-300 rounded-full p-2 text-xs sm:text-sm md:text-base transform hover:scale-105"
+              className="flex items-center justify-center gap-1.5 sm:gap-2 whatsapp-btn hover:bg-[#006A67] hover:text-white transition-all duration-300 rounded-full p-1.5 sm:p-2 text-xs sm:text-sm md:text-base transform hover:scale-105 w-full"
             >
-              <FaWhatsapp size={20} className="flex-shrink-0" />
-              <span>+91 9079531049</span>
+              <FaWhatsapp size={16} className="flex-shrink-0 sm:w-5 sm:h-5" />
+              <span className="text-xs sm:text-sm">+91 9079531049</span>
             </a>
             {/* Location Button */}
             <a
               href="https://www.google.com/maps?q=Gangapur+City,+Rajasthan,+India"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 location-btn hover:bg-[#FF4D4D] hover:text-white transition-all duration-300 rounded-full p-2 text-xs sm:text-sm md:text-base transform hover:scale-105 text-center w-full"
+              className="flex items-center justify-center gap-1.5 sm:gap-2 location-btn hover:bg-[#FF4D4D] hover:text-white transition-all duration-300 rounded-full p-1.5 sm:p-2 text-xs sm:text-sm md:text-base transform hover:scale-105 w-full"
             >
-              <RiHomeHeartLine size={20} className="flex-shrink-0" />
-              <span className="truncate">Gangapur City, Rajasthan, India</span>
+              <RiHomeHeartLine size={16} className="flex-shrink-0 sm:w-5 sm:h-5" />
+              <span className="truncate text-xs sm:text-sm">Gangapur City, Rajasthan, India</span>
             </a>
           </div>
 
           {/* Social Media Links */}
-          <div className="flex flex-wrap justify-center gap-3 mt-6">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-4 sm:mt-6">
             <a
               href="https://github.com/ag-richa-13"
               className="text-gray-400 hover:bg-gray-300 hover:text-gray-900 transition-all duration-300 rounded-full p-2 transform hover:scale-105 hover-fill"
@@ -143,7 +142,7 @@ const ContactPage = () => {
               <FaLinkedin size={24} />
             </a>
             <a
-              href="https://www.instagram.com/r.i._c_.h.a/"
+              href="https://www.instagram.com/r.i._c.h.a/"
               className="text-gray-400 hover:bg-gray-300 hover:text-gray-900 transition-all duration-300 rounded-full p-2 transform hover:scale-105 hover-fill"
             >
               <FaInstagram size={24} />
@@ -169,22 +168,22 @@ const ContactPage = () => {
           </div>
 
           {/* Thank You Note */}
-          <p className="text-gray-400 text-center mt-6">
-            Thank you for visiting! 😊🎉 I'm glad you're here! Let's stay
-            connected! 🌟
+          <p className="text-gray-400 text-center mt-4 sm:mt-6 text-sm sm:text-base">
+            Thank you for visiting! 😊🎉 I'm glad you're here! Let's stay connected! 🌟
           </p>
         </div>
 
         {/* Contact Form */}
-        <div className="bg-[#000000] border-2 border-[#D4BDAC] shadow-lg rounded-lg p-4 sm:p-6 h-auto">
-          <h2 className="text-xl md:text-2xl font-semibold mb-4 text-orange-400">
+        <div className="bg-[#000000] border-2 border-[#D4BDAC] shadow-lg rounded-lg p-3 sm:p-4 md:p-6 h-auto">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 sm:mb-4 text-orange-400">
             Send a Message
           </h2>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+            {/* Form fields */}
             <div>
               <label
                 htmlFor="name"
-                className="block text-[#A0D683] font-medium mb-1 text-sm md:text-base"
+                className="block text-[#A0D683] font-medium mb-1 text-sm sm:text-base"
               >
                 Name
               </label>
@@ -194,7 +193,7 @@ const ContactPage = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-2 sm:px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08] text-sm md:text-base"
+                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-2 sm:px-3 py-1 sm:py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08] text-sm sm:text-base"
                 placeholder="Enter your name"
                 required
               />
@@ -202,7 +201,7 @@ const ContactPage = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-[#A0D683] font-medium mb-1 text-sm md:text-base"
+                className="block text-[#A0D683] font-medium mb-1 text-sm sm:text-base"
               >
                 Email
               </label>
@@ -212,7 +211,7 @@ const ContactPage = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-2 sm:px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08] text-sm md:text-base"
+                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-2 sm:px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08] text-sm sm:text-base"
                 placeholder="Enter your email"
                 required
               />
@@ -220,7 +219,7 @@ const ContactPage = () => {
             <div>
               <label
                 htmlFor="subject"
-                className="block text-[#A0D683] font-medium mb-1 text-sm md:text-base"
+                className="block text-[#A0D683] font-medium mb-1 text-sm sm:text-base"
               >
                 Subject
               </label>
@@ -230,7 +229,7 @@ const ContactPage = () => {
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-2 sm:px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08] text-sm md:text-base"
+                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-2 sm:px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08] text-sm sm:text-base"
                 placeholder="Enter the subject"
                 required
               />
@@ -238,7 +237,7 @@ const ContactPage = () => {
             <div>
               <label
                 htmlFor="message"
-                className="block text-[#A0D683] font-medium mb-1 text-sm md:text-base"
+                className="block text-[#A0D683] font-medium mb-1 text-sm sm:text-base"
               >
                 Message
               </label>
@@ -248,16 +247,16 @@ const ContactPage = () => {
                 value={formData.message}
                 onChange={handleChange}
                 rows={4}
-                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-2 sm:px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08] text-sm md:text-base"
+                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-2 sm:px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08] text-sm sm:text-base"
                 placeholder="Write your message"
                 required
               ></textarea>
             </div>
-            {/* Send Message Button with Fixed Length */}
+            {/* Send Message Button */}
             <button
               type="submit"
               disabled={loading}
-              className="w-full sm:w-auto bg-[#A78295] text-[#22092C] font-bold py-2 px-4 rounded-lg transition-colors hover:bg-[#22092C] hover:text-[#CDC1FF] transform hover:scale-105 text-sm md:text-base"
+              className="w-full sm:w-auto bg-[#A78295] text-[#22092C] font-bold py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg transition-colors hover:bg-[#22092C] hover:text-[#CDC1FF] transform hover:scale-105 text-sm sm:text-base"
             >
               {loading ? "Sending..." : "Send Message"}
             </button>
@@ -265,7 +264,6 @@ const ContactPage = () => {
         </div>
       </div>
 
-      {/* Toast Notifications Container */}
       <Toaster position="top-right" />
     </div>
   );

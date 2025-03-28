@@ -3,10 +3,11 @@
   padding: 4rem 0;
   background: #0a0a16;
   color: #b8b8b8;
+  width: 100%;
 }
 
 .pixel-font {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -15,24 +16,79 @@
   font-size: 2rem;
   margin-bottom: 3rem;
   text-align: center;
-  color: #10b981; /* emerald-400 */
+  color: #10b981;
   text-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
+  font-family: "Press Start 2P", monospace;
+  letter-spacing: 2px;
+}
+
+.project-title {
+  font-family: "Press Start 2P", monospace;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #10b981;
+  letter-spacing: 1px;
+}
+
+.tech-stack-title {
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.8rem;
+  color: #10b981;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 1px;
 }
 
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 0 2rem;
+  grid-template-columns: repeat(3, minmax(280px, 320px));
+  gap: 1.5rem;
+  padding: 0 1.5rem;
+  justify-content: center;
+}
+
+@media (max-width: 1200px) {
+  .projects-container {
+    grid-template-columns: repeat(2, minmax(280px, 320px));
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    grid-template-columns: minmax(280px, 320px);
+  }
 }
 
 .project-card {
+  height: 100%;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(16, 185, 129, 0.2);
   border-radius: 4px;
-  padding: 1.5rem;
+  padding: 1.25rem;
   transition: all 0.3s ease;
   position: relative;
+}
+
+.project-description {
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+  font-size: 0.85rem;
+}
+
+.tech-stack-container {
+  margin: 1.25rem 0;
+  padding: 0.875rem;
+}
+
+.project-skills {
+  gap: 0.6rem;
+}
+
+.skill-bubble {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.65rem;
 }
 
 .project-card:hover {
@@ -66,7 +122,7 @@
 }
 
 .tech-stack-container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -2px;
@@ -76,7 +132,7 @@
 }
 
 .tech-stack-container::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: -2px;
@@ -133,7 +189,7 @@
   text-decoration: none;
   transition: all 0.3s ease;
   font-size: 0.8rem;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
 }
 
 .button:hover {
@@ -171,7 +227,6 @@
 .github-icon {
   color: #10b981;
 }
-
 
 @media (max-width: 768px) {
   .projects-section {
@@ -263,4 +318,23 @@
   .github-link {
     font-size: 0.7rem;
   }
+}
+
+.project-type-bubble {
+  display: inline-block;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #10b981;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-type-bubble:hover {
+  background: rgba(16, 185, 129, 0.15);
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
 }

@@ -1,9 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "../assets/style/about.css";
-// Remove this import
-// import richaImage from "../assets/images/about.png";
-import { GraduationCap, MapPin, Terminal, Code2, Gamepad2 } from "lucide-react";
+import { GraduationCap, MapPin, Terminal, Code2, Gamepad2, User2, Briefcase } from "lucide-react";
 
 // Import your SVG files
 import UnityIcon from "../assets/Icons/unity.svg";
@@ -16,130 +14,148 @@ import SqlIcon from "../assets/Icons/mysql.svg";
 
 const About = () => {
   return (
-    <section id="about" className="about-section py-20">
-      <div className="container mx-auto px-4">
+    <section id="about" className="about-section py-20 bg-gradient-to-b from-gray-900 to-black w-full">
+      <div className="container mx-auto px-4 w-full">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+          className="max-w-6xl mx-auto w-full"
         >
-          {/* Left Column - Player Info and Education */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="space-y-6 md:space-y-8" // Adjusted spacing for mobile
-          >
-            <div className="player-card p-4 md:p-6">
-              <div className="player-info">
-                <h3 className="player-name text-lg sm:text-xl md:text-2xl mb-2 md:mb-3">RICHA AGRAWAL</h3>
-                <p className="player-title text-xs sm:text-sm md:text-base mb-4">Software Development Engineer</p>
-                <div className="player-stats grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
-                  <div className="stat flex items-center gap-2 p-2 md:p-3">
-                    <Terminal className="stat-icon w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-                    <span className="text-xs sm:text-sm md:text-base">Level 1 SDE</span>
-                  </div>
-                  <div className="stat flex items-center gap-2 p-2 md:p-3">
-                    <Code2 className="stat-icon w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-                    <span className="text-xs sm:text-sm md:text-base">Full Stack Dev</span>
-                  </div>
-                  <div className="stat flex items-center gap-2 p-2 md:p-3">
-                    <Gamepad2 className="stat-icon w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-                    <span className="text-xs sm:text-sm md:text-base">Game Developer</span>
-                  </div>
-                </div>
-              </div>
+          {/* Header Section */}
+          <div className="text-center mb-12">
+            <motion.h2
+              initial={{ y: -20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl md:text-4xl font-bold text-gradient mb-4"
+            >
+              About Me
+            </motion.h2>
+            <div className="flex items-center justify-center space-x-4">
+              <span className="h-[1px] w-20 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></span>
+              <User2 className="w-6 h-6 text-purple-500" />
+              <span className="h-[1px] w-20 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></span>
             </div>
+          </div>
 
-            <div className="education-card p-4 md:p-6">
-              <div className="card-header flex items-center justify-center sm:justify-start gap-3 mb-4">
-                <GraduationCap className="header-icon w-5 h-5 md:w-6 md:h-6" />
-                <h3 className="text-base md:text-lg">Education Quest</h3>
-              </div>
-              <div className="education-content text-center sm:text-left">
-                <h4 className="text-base md:text-lg mb-2">B.Tech in IT</h4>
-                <p className="institution text-sm md:text-base mb-3">Engineering College Ajmer</p>
-                <div className="education-details flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-between text-xs md:text-sm gap-2">
-                  <span className="duration">2019 - 2023</span>
-                  <div className="location flex items-center gap-2">
-                    <MapPin className="w-3 h-3 md:w-4 md:h-4" />
-                    <span>Ajmer, Rajasthan</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Left Column - Profile & Experience */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8"
+            >
+              {/* Profile Card */}
+              <div className="glass-card p-6 rounded-xl">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
+                    <User2 className="w-8 h-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
+                      RICHA AGRAWAL
+                    </h3>
+                    <p className="text-gray-400">Software Development Engineer</p>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="stat-card p-4 rounded-lg">
+                    <Terminal className="w-6 h-6 mb-2 text-purple-500" />
+                    <p className="text-sm">Level 1 SDE</p>
+                  </div>
+                  <div className="stat-card p-4 rounded-lg">
+                    <Code2 className="w-6 h-6 mb-2 text-purple-500" />
+                    <p className="text-sm">Full Stack</p>
+                  </div>
+                  <div className="stat-card p-4 rounded-lg">
+                    <Gamepad2 className="w-6 h-6 mb-2 text-purple-500" />
+                    <p className="text-sm">Game Dev</p>
                   </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
 
-          {/* Right Column - About Content and Skills */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
-            <div className="about-content">
-              <h2 className="content-title flex items-center justify-center sm:justify-start gap-2 sm:gap-3 mb-6 sm:mb-8">
-                <span className="bracket text-lg sm:text-xl md:text-2xl">[</span>
-                <span className="title-text text-base sm:text-lg md:text-xl">PLAYER_PROFILE</span>
-                <span className="bracket text-lg sm:text-xl md:text-2xl">]</span>
-                <span className="status-dot w-2 h-2 sm:w-3 sm:h-3"></span>
-              </h2>
-              <div className="content-text">
-                <p>
-                  Greetings, fellow developers! I'm a passionate{" "}
-                  <span className="highlight-text">
-                    Software Development Engineer
-                  </span>{" "}
-                  on a quest to create engaging digital experiences.
-                </p>
-                <p>
-                  Currently stationed at{" "}
-                  <span className="highlight-text">
-                    MyTeam11 Fantasy Sports
-                  </span>
-                  , where I'm crafting immersive gaming experiences in projects
-                  like Power Ludo.
-                </p>
-                <p>
-                  My mission is to combine{" "}
-                  <span className="highlight-text">technical mastery</span> with{" "}
-                  <span className="highlight-text">creative innovation</span> to
-                  forge exceptional digital solutions.
-                </p>
-              </div>
-            </div>
-
-            <div className="skills-card">
-              <h3 className="skills-title">Tech Arsenal</h3>
-              <div className="skills-grid">
-                <div className="skill-item" data-skill="unity">
-                  <img src={UnityIcon} alt="Unity" />
+              {/* Experience Card */}
+              <div className="glass-card p-6 rounded-xl">
+                <div className="flex items-center gap-3 mb-6">
+                  <Briefcase className="w-6 h-6 text-purple-500" />
+                  <h3 className="text-xl font-semibold">Current Quest</h3>
                 </div>
-                <div className="skill-item" data-skill="csharp">
-                  <img src={CSharpIcon} alt="C#" />
-                </div>
-                <div className="skill-item" data-skill="nodejs">
-                  <img src={NodeJsIcon} alt="Node.js" />
-                </div>
-                <div className="skill-item" data-skill="html">
-                  <img src={HtmlIcon} alt="HTML5" />
-                </div>
-                <div className="skill-item" data-skill="css">
-                  <img src={CssIcon} alt="CSS3" />
-                </div>
-                <div className="skill-item" data-skill="javascript">
-                  <img src={JsIcon} alt="JavaScript" />
-                </div>
-                <div className="skill-item" data-skill="sql">
-                  <img src={SqlIcon} alt="SQL" />
+                <div className="space-y-4">
+                  <p className="text-gray-300">
+                    Currently crafting immersive gaming experiences at{" "}
+                    <span className="text-purple-400">MyTeam11 Fantasy Sports</span>
+                  </p>
+                  <p className="text-gray-300">
+                    Specializing in projects like Power Ludo and combining{" "}
+                    <span className="text-purple-400">technical mastery</span> with{" "}
+                    <span className="text-purple-400">creative innovation</span>
+                  </p>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+
+            {/* Right Column - Education & Skills */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8"
+            >
+              {/* Education Card */}
+              <div className="glass-card p-6 rounded-xl">
+                <div className="flex items-center gap-3 mb-6">
+                  <GraduationCap className="w-6 h-6 text-purple-500" />
+                  <h3 className="text-xl font-semibold">Education Quest</h3>
+                </div>
+                <div className="space-y-4">
+                  <h4 className="text-lg font-medium">B.Tech in IT</h4>
+                  <p className="text-gray-400">Engineering College Ajmer</p>
+                  <div className="flex justify-between text-sm text-gray-500">
+                    <span>2019 - 2023</span>
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4" />
+                      <span>Ajmer, Rajasthan</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Skills Card */}
+              <div className="glass-card p-6 rounded-xl">
+                <div className="flex items-center gap-3 mb-6">
+                  <Code2 className="w-6 h-6 text-purple-500" />
+                  <h3 className="text-xl font-semibold">Tech Arsenal</h3>
+                </div>
+                <div className="grid grid-cols-4 md:grid-cols-7 gap-4 md:gap-6 place-items-center">
+                  <div className="skill-icon unity-icon w-14 h-14" data-skill="unity">
+                    <img src={UnityIcon} alt="Unity" className="w-10 h-10" />
+                  </div>
+                  <div className="skill-icon w-14 h-14" data-skill="csharp">
+                    <img src={CSharpIcon} alt="C#" className="w-10 h-10" />
+                  </div>
+                  <div className="skill-icon" data-skill="nodejs">
+                    <img src={NodeJsIcon} alt="Node.js" />
+                  </div>
+                  <div className="skill-icon" data-skill="html">
+                    <img src={HtmlIcon} alt="HTML5" />
+                  </div>
+                  <div className="skill-icon" data-skill="css">
+                    <img src={CssIcon} alt="CSS3" />
+                  </div>
+                  <div className="skill-icon" data-skill="javascript">
+                    <img src={JsIcon} alt="JavaScript" />
+                  </div>
+                  <div className="skill-icon" data-skill="sql">
+                    <img src={SqlIcon} alt="SQL" />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

@@ -8,7 +8,7 @@
 
 body {
   font-family: "Fira Code", monospace;
-  background-color: #000000;
+  background-color: #fff;
   color: #fff;
   overflow-x: hidden;
 }
@@ -62,4 +62,29 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Add these to your global styles */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }

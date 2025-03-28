@@ -2,8 +2,8 @@ import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#000] border-2 border-[#fff] rounded-lg py-6">
-      <div className="container mx-auto px-4 text-center">
+    <footer className="bg-[#000] border-2 border-[#fff] rounded-lg py-6 w-full">
+      <div className="container mx-auto px-4 text-center w-full">
         {/* Social Media Links */}
         <div className="flex justify-center gap-6 mb-4">
           <a
