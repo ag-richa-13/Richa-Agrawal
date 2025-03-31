@@ -15,86 +15,81 @@ const Projects = () => {
   });
 
   return (
-    <div className="projects-section mx-auto px-4" id="projects">
-      <div className="text-center mb-12">
-        <h2 className="projects-heading pixel-font">Projects Archive</h2>
-        <div className="flex items-center justify-center space-x-4 mt-2">
-          <span className="h-[1px] w-20 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></span>
-          <FaGithub className="w-5 h-5 text-purple-500" />
-          <span className="h-[1px] w-20 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></span>
+    <div className="projects-section" id="projects">
+      <div className="section-header">
+        <h2 className="neon-text">Projects Archive</h2>
+        <div className="header-decoration">
+          <span className="line"></span>
+          <FaGithub className="header-icon" />
+          <span className="line"></span>
         </div>
       </div>
-      <p className="text-center mb-8 font-mono">
-        A showcase of my work in game development and web applications,
-        demonstrating my skills and passion for creating interactive
-        experiences.
+
+      <p className="section-description">
+        Level up with my collection of games and web applications
       </p>
 
-      <div className="filter-buttons mb-8 flex justify-center gap-4">
+      <div className="filter-controls">
         <button
-          className={`button font-mono ${filter === "all" ? "active" : ""}`}
+          className={`control-btn ${filter === "all" ? "active" : ""}`}
           onClick={() => setFilter("all")}
         >
           All Projects
         </button>
         <button
-          className={`button font-mono ${filter === "games" ? "active" : ""}`}
+          className={`control-btn ${filter === "games" ? "active" : ""}`}
           onClick={() => setFilter("games")}
         >
           Games
         </button>
         <button
-          className={`button font-mono ${filter === "web" ? "active" : ""}`}
+          className={`control-btn ${filter === "web" ? "active" : ""}`}
           onClick={() => setFilter("web")}
         >
           Web Apps
         </button>
       </div>
 
-      <div className="projects-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="projects-grid">
         {filteredProjects.map((project, index) => (
           <div className="project-card" key={index}>
             <div className="card-content">
-              <div className="project-type-bubble font-mono">
+              <div className="project-badge">
                 {project.type === "game" ? "🎮 Game" : "🌐 Web"}
               </div>
-              <h2 className="project-title pixel-font">{project.title}</h2>
-              <div className="project-description">{project.description}</div>
+              <h3 className="card-title">{project.title}</h3>
+              <p className="card-description">{project.description}</p>
 
-              <div className="tech-stack-container">
-                <h3 className="tech-stack-title pixel-font">
-                  {">"} TECH STACK_
-                </h3>
-                <ul className="project-skills">
-                  {project.techStack.map((skill, index) => (
-                    <li key={index} className="skill-bubble">
-                      {skill}
-                    </li>
+              <div className="tech-stack">
+                <h4 className="stack-title">TECH STACK</h4>
+                <div className="tech-tags">
+                  {project.techStack.map((tech, idx) => (
+                    <span key={idx} className="tech-tag">
+                      {tech}
+                    </span>
                   ))}
-                </ul>
+                </div>
               </div>
 
-              <div className="project-buttons">
-                {project.type === "game" && project.apkUrl && (
+              <div className="card-actions">
+                {(project.type === "game" || project.title === "Power Ludo") && (
                   <a
                     href={project.apkUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="button download-btn"
+                    className="action-btn download-btn"
                   >
-                    <FaDownload size={16} className="icon" />
-                    DOWNLOAD
+                    <FaDownload /> Download
                   </a>
                 )}
-                {project.githubUrl && (
+                {(project.githubUrl || project.type === "web") && (
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="button github-btn"
+                    className="action-btn github-btn"
                   >
-                    <FaGithub size={16} className="icon" />
-                    SOURCE
+                    <FaGithub /> Source
                   </a>
                 )}
               </div>
@@ -103,19 +98,28 @@ const Projects = () => {
         ))}
       </div>
 
-      <div className="github-prompt">
-        <h3 className="pixel-font">{">"} MORE_PROJECTS</h3>
-        <p>[ Explore the complete archive of my digital creations ]</p>
-        <div className="github-info">
-          <FaGithub size={24} className="github-icon" />
-          <a
-            href="https://github.com/ag-richa-13"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="github-link"
-          >
-            OPEN GITHUB PROFILE
-          </a>
+      <div className="more-projects">
+        <div className="github-box">
+          <div className="github-header">
+            <FaGithub className="github-header-icon" />
+            <h3>More Projects</h3>
+          </div>
+          <div className="github-content">
+            <div className="github-stats">
+              <div className="stat">
+                <span className="stat-number">10+</span>
+                <span className="stat-label">Projects</span>
+              </div>
+            </div>
+            <a
+              href="https://github.com/ag-richa-13"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="github-view-btn"
+            >
+              <FaGithub /> View GitHub Profile
+            </a>
+          </div>
         </div>
       </div>
     </div>

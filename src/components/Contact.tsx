@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { toast, Toaster } from "react-hot-toast";
-import emailjs from "emailjs-com"; // Import EmailJS
+import emailjs from "emailjs-com";
 import { FaGithub, FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
 import { FaMedium, FaWhatsapp, FaXTwitter } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";
@@ -15,7 +15,7 @@ const ContactPage = () => {
     message: "",
   });
 
-  const [loading, setLoading] = useState(false); // Loading state for the button
+  const [loading, setLoading] = useState(false);
 
   // Handle change for form fields
   const handleChange = (
@@ -78,195 +78,162 @@ const ContactPage = () => {
   return (
     <div
       id="contact"
-      className="bg-[#000000] min-h-screen flex flex-col justify-center items-center px-2 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8 text-gray-300 text-sm md:text-base w-full"
+      className="bg-[#0a0a0a] min-h-[80vh] flex flex-col justify-center items-center px-4 py-8 text-gray-300 w-full relative overflow-hidden"
     >
-      <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-2 sm:mb-4 text-pink-400 animate__animated animate__fadeIn animate__delay-1s hover:text-yellow-400 cursor-pointer transition-all duration-300 transform hover:scale-105 text-center px-2 sm:px-4">
-        Let's connect.
+      <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-cyan-900/20"></div>
+
+      <h1 className="text-2xl md:text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 animate-pulse">
+        Player Connect Hub
       </h1>
-      <p className="text-center mb-4 sm:mb-6 md:mb-8 text-sm sm:text-base md:text-lg lg:text-xl animate__animated animate__fadeIn animate__delay-2s px-2 sm:px-4 max-w-2xl mx-auto">
-        If you want to know more about my work, or just say hello, send me a
-        message. I'd love to hear from you.
-      </p>
 
-      {/* Contact Form and Info Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 w-full max-w-4xl px-2 sm:px-4">
-        {/* Contact Info */}
-        <div className="bg-[#000000] border-2 border-[#D4BDAC] shadow-lg rounded-lg p-3 sm:p-4 md:p-6 flex flex-col items-center h-auto">
-          <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 sm:mb-4 text-yellow-400">
-            Get in Touch
+      <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8 z-10">
+        {/* Quick Connect Panel */}
+        <div className="bg-black/40 backdrop-blur-sm border border-cyan-500/30 rounded-lg p-4 space-y-4">
+          <h2 className="text-lg font-gaming text-cyan-400 mb-2 border-b border-cyan-500/30 pb-2">
+            Quick Connect
           </h2>
-          <p className="text-center mb-4 text-gray-400">
-            Feel free to reach out via email or connect with me on social media.
-          </p>
-          <div className="text-gray-400 space-y-2 sm:space-y-3 text-center w-full max-w-xs sm:max-w-sm mx-auto">
-            {/* Gmail Button with Blue Color */}
-            <a
-              href="mailto:agrawalricha013@gmail.com"
-              className="flex items-center justify-center gap-1.5 sm:gap-2 gmail-btn hover:bg-[#030637] hover:text-white transition-all duration-300 rounded-full p-1.5 sm:p-2 text-xs sm:text-sm md:text-base transform hover:scale-105 w-full"
-            >
-              <SiGmail size={16} className="flex-shrink-0 sm:w-5 sm:h-5" />
-              <span className="truncate text-xs sm:text-sm">
-                agrawalricha013@gmail.com
-              </span>
+          
+          {/* Contact Info Links */}
+          <div className="space-y-2">
+            <a href="mailto:agrawalricha013@gmail.com" 
+               className="flex items-center gap-3 p-2 border border-gray-700 rounded-lg hover:border-cyan-500 hover:bg-black/30 transition-all group">
+              <div className="bg-red-500/20 p-1.5 rounded-lg group-hover:bg-red-500/30 transition-all">
+                <SiGmail size={18} className="text-red-500" />
+              </div>
+              <span className="text-xs group-hover:text-red-400 transition-colors">agrawalricha013@gmail.com</span>
             </a>
-            {/* WhatsApp Button */}
-            <a
-              href="https://wa.me/919079531049"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1.5 sm:gap-2 whatsapp-btn hover:bg-[#006A67] hover:text-white transition-all duration-300 rounded-full p-1.5 sm:p-2 text-xs sm:text-sm md:text-base transform hover:scale-105 w-full"
-            >
-              <FaWhatsapp size={16} className="flex-shrink-0 sm:w-5 sm:h-5" />
-              <span className="text-xs sm:text-sm">+91 9079531049</span>
+            
+            <a href="https://wa.me/919079531049" 
+               className="flex items-center gap-3 p-2 border border-gray-700 rounded-lg hover:border-cyan-500 hover:bg-black/30 transition-all group">
+              <div className="bg-green-500/20 p-1.5 rounded-lg group-hover:bg-green-500/30 transition-all">
+                <FaWhatsapp size={18} className="text-green-500" />
+              </div>
+              <span className="text-xs group-hover:text-green-400 transition-colors">+91 9079531049</span>
             </a>
-            {/* Location Button */}
-            <a
-              href="https://www.google.com/maps?q=Gangapur+City,+Rajasthan,+India"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1.5 sm:gap-2 location-btn hover:bg-[#FF4D4D] hover:text-white transition-all duration-300 rounded-full p-1.5 sm:p-2 text-xs sm:text-sm md:text-base transform hover:scale-105 w-full"
-            >
-              <RiHomeHeartLine
-                size={16}
-                className="flex-shrink-0 sm:w-5 sm:h-5"
-              />
-              <span className="truncate text-xs sm:text-sm">
-                Gangapur City, Rajasthan, India
-              </span>
-            </a>
+
+            <div className="flex items-center gap-3 p-2 border border-gray-700 rounded-lg group">
+              <div className="bg-purple-500/20 p-1.5 rounded-lg">
+                <RiHomeHeartLine size={18} className="text-purple-500" />
+              </div>
+              <span className="text-xs">Gangapur City, Rajasthan</span>
+            </div>
           </div>
 
-          {/* Social Media Links */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-4 sm:mt-6">
-            <a
-              href="https://github.com/ag-richa-13"
-              className="text-gray-400 hover:bg-gray-300 hover:text-gray-900 transition-all duration-300 rounded-full p-2 transform hover:scale-105 hover-fill"
-            >
-              <FaGithub size={24} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/ag-richa-13s/"
-              className="text-gray-400 hover:bg-gray-300 hover:text-gray-900 transition-all duration-300 rounded-full p-2 transform hover:scale-105 hover-fill"
-            >
-              <FaLinkedin size={24} />
-            </a>
-            <a
-              href="https://www.instagram.com/r.i._c.h.a/"
-              className="text-gray-400 hover:bg-gray-300 hover:text-gray-900 transition-all duration-300 rounded-full p-2 transform hover:scale-105 hover-fill"
-            >
-              <FaInstagram size={24} />
-            </a>
-            <a
-              href="https://www.facebook.com/ag.richa13"
-              className="text-gray-400 hover:bg-gray-300 hover:text-gray-900 transition-all duration-300 rounded-full p-2 transform hover:scale-105 hover-fill"
-            >
-              <FaFacebook size={24} />
-            </a>
-            <a
-              href="https://twitter.com/IAMRICHAAGRAWAL"
-              className="text-gray-400 hover:bg-gray-300 hover:text-gray-900 transition-all duration-300 rounded-full p-2 transform hover:scale-105 hover-fill"
-            >
-              <FaXTwitter size={24} />
-            </a>
-            <a
-              href="https://medium.com/@agricha-13"
-              className="text-gray-400 hover:bg-gray-300 hover:text-gray-900 transition-all duration-300 rounded-full p-2 transform hover:scale-105 hover-fill"
-            >
-              <FaMedium size={24} />
-            </a>
+          {/* Social Icons Grid */}
+          <div className="pt-3 border-t border-gray-700">
+            <h3 className="text-xs text-gray-400 mb-3">Connect on Social Media</h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              {[
+                { 
+                  icon: <FaGithub size={18} />, 
+                  link: "https://github.com/ag-richa-13", 
+                  bgColor: "from-gray-700 to-gray-900",
+                  iconColor: "group-hover:text-white"
+                },
+                { 
+                  icon: <FaLinkedin size={18} />, 
+                  link: "https://www.linkedin.com/in/ag-richa-13s/", 
+                  bgColor: "from-blue-600 to-blue-800",
+                  iconColor: "group-hover:text-blue-200"
+                },
+                { 
+                  icon: <FaXTwitter size={18} />, 
+                  link: "https://twitter.com/IAMRICHAAGRAWAL", 
+                  bgColor: "from-sky-600 to-sky-800",
+                  iconColor: "group-hover:text-sky-200"
+                },
+                { 
+                  icon: <FaInstagram size={18} />, 
+                  link: "https://www.instagram.com/r.i._c.h.a/", 
+                  bgColor: "from-pink-600 to-purple-600",
+                  iconColor: "group-hover:text-pink-200"
+                },
+                { 
+                  icon: <FaFacebook size={18} />, 
+                  link: "https://www.facebook.com/ag.richa13", 
+                  bgColor: "from-blue-500 to-blue-700",
+                  iconColor: "group-hover:text-blue-200"
+                },
+                { 
+                  icon: <FaMedium size={18} />, 
+                  link: "https://medium.com/@agricha-13", 
+                  bgColor: "from-gray-600 to-gray-800",
+                  iconColor: "group-hover:text-white"
+                },
+              ].map((social, index) => (
+                <a
+                  key={index}
+                  href={social.link}
+                  className="group relative"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-purple-500 rounded-full blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className={`relative w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-tr ${social.bgColor} transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6`}>
+                    <div className={`text-gray-300 transition-all duration-300 ${social.iconColor} transform group-hover:-rotate-6`}>
+                      {social.icon}
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+            
+            {/* Thank You Message */}
+            <div className="mt-6 text-center relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 blur-xl"></div>
+              <div className="relative">
+                <p className="text-sm font-gaming bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent animate-pulse">
+                  Thanks for Connecting! 🎮
+                </p>
+                <p className="text-xs text-gray-500 mt-1">Let's create something amazing together</p>
+              </div>
+            </div>
           </div>
-
-          {/* Thank You Note */}
-          <p className="text-gray-400 text-center mt-4 sm:mt-6 text-sm sm:text-base">
-            Thank you for visiting! 😊🎉 I'm glad you're here! Let's stay
-            connected! 🌟
-          </p>
         </div>
 
-        {/* Contact Form */}
-        <div className="bg-[#000000] border-2 border-[#D4BDAC] shadow-lg rounded-lg p-3 sm:p-4 md:p-6 h-auto">
-          <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 sm:mb-4 text-orange-400">
-            Send a Message
+        {/* Contact Form Panel */}
+        <div className="bg-black/40 backdrop-blur-sm border border-purple-500/30 rounded-lg p-6">
+          <h2 className="text-xl font-gaming text-purple-400 mb-6 border-b border-purple-500/30 pb-2">
+            Send Message
           </h2>
-          <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
-            {/* Form fields */}
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-[#A0D683] font-medium mb-1 text-sm sm:text-base"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-2 sm:px-3 py-1 sm:py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08] text-sm sm:text-base"
-                placeholder="Enter your name"
-                required
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-[#A0D683] font-medium mb-1 text-sm sm:text-base"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-2 sm:px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08] text-sm sm:text-base"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="subject"
-                className="block text-[#A0D683] font-medium mb-1 text-sm sm:text-base"
-              >
-                Subject
-              </label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-2 sm:px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08] text-sm sm:text-base"
-                placeholder="Enter the subject"
-                required
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-[#A0D683] font-medium mb-1 text-sm sm:text-base"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows={4}
-                className="w-full bg-[#000] border border-[#EDDFE0] rounded px-2 sm:px-3 py-1.5 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF8A08] text-sm sm:text-base"
-                placeholder="Write your message"
-                required
-              ></textarea>
-            </div>
-            {/* Send Message Button */}
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Your Name"
+              className="w-full bg-black/50 border border-purple-500/30 rounded-lg px-4 py-2 text-sm focus:border-cyan-500 focus:outline-none transition-colors"
+            />
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Your Email"
+              className="w-full bg-black/50 border border-purple-500/30 rounded-lg px-4 py-2 text-sm focus:border-cyan-500 focus:outline-none transition-colors"
+            />
+            <input
+              type="text"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              placeholder="Subject"
+              className="w-full bg-black/50 border border-purple-500/30 rounded-lg px-4 py-2 text-sm focus:border-cyan-500 focus:outline-none transition-colors"
+            />
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Your Message"
+              rows={4}
+              className="w-full bg-black/50 border border-purple-500/30 rounded-lg px-4 py-2 text-sm focus:border-cyan-500 focus:outline-none transition-colors resize-none"
+            ></textarea>
             <button
               type="submit"
               disabled={loading}
-              className="w-full sm:w-auto bg-[#A78295] text-[#22092C] font-bold py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg transition-colors hover:bg-[#22092C] hover:text-[#CDC1FF] transform hover:scale-105 text-sm sm:text-base"
+              className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 text-white py-3 rounded-lg hover:opacity-90 transition-all hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100 font-medium"
             >
               {loading ? "Sending..." : "Send Message"}
             </button>

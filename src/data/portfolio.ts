@@ -31,18 +31,22 @@ export const projects: Project[] = [
       "https://drive.google.com/drive/u/0/folders/1Psdk2AtcdGUVEwWsiFV8M_hDbC-wA8py",
     type: "game",
   },
+  // Update the Power Ludo project object
   {
     title: "Power Ludo",
     description:
       "A high-performance Ludo game built with Unity and C#, focusing on responsive UI/UX and seamless in-app updates.",
     techStack: ["Unity", "C#", "Android Library", "UI/UX"],
     type: "game",
+    apkUrl:
+      "https://play.google.com/store/apps/details?id=com.power.ludo.online.board.game", // Add the APK URL here
   },
   {
     title: "User Registration System",
     description:
       "A robust user registration page with secure authentication mechanisms and responsive design.",
     techStack: ["Node.js", "MySQL", "HTML", "CSS"],
+    githubUrl: "https://github.com/ag-richa-13/user-registration-page",
     type: "web",
   },
   {
@@ -50,6 +54,7 @@ export const projects: Project[] = [
     description:
       "A dynamic feature enabling users to manage and personalize movie and drama watchlists with intuitive UI.",
     techStack: ["Node.js", "MySQL", "HTML", "CSS", "JavaScript"],
+    githubUrl: "http://github.com/ag-richa-13/CineCraze",
     type: "web",
   },
 ];

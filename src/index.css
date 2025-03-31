@@ -5,7 +5,11 @@
 :root {
   color-scheme: dark;
 }
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
+.font-pixel {
+  font-family: "Press Start 2P", cursive;
+}
 body {
   font-family: "Fira Code", monospace;
   background-color: #000;
