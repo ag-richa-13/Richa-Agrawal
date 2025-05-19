@@ -240,11 +240,110 @@
   }
 }
 
+/* Base styles */
 .about-section {
   background: linear-gradient(135deg, #0f1218 0%, #1a1f2c 100%);
-  min-height: 80vh; /* Reduced from 100vh */
+  min-height: 100vh;
   color: #e0e0e0;
-  padding: 2rem 0; /* Reduced padding */
+}
+
+/* Glass card effects */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Stat cards */
+.stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.stat-card-hover:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-3px);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Skill icons */
+.skill-icon {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-icon-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific skill icon hover states */
+.skill-icon[data-skill="unity"]:hover { background-color: rgba(255, 255, 255, 0.15); }
+.skill-icon[data-skill="csharp"]:hover { background-color: rgba(96, 114, 116, 0.5); }
+.skill-icon[data-skill="nodejs"]:hover { background-color: rgba(31, 69, 41, 0.5); }
+.skill-icon[data-skill="html"]:hover { background-color: rgba(235, 91, 0, 0.3); }
+.skill-icon[data-skill="css"]:hover { background-color: rgba(38, 77, 228, 0.3); }
+.skill-icon[data-skill="javascript"]:hover { background-color: rgba(247, 223, 30, 0.2); }
+.skill-icon[data-skill="sql"]:hover { background-color: rgba(31, 80, 154, 0.3); }
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .about-section {
+    min-height: auto;
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .skill-icon {
+    padding: 0.75rem;
+  }
+  
+  .skill-icon img {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .glass-card {
+    padding: 1.5rem !important;
+  }
+  
+  .stat-card {
+    padding: 0.75rem !important;
+  }
+  
+  .skill-icon {
+    padding: 0.5rem;
+  }
+  
+  .skill-icon img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
 
 .player-card {

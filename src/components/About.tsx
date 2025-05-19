@@ -14,34 +14,27 @@ import SqlIcon from "../assets/Icons/mysql.svg";
 
 const About = () => {
   return (
-    <section id="about" className="about-section py-20 bg-gradient-to-b from-gray-900 to-black w-full">
-      <div className="container mx-auto px-4 w-full">
+    <section id="about" className="about-section py-16 md:py-24">
+      <div className="container mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="max-w-6xl mx-auto w-full"
+          className="max-w-6xl mx-auto"
         >
-          {/* Header Section */}
-          <div className="text-center mb-12">
-            <motion.h2
-              initial={{ y: -20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="text-3xl md:text-4xl font-bold text-gradient mb-4"
-            >
-              About Me
-            </motion.h2>
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">About Me</h2>
             <div className="flex items-center justify-center space-x-4">
-              <span className="h-[1px] w-20 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></span>
+              <div className="h-[2px] w-24 bg-gradient-to-r from-purple-500/20 via-purple-500 to-purple-500/20"></div>
               <User2 className="w-6 h-6 text-purple-500" />
-              <span className="h-[1px] w-20 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></span>
+              <div className="h-[2px] w-24 bg-gradient-to-r from-purple-500/20 via-purple-500 to-purple-500/20"></div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left Column - Profile & Experience */}
+          {/* Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Left Column */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -49,56 +42,54 @@ const About = () => {
               className="space-y-8"
             >
               {/* Profile Card */}
-              <div className="glass-card p-6 rounded-xl">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
-                    <User2 className="w-8 h-8 text-white" />
+              <div className="glass-card hover:glass-card-hover rounded-2xl p-8">
+                <div className="flex items-start gap-6 mb-8">
+                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 p-5">
+                    <User2 className="w-full h-full text-white" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
-                      RICHA AGRAWAL
-                    </h3>
-                    <p className="text-gray-400">Software Development Engineer</p>
+                    <h3 className="text-3xl font-bold gradient-text mb-2">RICHA AGRAWAL</h3>
+                    <p className="text-gray-400 text-lg">Software Development Engineer</p>
                   </div>
                 </div>
                 
                 <div className="grid grid-cols-3 gap-4">
-                  <div className="stat-card p-4 rounded-lg">
-                    <Terminal className="w-6 h-6 mb-2 text-purple-500" />
-                    <p className="text-sm">Level 1 SDE</p>
+                  <div className="stat-card hover:stat-card-hover p-4 rounded-xl text-center">
+                    <Terminal className="w-8 h-8 mb-3 mx-auto text-purple-500" />
+                    <p className="text-sm font-medium">Level 1 SDE</p>
                   </div>
-                  <div className="stat-card p-4 rounded-lg">
-                    <Code2 className="w-6 h-6 mb-2 text-purple-500" />
-                    <p className="text-sm">Full Stack</p>
+                  <div className="stat-card hover:stat-card-hover p-4 rounded-xl text-center">
+                    <Code2 className="w-8 h-8 mb-3 mx-auto text-purple-500" />
+                    <p className="text-sm font-medium">Full Stack</p>
                   </div>
-                  <div className="stat-card p-4 rounded-lg">
-                    <Gamepad2 className="w-6 h-6 mb-2 text-purple-500" />
-                    <p className="text-sm">Game Dev</p>
+                  <div className="stat-card hover:stat-card-hover p-4 rounded-xl text-center">
+                    <Gamepad2 className="w-8 h-8 mb-3 mx-auto text-purple-500" />
+                    <p className="text-sm font-medium">Game Dev</p>
                   </div>
                 </div>
               </div>
 
               {/* Experience Card */}
-              <div className="glass-card p-6 rounded-xl">
-                <div className="flex items-center gap-3 mb-6">
-                  <Briefcase className="w-6 h-6 text-purple-500" />
-                  <h3 className="text-xl font-semibold">Current Quest</h3>
+              <div className="glass-card hover:glass-card-hover rounded-2xl p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <Briefcase className="w-8 h-8 text-purple-500" />
+                  <h3 className="text-2xl font-semibold">Current Quest</h3>
                 </div>
-                <div className="space-y-4">
+                <div className="space-y-4 text-lg">
                   <p className="text-gray-300">
                     Currently crafting immersive gaming experiences at{" "}
-                    <span className="text-purple-400">MyTeam11 Fantasy Sports</span>
+                    <span className="text-purple-400 font-medium">MyTeam11 Fantasy Sports</span>
                   </p>
                   <p className="text-gray-300">
                     Specializing in projects like Power Ludo and combining{" "}
-                    <span className="text-purple-400">technical mastery</span> with{" "}
-                    <span className="text-purple-400">creative innovation</span>
+                    <span className="text-purple-400 font-medium">technical mastery</span> with{" "}
+                    <span className="text-purple-400 font-medium">creative innovation</span>
                   </p>
                 </div>
               </div>
             </motion.div>
 
-            {/* Right Column - Education & Skills */}
+            {/* Right Column */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -106,18 +97,18 @@ const About = () => {
               className="space-y-8"
             >
               {/* Education Card */}
-              <div className="glass-card p-6 rounded-xl">
-                <div className="flex items-center gap-3 mb-6">
-                  <GraduationCap className="w-6 h-6 text-purple-500" />
-                  <h3 className="text-xl font-semibold">Education Quest</h3>
+              <div className="glass-card hover:glass-card-hover rounded-2xl p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <GraduationCap className="w-8 h-8 text-purple-500" />
+                  <h3 className="text-2xl font-semibold">Education Quest</h3>
                 </div>
                 <div className="space-y-4">
-                  <h4 className="text-lg font-medium">B.Tech in IT</h4>
-                  <p className="text-gray-400">Engineering College Ajmer</p>
-                  <div className="flex justify-between text-sm text-gray-500">
+                  <h4 className="text-xl font-medium">B.Tech in IT</h4>
+                  <p className="text-gray-400 text-lg">Engineering College Ajmer</p>
+                  <div className="flex justify-between text-gray-500">
                     <span>2019 - 2023</span>
                     <div className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4" />
+                      <MapPin className="w-5 h-5" />
                       <span>Ajmer, Rajasthan</span>
                     </div>
                   </div>
@@ -125,33 +116,29 @@ const About = () => {
               </div>
 
               {/* Skills Card */}
-              <div className="glass-card p-6 rounded-xl">
-                <div className="flex items-center gap-3 mb-6">
-                  <Code2 className="w-6 h-6 text-purple-500" />
-                  <h3 className="text-xl font-semibold">Tech Arsenal</h3>
+              <div className="glass-card hover:glass-card-hover rounded-2xl p-8">
+                <div className="flex items-center gap-4 mb-8">
+                  <Code2 className="w-8 h-8 text-purple-500" />
+                  <h3 className="text-2xl font-semibold">Tech Arsenal</h3>
                 </div>
-                <div className="grid grid-cols-4 md:grid-cols-7 gap-4 md:gap-6 place-items-center">
-                  <div className="skill-icon unity-icon w-14 h-14" data-skill="unity">
-                    <img src={UnityIcon} alt="Unity" className="w-10 h-10" />
-                  </div>
-                  <div className="skill-icon w-14 h-14" data-skill="csharp">
-                    <img src={CSharpIcon} alt="C#" className="w-10 h-10" />
-                  </div>
-                  <div className="skill-icon" data-skill="nodejs">
-                    <img src={NodeJsIcon} alt="Node.js" />
-                  </div>
-                  <div className="skill-icon" data-skill="html">
-                    <img src={HtmlIcon} alt="HTML5" />
-                  </div>
-                  <div className="skill-icon" data-skill="css">
-                    <img src={CssIcon} alt="CSS3" />
-                  </div>
-                  <div className="skill-icon" data-skill="javascript">
-                    <img src={JsIcon} alt="JavaScript" />
-                  </div>
-                  <div className="skill-icon" data-skill="sql">
-                    <img src={SqlIcon} alt="SQL" />
-                  </div>
+                <div className="grid grid-cols-4 md:grid-cols-7 gap-6 place-items-center">
+                  {[
+                    { icon: UnityIcon, alt: "Unity", skill: "unity" },
+                    { icon: CSharpIcon, alt: "C#", skill: "csharp" },
+                    { icon: NodeJsIcon, alt: "Node.js", skill: "nodejs" },
+                    { icon: HtmlIcon, alt: "HTML5", skill: "html" },
+                    { icon: CssIcon, alt: "CSS3", skill: "css" },
+                    { icon: JsIcon, alt: "JavaScript", skill: "javascript" },
+                    { icon: SqlIcon, alt: "SQL", skill: "sql" }
+                  ].map((tech, index) => (
+                    <div
+                      key={index}
+                      className={`skill-icon hover:skill-icon-hover ${tech.skill}-icon`}
+                      data-skill={tech.skill}
+                    >
+                      <img src={tech.icon} alt={tech.alt} className="w-12 h-12" />
+                    </div>
+                  ))}
                 </div>
               </div>
             </motion.div>
