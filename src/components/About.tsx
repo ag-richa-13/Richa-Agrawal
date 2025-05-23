@@ -1,7 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "../assets/style/about.css";
-import { GraduationCap, MapPin, Terminal, Code2, Gamepad2, User2, Briefcase } from "lucide-react";
+import {
+  GraduationCap,
+  MapPin,
+  Terminal,
+  Code2,
+  Gamepad2,
+  User2,
+  Briefcase,
+} from "lucide-react";
 
 // Import your SVG files
 import UnityIcon from "../assets/Icons/unity.svg";
@@ -24,7 +32,9 @@ const About = () => {
         >
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">About Me</h2>
+            <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+              About Me
+            </h2>
             <div className="flex items-center justify-center space-x-4">
               <div className="h-[2px] w-24 bg-gradient-to-r from-purple-500/20 via-purple-500 to-purple-500/20"></div>
               <User2 className="w-6 h-6 text-purple-500" />
@@ -48,11 +58,15 @@ const About = () => {
                     <User2 className="w-full h-full text-white" />
                   </div>
                   <div>
-                    <h3 className="text-3xl font-bold gradient-text mb-2">RICHA AGRAWAL</h3>
-                    <p className="text-gray-400 text-lg">Software Development Engineer</p>
+                    <h3 className="text-3xl font-bold gradient-text mb-2">
+                      RICHA AGRAWAL
+                    </h3>
+                    <p className="text-gray-400 text-lg">
+                      Software Development Engineer
+                    </p>
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-3 gap-4">
                   <div className="stat-card hover:stat-card-hover p-4 rounded-xl text-center">
                     <Terminal className="w-8 h-8 mb-3 mx-auto text-purple-500" />
@@ -78,12 +92,19 @@ const About = () => {
                 <div className="space-y-4 text-lg">
                   <p className="text-gray-300">
                     Currently crafting immersive gaming experiences at{" "}
-                    <span className="text-purple-400 font-medium">MyTeam11 Fantasy Sports</span>
+                    <span className="text-purple-400 font-medium">
+                      MyTeam11 Fantasy Sports
+                    </span>
                   </p>
                   <p className="text-gray-300">
                     Specializing in projects like Power Ludo and combining{" "}
-                    <span className="text-purple-400 font-medium">technical mastery</span> with{" "}
-                    <span className="text-purple-400 font-medium">creative innovation</span>
+                    <span className="text-purple-400 font-medium">
+                      technical mastery
+                    </span>{" "}
+                    with{" "}
+                    <span className="text-purple-400 font-medium">
+                      creative innovation
+                    </span>
                   </p>
                 </div>
               </div>
@@ -104,7 +125,9 @@ const About = () => {
                 </div>
                 <div className="space-y-4">
                   <h4 className="text-xl font-medium">B.Tech in IT</h4>
-                  <p className="text-gray-400 text-lg">Engineering College Ajmer</p>
+                  <p className="text-gray-400 text-lg">
+                    Engineering College Ajmer
+                  </p>
                   <div className="flex justify-between text-gray-500">
                     <span>2019 - 2023</span>
                     <div className="flex items-center gap-2">
@@ -129,14 +152,18 @@ const About = () => {
                     { icon: HtmlIcon, alt: "HTML5", skill: "html" },
                     { icon: CssIcon, alt: "CSS3", skill: "css" },
                     { icon: JsIcon, alt: "JavaScript", skill: "javascript" },
-                    { icon: SqlIcon, alt: "SQL", skill: "sql" }
+                    { icon: SqlIcon, alt: "SQL", skill: "sql" },
                   ].map((tech, index) => (
                     <div
                       key={index}
                       className={`skill-icon hover:skill-icon-hover ${tech.skill}-icon`}
                       data-skill={tech.skill}
                     >
-                      <img src={tech.icon} alt={tech.alt} className="w-12 h-12" />
+                      <img
+                        src={tech.icon}
+                        alt={tech.alt}
+                        className="w-12 h-12"
+                      />
                     </div>
                   ))}
                 </div>
