@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+// Remove the unused import
+// import React, { useState } from "react";
+import { useState } from "react";
 import Terminal from "./components/Terminal";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-// import About from "./components/About";
+import About from "./components/About";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
@@ -25,7 +27,7 @@ function App() {
         <div className="bg-[#1e1e1e] text-white min-h-screen">
           <Header />
           <Hero />
-          {/* <About /> */}
+          <About />
           <Experience />
           <Projects />
           <Skills />
