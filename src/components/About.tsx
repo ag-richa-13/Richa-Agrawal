@@ -2,29 +2,28 @@
 // import React from "react";
 import { motion } from "framer-motion";
 import "../assets/style/about.css";
-import {
-  GraduationCap,
-  MapPin,
-  Terminal,
-  Code2,
-  Gamepad2,
-  User2,
-  Briefcase,
-} from "lucide-react";
-
-// Import your SVG files
-import UnityIcon from "../assets/Icons/unity.svg";
-import CSharpIcon from "../assets/Icons/csharp.svg";
-import NodeJsIcon from "../assets/Icons/node.svg";
-import HtmlIcon from "../assets/Icons/html.svg";
-import CssIcon from "../assets/Icons/css.svg";
-import JsIcon from "../assets/Icons/js.svg";
-import SqlIcon from "../assets/Icons/mysql.svg";
+import { GraduationCap, MapPin, User } from "lucide-react";
 
 const About = () => {
   return (
     <section id="about" className="about-section">
       <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <motion.h2
+            initial={{ y: -20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-bold heading-gradient mb-4"
+          >
+            About Me
+          </motion.h2>
+          <div className="flex items-center justify-center space-x-4">
+            <span className="h-[1px] w-20 bg-gradient-to-r from-transparent via-[#ea7907] to-transparent"></span>
+            <User className="w-6 h-6 text-[#ea7907]" />
+            <span className="h-[1px] w-20 bg-gradient-to-r from-transparent via-[#ea7907] to-transparent"></span>
+          </div>
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,9 +31,8 @@ const About = () => {
           className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8"
         >
           {/* Introduction */}
-          <div className="text-center md:text-left mb-10 flex flex-col gap-4 items-center md:items-start md:w-[60%]">
-            <h2 className="text-4xl font-bold heading mb-4">About Me</h2>
-            <p className="text-lg text-gray-300">
+          <div className="text-center md:text-left mb-10 flex flex-col gap-6 items-center md:items-start md:w-[60%] bg-gradient-to-r from-[#1a1f2c] to-[#0f1218] p-6 rounded-lg shadow-lg">
+            <p className="text-md text-gray-300 leading-relaxed">
               I'm Richa Agrawal, a proactive Software Development Engineer
               passionate about building engaging digital experiences through
               game and web development. With hands-on expertise in Unity, C#,
@@ -47,8 +45,24 @@ const About = () => {
               impactful digital products!
             </p>
 
-            <div className="text-center">
-              <button className="hire-me-button px-6 py-3 rounded-full text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:shadow-lg transition-transform transform hover:scale-105">
+            <div className="text-center mt-6 flex gap-4">
+              <button
+                className="freelancer-button px-8 py-3 text-white hover:shadow-xl transition-transform transform hover:scale-110"
+                onClick={() =>
+                  window.open(
+                    "https://www.freelancer.com/u/agricha13",
+                    "_blank"
+                  )
+                }
+              >
+                Freelancer
+              </button>
+              <button
+                className="email-button px-8 py-3 text-white hover:shadow-xl transition-transform transform hover:scale-110"
+                onClick={() =>
+                  (window.location.href = "mailto:your-email@example.com")
+                }
+              >
                 Hire Me
               </button>
             </div>
@@ -72,8 +86,6 @@ const About = () => {
               </div>
             </div>
           </div>
-
-          {/* Hire Me Button */}
         </motion.div>
       </div>
     </section>
