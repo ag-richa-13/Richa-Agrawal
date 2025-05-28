@@ -62,7 +62,7 @@ export const projects: Project[] = [
     description:
       "A professional portfolio website showcasing the work and achievements of Kartik PM.",
     techStack: ["React", "TypeScript", "CSS", "JavaScript", "HTML"],
-    // githubUrl: "", // Add GitHub URL if available
+    //
     apkUrl: "https://kartik-pm.netlify.app/",
     type: "web",
   },
