@@ -1,10 +1,10 @@
 export interface Project {
   title: string;
   description: string;
-  techStack: string[];  // Changed to array for better tag handling
+  techStack: string[]; // Changed to array for better tag handling
   githubUrl?: string;
   apkUrl?: string;
-  type: 'game' | 'web';  // Made type required and specific
+  type: "game" | "web"; // Made type required and specific
 }
 
 export interface BlogPost {

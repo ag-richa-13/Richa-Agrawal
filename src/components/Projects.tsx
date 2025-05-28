@@ -74,14 +74,15 @@ const Projects = () => {
               </div>
 
               <div className="card-actions">
-                {(project.type === "game" || project.title === "Power Ludo") && (
+                {(project.type === "game" ||
+                  project.title === "Power Ludo") && (
                   <a
                     href={project.apkUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="action-btn download-btn"
                   >
-                    <FaDownload /> Download
+                    <FaDownload /> Demo
                   </a>
                 )}
                 {(project.githubUrl || project.type === "web") && (
