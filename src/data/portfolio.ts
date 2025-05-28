@@ -60,10 +60,18 @@ export const projects: Project[] = [
   {
     title: "Client Portfolio",
     description:
-      "A professional portfolio website showcasing the work and achievements of Kartik PM.",
+      "A professional portfolio website showcasing the work and achievements.",
     techStack: ["React", "TypeScript", "CSS", "JavaScript", "HTML"],
     //
     apkUrl: "https://kartik-pm.netlify.app/",
+    type: "web",
+  },
+  {
+    title: "Startup Website",
+    description:
+      "A modern and responsive website designed for a startup, featuring a sleek design and user-friendly interface.",
+    techStack: ["React", "Node.js", "CSS", "JavaScript", "TypeScript", "HTML"],
+    apkUrl: "https://wolferra.io/",
     type: "web",
   },
 ];

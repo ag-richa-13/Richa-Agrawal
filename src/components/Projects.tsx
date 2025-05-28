@@ -74,8 +74,7 @@ const Projects = () => {
               </div>
 
               <div className="card-actions">
-                {(project.type === "game" ||
-                  project.title === "Power Ludo") && (
+                {project.apkUrl && (
                   <a
                     href={project.apkUrl}
                     target="_blank"
@@ -85,7 +84,7 @@ const Projects = () => {
                     <FaDownload /> Demo
                   </a>
                 )}
-                {(project.githubUrl || project.type === "web") && (
+                {project.githubUrl && (
                   <a
                     href={project.githubUrl}
                     target="_blank"
@@ -101,7 +100,7 @@ const Projects = () => {
         ))}
       </div>
 
-      <div className="more-projects">
+      {/* <div className="more-projects">
         <div className="github-box">
           <div className="github-header">
             <FaGithub className="github-header-icon" />
@@ -124,7 +123,7 @@ const Projects = () => {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
