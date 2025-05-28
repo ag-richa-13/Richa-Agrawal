@@ -57,6 +57,15 @@ export const projects: Project[] = [
     githubUrl: "http://github.com/ag-richa-13/CineCraze",
     type: "web",
   },
+  {
+    title: "Client Portfolio",
+    description:
+      "A professional portfolio website showcasing the work and achievements of Kartik PM.",
+    techStack: ["React", "Netlify", "CSS", "JavaScript"],
+    githubUrl: "", // Add GitHub URL if available
+    apkUrl: "https://kartik-pm.netlify.app/",
+    type: "web",
+  },
 ];
 
 export const blogPosts: BlogPost[] = [

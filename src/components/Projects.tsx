@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+// Remove the unused import
+// import React, { useState } from "react";
+import { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa6";
 import { projects } from "../data/portfolio";
