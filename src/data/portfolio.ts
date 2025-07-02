@@ -9,6 +9,7 @@ import {
 // import ticTacToe from "../assets/images/tictactoeIcon.png"; // Adjust the path as needed
 import blogTicTac from "../assets/images/blogtictac.jpeg";
 import blogInApp from "../assets/images/blogInApp.png";
+import blogImgPick from "../assets/images/blogImagePicker.png";
 
 export const projects: Project[] = [
   {
@@ -90,6 +91,13 @@ export const blogPosts: BlogPost[] = [
     description:
       "Developed a multiplayer Tic-Tac-Toe game using Photon Unity Networking 2 (PUN2), integrating features like room creation, random matchmaking, and seamless gameplay synchronization for a smooth, real-time gaming experience.",
     imageUrl: blogTicTac,
+  },
+  {
+    title: "Unity x Android Image Picker — Gallery, Camera & Crop",
+    url: "https://agricha-13.medium.com/unity-x-android-image-picker-gallery-camera-crop-8c5c141e4bae",
+    description:
+      "Built your own Unity image picker with native Android support — pick from gallery, click with camera, crop it, and preview it inside Unity. Full source, clean UI, and blog explained step-by-step.",
+    imageUrl: blogImgPick,
   },
 ];
 
