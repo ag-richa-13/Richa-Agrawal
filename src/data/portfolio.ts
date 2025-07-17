@@ -103,9 +103,30 @@ export const blogPosts: BlogPost[] = [
 
 export const experiences: Experience[] = [
   {
+    company: "OneVerse",
+    role: "Software Development Engineer - 1",
+    duration: "April 2025 – present",
+    location: "Jaipur, Rajasthan",
+    skills: [
+      "Game Development",
+      "Unity",
+      "C#",
+      "Figma",
+      "App Testing",
+      "Game Testing",
+      "Bug Fixes",
+      "HTML",
+      "CSS",
+      "Android Studio",
+      "GitHub",
+      "Jira",
+      "Postman",
+    ],
+  }
+  ,{
     company: "MyTeam11 Fantasy Sports",
     role: "Software Development Engineer - 1",
-    duration: "Nov 2023 – present",
+    duration: "Nov 2023 – March 2025",
     location: "Jaipur, Rajasthan",
     skills: [
       "Game Development",

@@ -2,24 +2,26 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { experiences } from "../data/portfolio";
 import { Building2, MapPin } from "lucide-react";
+import oneverse from "../assets/images/oneVerseLogo.png";
 import myteam11 from "../assets/images/myteam11_logo.jpg";
 import labdox from "../assets/images/labdox_logo.jpg";
 import { MdDiamond } from "react-icons/md";
 import { RiCloseCircleLine } from "react-icons/ri";
-import { FaGamepad } from "react-icons/fa";
 
 import "../assets/style/experience.css";
+
+const companyLogos: Record<string, string> = {
+  "OneVerse": oneverse,
+  "MyTeam11 Fantasy Sports": myteam11,
+  "Labdox": labdox,
+};
 
 const Experience = () => {
   const [showPrompt, setShowPrompt] = useState(false);
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
 
   useEffect(() => {
-    if (showPrompt) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = showPrompt ? "hidden" : "auto";
   }, [showPrompt]);
 
   const handlePromptClose = () => {
@@ -70,11 +72,7 @@ const Experience = () => {
                   <div className="w-full h-full relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 rounded-lg transform rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
                     <img
-                      src={
-                        exp.company === "MyTeam11 Fantasy Sports"
-                          ? myteam11
-                          : labdox
-                      }
+                      src={companyLogos[exp.company] || oneverse}
                       alt={exp.company}
                       className="w-full h-full object-contain rounded-lg relative z-10 p-2"
                     />
