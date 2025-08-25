@@ -5,18 +5,38 @@ import { Code2 } from "lucide-react";
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Game Development",
-      skills: ["Unity", "C#", "Figma"],
-      icon: "🎮",
+      title: "Programming Languages",
+      skills: ["C#", "C++", "JavaScript", "HTML5", "CSS3"],
+      icon: "💻",
     },
     {
-      title: "Web Development",
-      skills: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MySQL"],
-      icon: "🌐",
+      title: "Frameworks & Libraries",
+      skills: [
+        "Unity",
+        "React.js",
+        "TypeScript",
+        "Express.js",
+        "Node.js",
+        "APIs",
+      ],
+      icon: "📚",
     },
     {
-      title: "Tools & Technologies",
-      skills: ["Git", "Postman", "Android Studio", "GitHub", "Jira", "VS Code"],
+      title: "Databases",
+      skills: ["MySQL", "MongoDB"],
+      icon: "🗄️",
+    },
+    {
+      title: "Tools & Platforms",
+      skills: [
+        "VS Code",
+        "Postman",
+        "Git",
+        "GitHub",
+        "Android Studio",
+        "Figma",
+        "Jira",
+      ],
       icon: "🛠️",
     },
   ];
