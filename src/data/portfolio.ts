@@ -103,7 +103,7 @@ export const blogPosts: BlogPost[] = [
 
 export const experiences: Experience[] = [
   {
-    company: "OneVerse",
+    company: "ONE VERSE GAMING TECHNOLOGY PRIVATE LIMITED",
     role: "Software Development Engineer - 1",
     duration: "April 2025 – present",
     location: "Jaipur, Rajasthan",
@@ -122,8 +122,8 @@ export const experiences: Experience[] = [
       "Jira",
       "Postman",
     ],
-  }
-  ,{
+  },
+  {
     company: "MyTeam11 Fantasy Sports",
     role: "Software Development Engineer - 1",
     duration: "Nov 2023 – March 2025",
