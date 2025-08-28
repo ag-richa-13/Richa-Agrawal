@@ -75,6 +75,14 @@ export const projects: Project[] = [
     apkUrl: "https://wolferra.io/",
     type: "web",
   },
+  {
+    title: "Senior Product Manager Portfolio",
+    description:
+      "A sleek and professional portfolio website designed for a Senior Product Manager to showcase projects, achievements, and leadership experience.",
+    techStack: ["React", "TypeScript", "CSS", "JavaScript", "HTML"],
+    apkUrl: "https://shubham-malhotra.netlify.app/", // Replace with actual URL
+    type: "web",
+  },
 ];
 
 export const blogPosts: BlogPost[] = [
