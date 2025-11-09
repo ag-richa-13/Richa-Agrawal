@@ -7,7 +7,7 @@ import {
 } from "../types";
 // import rocket from "../assets/images/rocket.png"; // Adjust the path as needed
 // import ticTacToe from "../assets/images/tictactoeIcon.png"; // Adjust the path as needed
-import blogTicTac from "../assets/images/blogtictac.jpeg";
+const blogTicTac = "../assets/images/blogtictac.jpeg";
 import blogInApp from "../assets/images/blogInApp.png";
 import blogImgPick from "../assets/images/blogImagePicker.png";
 
@@ -81,6 +81,24 @@ export const projects: Project[] = [
       "A sleek and professional portfolio website designed for a Senior Product Manager to showcase projects, achievements, and leadership experience.",
     techStack: ["React", "TypeScript", "CSS", "JavaScript", "HTML"],
     apkUrl: "https://shubham-malhotra.netlify.app/", // Replace with actual URL
+    type: "web",
+  },
+  {
+    title: "Live Session Stream",
+    description:
+      "A full-stack live session application with persistent sessions, shareable URLs, and an interactive video player, enabling presenters and participants to join seamlessly.",
+    techStack: [
+      "React",
+      "Vite",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MongoDB Atlas",
+      "HTML5 Video",
+      "REST APIs",
+    ],
+    apkUrl: "https://live-session-bdeo.onrender.com/",
+    githubUrl: "https://github.com/ag-richa-13/live-session",
     type: "web",
   },
 ];
